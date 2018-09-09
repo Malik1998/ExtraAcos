@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
+    <generated>
+      <config projectName="QuadricQuations" targetName="QuadraticEquationSolverTest" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="18dc00e5-e70e-4434-9010-301844239b9e" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <ignored path="$PROJECT_DIR$/../QuationsSover/cmake-build-debug/" />
+    <ignored path="$PROJECT_DIR$/../EquationSolver/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="LinearEquationSolver.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../EquationSolver/LinearEquationSolver/LinearEquationSolver.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuadraticEquationSolver.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>descreminant</find>
+      <find>QuadricQuationsSolver</find>
+      <find>static</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>discriminant</replace>
+      <replace>QuadraticEquationSolver</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Tests/QuadricQuationSolverTest.h" />
+        <option value="$PROJECT_DIR$/Tests/QuadricQuationSolverTest.cpp" />
+        <option value="$PROJECT_DIR$/Result/Result.cpp" />
+        <option value="$PROJECT_DIR$/Result/Result.h" />
+        <option value="$PROJECT_DIR$/QuadricEquationSolver/QuadraticEquationSolver.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/QuadricEquationSolver/QuadraticEquationSolver.cpp" />
+        <option value="$PROJECT_DIR$/LinearEquationSolver/LinearEquationSolver.h" />
+        <option value="$PROJECT_DIR$/Tests/QuadricQuatationSolver/QuadricQuationSolverTest.cpp" />
+        <option value="$PROJECT_DIR$/Tests/QuadricQuatationSolver/QuadraticEquationSolverTest.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/QuadraticEquationSolver/QuadraticEquationSolver.cpp" />
+        <option value="$PROJECT_DIR$/LinearEquationSolver/LinearEquationSolver.cpp" />
+        <option value="$PROJECT_DIR$/common_libs/Result/Result.h" />
+        <option value="$PROJECT_DIR$/common_libs/Result/Result.cpp" />
+        <option value="$PROJECT_DIR$/QuadraticEquationSolver/QuadraticEquationSolver.h" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="155" />
+    <option name="y" value="125" />
+    <option name="width" value="926" />
+    <option name="height" value="1012" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="QuadricQuations" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuadricQuations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuadricQuations" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuadricQuations" type="462c0819:PsiDirectoryNode" />
+              <item name="QuadraticEquationSolver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuadricQuations" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuadricQuations" type="462c0819:PsiDirectoryNode" />
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuadricQuations" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuadricQuations" type="462c0819:PsiDirectoryNode" />
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="QuadraticEquatationSolver" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EquationSolver/CMakeLists.txt" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/common_libs" />
+      <recent name="$PROJECT_DIR$/QuadricEquationSolver" />
+      <recent name="$PROJECT_DIR$/Tests/QuadricQuatationSolver" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Google Test.QuadraticQuationSolverTest">
+    <configuration name="QuadraticQuationSolverTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="QuadricQuations" TARGET_NAME="QuadraticEquationSolverTest" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="QuadricQuations" RUN_TARGET_NAME="QuadraticEquationSolverTest" TEST_MODE="SUITE_TEST" />
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="QuadricQuations" RUN_TARGET_NAME="QuadricQuations" EXPLICIT_BUILD_TARGET_NAME="all" />
+    <list>
+      <item itemvalue="Application.Build All" />
+      <item itemvalue="Google Test.QuadraticQuationSolverTest" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="18dc00e5-e70e-4434-9010-301844239b9e" name="Default" comment="" />
+      <created>1536250192092</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1536250192092</updated>
+      <workItem from="1536250193765" duration="1274000" />
+      <workItem from="1536389075823" duration="592000" />
+      <workItem from="1536393378416" duration="2779000" />
+      <workItem from="1536432559608" duration="3032000" />
+      <workItem from="1536474815635" duration="6315000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unnamed - 2018.09.09 at 10h 43m 51s.xml">
+      <configuration name="Unnamed" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Unnamed - 2018.09.09 at 10h 44m 22s.xml">
+      <configuration name="Unnamed" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="QuadraticQuationSolverTest - 2018.09.09 at 10h 45m 44s.xml">
+      <configuration name="QuadraticQuationSolverTest" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="QuadraticQuationSolverTest - 2018.09.09 at 10h 46m 38s.xml">
+      <configuration name="QuadraticQuationSolverTest" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="QuadraticQuationSolverTest - 2018.09.09 at 10h 47m 07s.xml">
+      <configuration name="QuadraticQuationSolverTest" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="QuadraticQuationSolverTest - 2018.09.09 at 10h 50m 48s.xml">
+      <configuration name="QuadraticQuationSolverTest" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="QuadraticQuationSolverTest - 2018.09.09 at 10h 51m 32s.xml">
+      <configuration name="QuadraticQuationSolverTest" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="QuadraticQuationSolverTest - 2018.09.09 at 11h 06m 31s.xml">
+      <configuration name="QuadraticQuationSolverTest" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="QuadraticQuationSolverTest - 2018.09.09 at 11h 08m 14s.xml">
+      <configuration name="QuadraticQuationSolverTest" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="QuadraticQuationSolverTest - 2018.09.09 at 11h 10m 48s.xml">
+      <configuration name="QuadraticQuationSolverTest" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="13992000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24959569" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32924336" />
+      <window_info anchor="bottom" id="CMake" order="7" weight="0.32924336" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32924336" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997955" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1007">
+          <caret line="53" column="14" lean-forward="true" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#39#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding>
+            <element signature="e#141#165#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1387">
+          <caret line="73" selection-start-line="73" selection-start-column="2" selection-end-line="76" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding>
+            <element signature="e#39#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/TestLib/googletest-master/googletest/googlemock/gtest/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5040" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+          <folding>
+            <element signature="e#39#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/LinearEquationSolver/LinearEquationSolver.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#39#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/common_libs/Result/Result.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+          <folding>
+            <element signature="e#107#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-339">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding>
+            <element signature="e#39#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/common_libs/Result/Result.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="e#39#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+          <folding>
+            <element signature="e#141#165#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/LinearEquationSolver/LinearEquationSolver.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

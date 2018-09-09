@@ -1,0 +1,24 @@
+\hypertarget{classQuadricQuationSolverTest}{}\section{Quadric\+Quation\+Solver\+Test Class Reference}
+\label{classQuadricQuationSolverTest}\index{Quadric\+Quation\+Solver\+Test@{Quadric\+Quation\+Solver\+Test}}
+
+
+Inheritance diagram for Quadric\+Quation\+Solver\+Test\+:
+% FIG 0
+
+
+Collaboration diagram for Quadric\+Quation\+Solver\+Test\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQuadricQuationSolverTest_a4ba162954f6ce5e1d6d84243bc7420e5}\label{classQuadricQuationSolverTest_a4ba162954f6ce5e1d6d84243bc7420e5}} 
+void {\bfseries Set\+Up} ()
+\item 
+\mbox{\Hypertarget{classQuadricQuationSolverTest_a4b8580d5b657bf0d4d95df49885a7dd1}\label{classQuadricQuationSolverTest_a4b8580d5b657bf0d4d95df49885a7dd1}} 
+void {\bfseries Tear\+Down} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\+Quadratic\+Equatation\+Solver/Quadratic\+Equation\+Solver\+Test.\+h\end{DoxyCompactItemize}

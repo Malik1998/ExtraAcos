@@ -1,0 +1,133 @@
+\hypertarget{classResult}{}\section{Result Class Reference}
+\label{classResult}\index{Result@{Result}}
+
+
+Class to use results of solving quatations. Singletone.  
+
+
+
+
+{\ttfamily \#include $<$Result.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classResult_ae4448d298878f49e7adf0c7a9908f2e5}{T\+Y\+P\+E\+\_\+\+O\+F\+\_\+\+R\+O\+O\+TS} \{ {\bfseries C\+O\+U\+N\+T\+A\+B\+LE}, 
+{\bfseries I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+C\+O\+U\+NT}, 
+{\bfseries N\+O\+NE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classResult_ae4448d298878f49e7adf0c7a9908f2e5}{T\+Y\+P\+E\+\_\+\+O\+F\+\_\+\+R\+O\+O\+TS} \hyperlink{classResult_a31f11436c4ec4716acfc281893f16297}{get\+Type\+Of\+Roots} ()
+\item 
+std\+::set$<$ double $>$ \hyperlink{classResult_a3d480d756c97fa635e7ad4e6044dd828}{get\+Roots} ()
+\item 
+size\+\_\+t \hyperlink{classResult_a8975ae2fbaaf559f9db4bb52e050b294}{get\+Count} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classResult}{Result} \hyperlink{classResult_ae80743c03328802c58ee712ffc901f7e}{get\+Infinity\+Roots} ()
+\item 
+static \hyperlink{classResult}{Result} \hyperlink{classResult_aa295438130675921abb93d72818f8e19}{get\+None\+Roots} ()
+\item 
+static \hyperlink{classResult}{Result} \hyperlink{classResult_a96fd5f4460fb7b17a7e0e7f35c44e97c}{get\+Countable\+Roots} (std\+::set$<$ double $>$ \&\&roots)
+\item 
+static \hyperlink{classResult}{Result} \hyperlink{classResult_a4fd93039999c369636e4b9c9a5a23d6c}{get\+Countable\+Roots} (std\+::set$<$ double $>$ \&roots)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to use results of solving quatations. Singletone. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classResult_ae4448d298878f49e7adf0c7a9908f2e5}\label{classResult_ae4448d298878f49e7adf0c7a9908f2e5}} 
+\index{Result@{Result}!T\+Y\+P\+E\+\_\+\+O\+F\+\_\+\+R\+O\+O\+TS@{T\+Y\+P\+E\+\_\+\+O\+F\+\_\+\+R\+O\+O\+TS}}
+\index{T\+Y\+P\+E\+\_\+\+O\+F\+\_\+\+R\+O\+O\+TS@{T\+Y\+P\+E\+\_\+\+O\+F\+\_\+\+R\+O\+O\+TS}!Result@{Result}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+O\+F\+\_\+\+R\+O\+O\+TS}{TYPE\_OF\_ROOTS}}
+{\footnotesize\ttfamily enum \hyperlink{classResult_ae4448d298878f49e7adf0c7a9908f2e5}{Result\+::\+T\+Y\+P\+E\+\_\+\+O\+F\+\_\+\+R\+O\+O\+TS}}
+
+Type of count of roots Countable -\/ numeric count Infinity\+\_\+count -\/ infinity number roots None -\/ no roots 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classResult_a8975ae2fbaaf559f9db4bb52e050b294}\label{classResult_a8975ae2fbaaf559f9db4bb52e050b294}} 
+\index{Result@{Result}!get\+Count@{get\+Count}}
+\index{get\+Count@{get\+Count}!Result@{Result}}
+\subsubsection{\texorpdfstring{get\+Count()}{getCount()}}
+{\footnotesize\ttfamily size\+\_\+t Result\+::get\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+access to private member count of roots set is returned, if type is countable, otherwise assert thrown \begin{DoxyReturn}{Returns}
+count of roots set, if type is countable 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classResult_a96fd5f4460fb7b17a7e0e7f35c44e97c}\label{classResult_a96fd5f4460fb7b17a7e0e7f35c44e97c}} 
+\index{Result@{Result}!get\+Countable\+Roots@{get\+Countable\+Roots}}
+\index{get\+Countable\+Roots@{get\+Countable\+Roots}!Result@{Result}}
+\subsubsection{\texorpdfstring{get\+Countable\+Roots()}{getCountableRoots()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classResult}{Result} Result\+::get\+Countable\+Roots (\begin{DoxyParamCaption}\item[{std\+::set$<$ double $>$ \&\&}]{roots }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+roots will be moved from parameter, count\+\_\+of\+\_\+roots set to roots.\+size() and type\+\_\+of\+\_\+roots set to Countable 
+\begin{DoxyParams}{Parameters}
+{\em roots} & -\/ set of all roots of quatation, will be moved \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This \hyperlink{classResult}{Result} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classResult_a4fd93039999c369636e4b9c9a5a23d6c}\label{classResult_a4fd93039999c369636e4b9c9a5a23d6c}} 
+\index{Result@{Result}!get\+Countable\+Roots@{get\+Countable\+Roots}}
+\index{get\+Countable\+Roots@{get\+Countable\+Roots}!Result@{Result}}
+\subsubsection{\texorpdfstring{get\+Countable\+Roots()}{getCountableRoots()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classResult}{Result} Result\+::get\+Countable\+Roots (\begin{DoxyParamCaption}\item[{std\+::set$<$ double $>$ \&}]{roots }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+roots will be copied from parameter, count\+\_\+of\+\_\+roots set to roots.\+size() and type\+\_\+of\+\_\+roots set to Countable 
+\begin{DoxyParams}{Parameters}
+{\em roots} & -\/ set of all roots of quatation, will be copied \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This \hyperlink{classResult}{Result} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classResult_ae80743c03328802c58ee712ffc901f7e}\label{classResult_ae80743c03328802c58ee712ffc901f7e}} 
+\index{Result@{Result}!get\+Infinity\+Roots@{get\+Infinity\+Roots}}
+\index{get\+Infinity\+Roots@{get\+Infinity\+Roots}!Result@{Result}}
+\subsubsection{\texorpdfstring{get\+Infinity\+Roots()}{getInfinityRoots()}}
+{\footnotesize\ttfamily \hyperlink{classResult}{Result} Result\+::get\+Infinity\+Roots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\hyperlink{classResult}{Result} object with type\+Of\+Roots set to I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+C\+O\+U\+NT Other variables don\textquotesingle{}t used. static varible will be not created again \begin{DoxyReturn}{Returns}
+this created \hyperlink{classResult}{Result} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classResult_aa295438130675921abb93d72818f8e19}\label{classResult_aa295438130675921abb93d72818f8e19}} 
+\index{Result@{Result}!get\+None\+Roots@{get\+None\+Roots}}
+\index{get\+None\+Roots@{get\+None\+Roots}!Result@{Result}}
+\subsubsection{\texorpdfstring{get\+None\+Roots()}{getNoneRoots()}}
+{\footnotesize\ttfamily \hyperlink{classResult}{Result} Result\+::get\+None\+Roots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\hyperlink{classResult}{Result} object with type\+Of\+Roots set to N\+O\+NE Other variables don\textquotesingle{}t used. static varible will be not created again \begin{DoxyReturn}{Returns}
+this created \hyperlink{classResult}{Result} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classResult_a3d480d756c97fa635e7ad4e6044dd828}\label{classResult_a3d480d756c97fa635e7ad4e6044dd828}} 
+\index{Result@{Result}!get\+Roots@{get\+Roots}}
+\index{get\+Roots@{get\+Roots}!Result@{Result}}
+\subsubsection{\texorpdfstring{get\+Roots()}{getRoots()}}
+{\footnotesize\ttfamily std\+::set$<$ double $>$ Result\+::get\+Roots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+acces to private member copy of roots set is returned, if type is countable, otherwise assert thrown \begin{DoxyReturn}{Returns}
+copy of roots set, if type is countable 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classResult_a31f11436c4ec4716acfc281893f16297}\label{classResult_a31f11436c4ec4716acfc281893f16297}} 
+\index{Result@{Result}!get\+Type\+Of\+Roots@{get\+Type\+Of\+Roots}}
+\index{get\+Type\+Of\+Roots@{get\+Type\+Of\+Roots}!Result@{Result}}
+\subsubsection{\texorpdfstring{get\+Type\+Of\+Roots()}{getTypeOfRoots()}}
+{\footnotesize\ttfamily \hyperlink{classResult_ae4448d298878f49e7adf0c7a9908f2e5}{Result\+::\+T\+Y\+P\+E\+\_\+\+O\+F\+\_\+\+R\+O\+O\+TS} Result\+::get\+Type\+Of\+Roots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+acces to private member \begin{DoxyReturn}{Returns}
+type\+Of\+Roots 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+common\+\_\+libs/\+Result/Result.\+h\item 
+common\+\_\+libs/\+Result/Result.\+cpp\end{DoxyCompactItemize}

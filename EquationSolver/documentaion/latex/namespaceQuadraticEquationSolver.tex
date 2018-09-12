@@ -1,0 +1,130 @@
+\hypertarget{namespaceQuadraticEquationSolver}{}\section{Quadratic\+Equation\+Solver Namespace Reference}
+\label{namespaceQuadraticEquationSolver}\index{Quadratic\+Equation\+Solver@{Quadratic\+Equation\+Solver}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::array$<$ double, 3 $>$ \hyperlink{namespaceQuadraticEquationSolver_a2fdb492d7c7c91571ef52b4365e69f96}{solve} (double a, double b, double c)
+\item 
+bool \hyperlink{namespaceQuadraticEquationSolver_a4f2ae1f720093c71706f80e9945bfbe6}{is\+Not\+Quadratic} (double a, double b, double c)
+\item 
+void \hyperlink{namespaceQuadraticEquationSolver_a938d16238c9d7b6fc6196eafd8b1d49d}{set\+Presicion} (double eps)
+\item 
+double \hyperlink{namespaceQuadraticEquationSolver_a7dac20c6acd080ae03efb79265ad0fb6}{get\+Presison} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{namespaceQuadraticEquationSolver_ad4a5b33521868e40baa80093d2759dbf}{P\+R\+E\+C\+I\+S\+I\+ON} = 1e-\/9
+\item 
+std\+::array$<$ double, 3 $>$ \hyperlink{namespaceQuadraticEquationSolver_a58fb06e9e5032bb24dee59668f208036}{N\+O\+\_\+\+R\+O\+O\+TS}
+\begin{DoxyCompactList}\small\item\em Variable indication no roots, as shown in docs of solve. \end{DoxyCompactList}\item 
+std\+::array$<$ double, 3 $>$ \hyperlink{namespaceQuadraticEquationSolver_a25a5da2c76273836195af9d508b8e571}{I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+R\+O\+O\+TS}
+\begin{DoxyCompactList}\small\item\em Variable indication infinity roots, as shown in docs of solve. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for Solving Quadratic equation a $\ast$ x $\ast$ x + b $\ast$ x + c = 0 Where a != 0, otherwise \hyperlink{namespaceLinearEquationSolver}{Linear\+Equation\+Solver} will be used Default precision 1e-\/9 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceQuadraticEquationSolver_a7dac20c6acd080ae03efb79265ad0fb6}\label{namespaceQuadraticEquationSolver_a7dac20c6acd080ae03efb79265ad0fb6}} 
+\index{Quadratic\+Equation\+Solver@{Quadratic\+Equation\+Solver}!get\+Presison@{get\+Presison}}
+\index{get\+Presison@{get\+Presison}!Quadratic\+Equation\+Solver@{Quadratic\+Equation\+Solver}}
+\subsubsection{\texorpdfstring{get\+Presison()}{getPresison()}}
+{\footnotesize\ttfamily double Quadratic\+Equation\+Solver\+::get\+Presison (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get current precision \begin{DoxyReturn}{Returns}
+current precision -\/ default = 1e-\/9 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceQuadraticEquationSolver_a4f2ae1f720093c71706f80e9945bfbe6}\label{namespaceQuadraticEquationSolver_a4f2ae1f720093c71706f80e9945bfbe6}} 
+\index{Quadratic\+Equation\+Solver@{Quadratic\+Equation\+Solver}!is\+Not\+Quadratic@{is\+Not\+Quadratic}}
+\index{is\+Not\+Quadratic@{is\+Not\+Quadratic}!Quadratic\+Equation\+Solver@{Quadratic\+Equation\+Solver}}
+\subsubsection{\texorpdfstring{is\+Not\+Quadratic()}{isNotQuadratic()}}
+{\footnotesize\ttfamily static bool Quadratic\+Equation\+Solver\+::is\+Not\+Quadratic (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c }\end{DoxyParamCaption})}
+
+Check if Equation given is quadratic (a != 0) 
+\begin{DoxyParams}{Parameters}
+{\em a} & -\/ parametr of x$^\wedge$2 \\
+\hline
+{\em b} & -\/ parametr of x \\
+\hline
+{\em c} & -\/ free member \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true -\/ if quadratic, false -\/ else 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceQuadraticEquationSolver_a938d16238c9d7b6fc6196eafd8b1d49d}\label{namespaceQuadraticEquationSolver_a938d16238c9d7b6fc6196eafd8b1d49d}} 
+\index{Quadratic\+Equation\+Solver@{Quadratic\+Equation\+Solver}!set\+Presicion@{set\+Presicion}}
+\index{set\+Presicion@{set\+Presicion}!Quadratic\+Equation\+Solver@{Quadratic\+Equation\+Solver}}
+\subsubsection{\texorpdfstring{set\+Presicion()}{setPresicion()}}
+{\footnotesize\ttfamily void Quadratic\+Equation\+Solver\+::set\+Presicion (\begin{DoxyParamCaption}\item[{double}]{eps }\end{DoxyParamCaption})}
+
+Set presion of calculating roots to eps 
+\begin{DoxyParams}{Parameters}
+{\em eps} & -\/ new precision -\/ default = 1e-\/9 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceQuadraticEquationSolver_a2fdb492d7c7c91571ef52b4365e69f96}\label{namespaceQuadraticEquationSolver_a2fdb492d7c7c91571ef52b4365e69f96}} 
+\index{Quadratic\+Equation\+Solver@{Quadratic\+Equation\+Solver}!solve@{solve}}
+\index{solve@{solve}!Quadratic\+Equation\+Solver@{Quadratic\+Equation\+Solver}}
+\subsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily std\+::array$<$ double, 3 $>$ Quadratic\+Equation\+Solver\+::solve (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c }\end{DoxyParamCaption})}
+
+Solve equation a $\ast$ x $\ast$ x + b $\ast$ x + c = 0 Equality with zero, used as\+: fabs(a) $<$= P\+R\+E\+C\+I\+S\+I\+ON If a = 0, \hyperlink{namespaceLinearEquationSolver}{Linear\+Equation\+Solver} used 
+\begin{DoxyParams}{Parameters}
+{\em a} & -\/ parametr of x$^\wedge$2 \\
+\hline
+{\em b} & -\/ parametr of x \\
+\hline
+{\em c} & -\/ free member \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ array with size 3, if roots are Infinity, first,second,third index -\/ std\+::numeric\+\_\+limits$<$double$>$\+::max() if roots are two, they are sorted and put in first indexes if root is one, where first index -\/ is root, second, thirs std\+::numeric\+\_\+limits$<$double$>$\+::max() if root -\/ none, first,second,third index std\+::numeric\+\_\+limits$<$double$>$\+::min() 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceQuadraticEquationSolver_a25a5da2c76273836195af9d508b8e571}\label{namespaceQuadraticEquationSolver_a25a5da2c76273836195af9d508b8e571}} 
+\index{Quadratic\+Equation\+Solver@{Quadratic\+Equation\+Solver}!I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+R\+O\+O\+TS@{I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+R\+O\+O\+TS}}
+\index{I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+R\+O\+O\+TS@{I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+R\+O\+O\+TS}!Quadratic\+Equation\+Solver@{Quadratic\+Equation\+Solver}}
+\subsubsection{\texorpdfstring{I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+R\+O\+O\+TS}{INFINITY\_ROOTS}}
+{\footnotesize\ttfamily std\+::array$<$ double, 3 $>$ Quadratic\+Equation\+Solver\+::\+I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+R\+O\+O\+TS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= std::array<double, 3>    \{
+            std::numeric\_limits<double>::max(),
+            std::numeric\_limits<double>::max(),
+            std::numeric\_limits<double>::max()
+    \}
+\end{DoxyCode}
+
+
+Variable indication infinity roots, as shown in docs of solve. 
+
+\mbox{\Hypertarget{namespaceQuadraticEquationSolver_a58fb06e9e5032bb24dee59668f208036}\label{namespaceQuadraticEquationSolver_a58fb06e9e5032bb24dee59668f208036}} 
+\index{Quadratic\+Equation\+Solver@{Quadratic\+Equation\+Solver}!N\+O\+\_\+\+R\+O\+O\+TS@{N\+O\+\_\+\+R\+O\+O\+TS}}
+\index{N\+O\+\_\+\+R\+O\+O\+TS@{N\+O\+\_\+\+R\+O\+O\+TS}!Quadratic\+Equation\+Solver@{Quadratic\+Equation\+Solver}}
+\subsubsection{\texorpdfstring{N\+O\+\_\+\+R\+O\+O\+TS}{NO\_ROOTS}}
+{\footnotesize\ttfamily std\+::array$<$ double, 3 $>$ Quadratic\+Equation\+Solver\+::\+N\+O\+\_\+\+R\+O\+O\+TS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= std::array<double, 3>    \{
+        std::numeric\_limits<double>::min(),
+        std::numeric\_limits<double>::min(),
+        std::numeric\_limits<double>::min()
+    \}
+\end{DoxyCode}
+
+
+Variable indication no roots, as shown in docs of solve. 
+
+\mbox{\Hypertarget{namespaceQuadraticEquationSolver_ad4a5b33521868e40baa80093d2759dbf}\label{namespaceQuadraticEquationSolver_ad4a5b33521868e40baa80093d2759dbf}} 
+\index{Quadratic\+Equation\+Solver@{Quadratic\+Equation\+Solver}!P\+R\+E\+C\+I\+S\+I\+ON@{P\+R\+E\+C\+I\+S\+I\+ON}}
+\index{P\+R\+E\+C\+I\+S\+I\+ON@{P\+R\+E\+C\+I\+S\+I\+ON}!Quadratic\+Equation\+Solver@{Quadratic\+Equation\+Solver}}
+\subsubsection{\texorpdfstring{P\+R\+E\+C\+I\+S\+I\+ON}{PRECISION}}
+{\footnotesize\ttfamily double Quadratic\+Equation\+Solver\+::\+P\+R\+E\+C\+I\+S\+I\+ON = 1e-\/9}
+
+Precisoion used to compare with 0; Default precision 1e-\/9 

@@ -1,24 +1,24 @@
 var indexSectionsWithContent =
 {
-  0: "glqrst",
-  1: "lqr",
-  2: "gs",
-  3: "t"
+  0: "gilnpqs",
+  1: "lq",
+  2: "gis",
+  3: "inp"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "classes",
+  1: "namespaces",
   2: "functions",
-  3: "enums"
+  3: "variables"
 };
 
 var indexSectionLabels =
 {
   0: "All",
-  1: "Classes",
+  1: "Namespaces",
   2: "Functions",
-  3: "Enumerations"
+  3: "Variables"
 };
 

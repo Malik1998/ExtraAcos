@@ -4,10 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/LinearEquationSolver/LinearEquationSolver.cpp" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug/CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.o"
-  "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.cpp" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug/CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.o"
-  "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug/CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.o"
-  "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/common_libs/Result/Result.cpp" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug/CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o"
+  "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/LinearEquationSolver/LinearEquationSolver.cpp" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug/CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.o"
+  "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.cpp" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug/CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.o"
+  "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug/CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -6,59 +6,53 @@
 
 #IncludeRegexTransform: 
 
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/LinearEquationSolver/LinearEquationSolver.cpp
-LinearEquationSolver.h
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/LinearEquationSolver/LinearEquationSolver.h
-../common_libs/Result/Result.h
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/common_libs/Result/Result.h
-
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/LinearEquationSolver/LinearEquationSolver.h
-../common_libs/Result/Result.h
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/common_libs/Result/Result.h
-
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.cpp
-QuadraticEquationSolver.h
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.h
-../LinearEquationSolver/LinearEquationSolver.h
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/LinearEquationSolver/LinearEquationSolver.h
-
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.h
-../common_libs/Result/Result.h
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/common_libs/Result/Result.h
+/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/LinearEquationSolver/LinearEquationSolver.cpp
+assert.h
+-
+limits
+-
 cmath
 -
+LinearEquationSolver.h
+/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/LinearEquationSolver/LinearEquationSolver.h
 
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp
+/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/LinearEquationSolver/LinearEquationSolver.h
+array
+-
+
+/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.cpp
+assert.h
+-
+array
+-
+limits
+-
+QuadraticEquationSolver.h
+/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.h
+../LinearEquationSolver/LinearEquationSolver.h
+/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/LinearEquationSolver/LinearEquationSolver.h
+
+/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.h
+cmath
+-
+array
+-
+
+/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp
 QuadraticEquationSolverTest.h
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.h
+/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.h
 gtest/gtest.h
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/Tests/QuadraticEquatationSolver/gtest/gtest.h
-../../common_libs/Result/Result.h
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/common_libs/Result/Result.h
+/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/Tests/QuadraticEquatationSolver/gtest/gtest.h
 ../../QuadraticEquationSolver/QuadraticEquationSolver.h
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.h
+/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.h
 
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.h
+/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.h
 gtest/gtest.h
 -
 ../../main.cpp
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/main.cpp
+/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/main.cpp
 
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/common_libs/Result/Result.cpp
-assert.h
--
-iostream
--
-Result.h
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/common_libs/Result/Result.h
-
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/common_libs/Result/Result.h
-cstdio
--
-set
--
-
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/main.cpp
+/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/main.cpp
 iostream
 -
 set

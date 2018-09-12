@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.o"
   "CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.o"
-  "CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o"
   "CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.o"
   "QuadraticEquationSolverTest.pdb"
   "QuadraticEquationSolverTest"

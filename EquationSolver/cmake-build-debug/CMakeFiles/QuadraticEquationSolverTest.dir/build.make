@@ -43,10 +43,10 @@ RM = /home/user/IDE/clion-2018.1/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver"
+CMAKE_SOURCE_DIR = "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug"
+CMAKE_BINARY_DIR = "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/QuadraticEquationSolverTest.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/QuadraticEquationSolverTest.dir/flags.make
 
 CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.o: CMakeFiles/QuadraticEquationSolverTest.dir/flags.make
 CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.o: ../Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.o -c "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.o -c "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp"
 
 CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp" > CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp" > CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.i
 
 CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp" -o CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp" -o CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.s
 
 CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/Quadr
 
 CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.o: CMakeFiles/QuadraticEquationSolverTest.dir/flags.make
 CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.o: ../QuadraticEquationSolver/QuadraticEquationSolver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.o -c "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.o -c "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.cpp"
 
 CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.cpp" > CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.cpp" > CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.i
 
 CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.cpp" -o CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/QuadraticEquationSolver/QuadraticEquationSolver.cpp" -o CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.s
 
 CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.o.requires:
 
@@ -105,42 +105,18 @@ CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEqua
 CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.o.provides.build: CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.o
 
 
-CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o: CMakeFiles/QuadraticEquationSolverTest.dir/flags.make
-CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o: ../common_libs/Result/Result.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o -c "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/common_libs/Result/Result.cpp"
-
-CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/common_libs/Result/Result.cpp" > CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.i
-
-CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/common_libs/Result/Result.cpp" -o CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.s
-
-CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o.requires:
-
-.PHONY : CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o.requires
-
-CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o.provides: CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o.requires
-	$(MAKE) -f CMakeFiles/QuadraticEquationSolverTest.dir/build.make CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o.provides.build
-.PHONY : CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o.provides
-
-CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o.provides.build: CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o
-
-
 CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.o: CMakeFiles/QuadraticEquationSolverTest.dir/flags.make
 CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.o: ../LinearEquationSolver/LinearEquationSolver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.o -c "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/LinearEquationSolver/LinearEquationSolver.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.o -c "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/LinearEquationSolver/LinearEquationSolver.cpp"
 
 CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/LinearEquationSolver/LinearEquationSolver.cpp" > CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/LinearEquationSolver/LinearEquationSolver.cpp" > CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.i
 
 CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/LinearEquationSolver/LinearEquationSolver.cpp" -o CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/LinearEquationSolver/LinearEquationSolver.cpp" -o CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.s
 
 CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.o.requires:
 
@@ -157,7 +133,6 @@ CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSo
 QuadraticEquationSolverTest_OBJECTS = \
 "CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.o" \
 "CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.o" \
-"CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o" \
 "CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.o"
 
 # External object files for target QuadraticEquationSolverTest
@@ -165,11 +140,10 @@ QuadraticEquationSolverTest_EXTERNAL_OBJECTS =
 
 QuadraticEquationSolverTest: CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.o
 QuadraticEquationSolverTest: CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.o
-QuadraticEquationSolverTest: CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o
 QuadraticEquationSolverTest: CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.o
 QuadraticEquationSolverTest: CMakeFiles/QuadraticEquationSolverTest.dir/build.make
 QuadraticEquationSolverTest: CMakeFiles/QuadraticEquationSolverTest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable QuadraticEquationSolverTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable QuadraticEquationSolverTest"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/QuadraticEquationSolverTest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -179,7 +153,6 @@ CMakeFiles/QuadraticEquationSolverTest.dir/build: QuadraticEquationSolverTest
 
 CMakeFiles/QuadraticEquationSolverTest.dir/requires: CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.o.requires
 CMakeFiles/QuadraticEquationSolverTest.dir/requires: CMakeFiles/QuadraticEquationSolverTest.dir/QuadraticEquationSolver/QuadraticEquationSolver.cpp.o.requires
-CMakeFiles/QuadraticEquationSolverTest.dir/requires: CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o.requires
 CMakeFiles/QuadraticEquationSolverTest.dir/requires: CMakeFiles/QuadraticEquationSolverTest.dir/LinearEquationSolver/LinearEquationSolver.cpp.o.requires
 
 .PHONY : CMakeFiles/QuadraticEquationSolverTest.dir/requires
@@ -189,6 +162,6 @@ CMakeFiles/QuadraticEquationSolverTest.dir/clean:
 .PHONY : CMakeFiles/QuadraticEquationSolverTest.dir/clean
 
 CMakeFiles/QuadraticEquationSolverTest.dir/depend:
-	cd "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug/CMakeFiles/QuadraticEquationSolverTest.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug/CMakeFiles/QuadraticEquationSolverTest.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/QuadraticEquationSolverTest.dir/depend
 

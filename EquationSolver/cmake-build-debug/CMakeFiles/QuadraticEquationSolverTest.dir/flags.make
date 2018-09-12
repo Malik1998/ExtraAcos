@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/External" -I"/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/Libs/googletest-master/googletest/googlemock/gtest" 
+CXX_INCLUDES = -I"/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/External" -I"/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/Libs/googletest-master/googletest/googlemock/gtest" 
 

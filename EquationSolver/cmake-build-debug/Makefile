@@ -48,10 +48,10 @@ RM = /home/user/IDE/clion-2018.1/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver"
+CMAKE_SOURCE_DIR = "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug"
+CMAKE_BINARY_DIR = "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -91,9 +91,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug/CMakeFiles" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug/CMakeFiles" "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/EquationSolver/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -215,33 +215,6 @@ Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.s:
 	$(MAKE) -f CMakeFiles/QuadraticEquationSolverTest.dir/build.make CMakeFiles/QuadraticEquationSolverTest.dir/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.s
 .PHONY : Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp.s
 
-common_libs/Result/Result.o: common_libs/Result/Result.cpp.o
-
-.PHONY : common_libs/Result/Result.o
-
-# target to build an object file
-common_libs/Result/Result.cpp.o:
-	$(MAKE) -f CMakeFiles/QuadraticEquationSolverTest.dir/build.make CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.o
-.PHONY : common_libs/Result/Result.cpp.o
-
-common_libs/Result/Result.i: common_libs/Result/Result.cpp.i
-
-.PHONY : common_libs/Result/Result.i
-
-# target to preprocess a source file
-common_libs/Result/Result.cpp.i:
-	$(MAKE) -f CMakeFiles/QuadraticEquationSolverTest.dir/build.make CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.i
-.PHONY : common_libs/Result/Result.cpp.i
-
-common_libs/Result/Result.s: common_libs/Result/Result.cpp.s
-
-.PHONY : common_libs/Result/Result.s
-
-# target to generate assembly for a file
-common_libs/Result/Result.cpp.s:
-	$(MAKE) -f CMakeFiles/QuadraticEquationSolverTest.dir/build.make CMakeFiles/QuadraticEquationSolverTest.dir/common_libs/Result/Result.cpp.s
-.PHONY : common_libs/Result/Result.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -261,9 +234,6 @@ help:
 	@echo "... Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.o"
 	@echo "... Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.i"
 	@echo "... Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.s"
-	@echo "... common_libs/Result/Result.o"
-	@echo "... common_libs/Result/Result.i"
-	@echo "... common_libs/Result/Result.s"
 .PHONY : help
 
 

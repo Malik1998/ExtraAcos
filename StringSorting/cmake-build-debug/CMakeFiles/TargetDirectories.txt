@@ -1,0 +1,3 @@
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/StringSorting/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/StringSorting/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/StringSorting/cmake-build-debug/CMakeFiles/StringSorting.dir

@@ -96,6 +96,9 @@
 		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/StringSorting/SortString/StringSorter.h">
 			<Option target="StringSorting"/>
 		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/StringSorting/SortString/StringToCompare.h">
+			<Option target="StringSorting"/>
+		</Unit>
 		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/StringSorting/main.cpp">
 			<Option target="StringSorting"/>
 		</Unit>

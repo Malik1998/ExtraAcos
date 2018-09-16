@@ -8,7 +8,18 @@
 
 namespace StringSorter {
 
-    void sortMyFile(char* SrcFileName, char* DistFileName);
+    class StringToCompare;
+    
+
+    bool comparator(StringToCompare&& a, StringToCompare&& b);
+
+    void outputAscendingText(size_t *indexes, size_t countOfLines, char *text, char *DistFileName);
+
+    void outputAscendingFromEndText(size_t *indexes, size_t countOfLines, char *text, char *DistFileName);
+
+    void outputNormalText(size_t *indexes, size_t countOfLines, char *text, char *DistFileName);
+
+    void sortMyFile(char *SrcFileName, char *DistFileName);
 };
 
 

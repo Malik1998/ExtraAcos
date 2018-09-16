@@ -12,68 +12,109 @@
 #include "../ReadFullFile/FullFileReader.h"
 
 namespace StringSorter {
-    bool isSpecial(char i) {
-        return !((i >= 'a' && i <= 'z') || (i >= 'A' && i <= 'Z'));
-    }
-    bool comparator(const char* a,
-                    const char* b,
-                    size_t firstStart,
-                    size_t secondStart,
-                    int firstIncrement,
-                    int secondIncrement,
-                    size_t firstEnd,
-                    size_t secondEnd) {
-        // empty -> to the end
-        if (firstEnd == firstStart) {
-            return false;
+    class StringToCompare {
+    private:
+        const char* data;
+        int increment;
+        size_t firstElement;
+        size_t lastElement;
+        size_t currentElement;
+    public:
+        explicit StringToCompare(const char *data_, int increment_, size_t firstElement_, size_t lastElement_)
+                : data(data_), increment(increment_), firstElement(firstElement_), lastElement(lastElement_),
+                  currentElement(firstElement_) {}
+
+        bool isEmpty() {
+            return firstElement == lastElement;
         }
-        if (secondEnd == secondStart) {
-            return true;
+
+        bool hasNext() {
+            return currentElement != lastElement;
         }
-        while (firstEnd != firstStart && secondEnd != secondStart) {
-            if (isSpecial(a[firstStart]) || isSpecial(b[secondStart])) {
-                if (isSpecial(a[firstStart])) {
-                    firstStart += firstIncrement;
+
+        bool isNextSpecial() {
+            char b = data[currentElement + increment];
+            return !((b >= 'a' && b <= 'z') || (b >= 'A' && b <= 'Z'));
+        }
+
+        char next() {
+            char b = data[currentElement];
+            currentElement += increment;
+            return b;
+        }
+
+        void skipSpecial() {
+            while(hasNext()) {
+                if (isNextSpecial()) {
+                    next();
+                } else {
+                    break;
                 }
-                if (isSpecial(b[secondStart])) {
-                    secondStart += secondIncrement;
-                }
-            } else if (a[firstStart] != b[secondStart]) {
-                return a[firstStart] < b[secondStart];
-            } else {
-                firstStart += firstIncrement;
-                secondStart += secondIncrement;
             }
         }
-        // if smaller -> less
-        return firstEnd == firstStart;
+    };
+
+    bool comparator(StringToCompare&& a, StringToCompare&& b) {
+        if (a.isEmpty()) {
+            return false;
+        }
+        if (b.isEmpty()) {
+            return true;
+        }
+        while (a.hasNext() && b.hasNext()) {
+            if (a.isNextSpecial() || b.isNextSpecial()) {
+                if (a.isNextSpecial()) {
+                    a.skipSpecial();
+                }
+                if (b.isNextSpecial()) {
+                    b.skipSpecial();
+                }
+            } else {
+                char aChar = a.next();
+                char bChar = b.next();
+                if (aChar != bChar) {
+                    return aChar < bChar;
+                }
+            }
+        }
+
+        return a.hasNext();
+    }
+
+    void outputAscendingText(size_t *indexes, size_t countOfLines, char *text, char *DistFileName) {
+        std::sort(indexes, indexes + countOfLines, [&text] (size_t a, size_t b) {
+            return comparator(StringToCompare(text + a, 1, 0, (strlen(text + a) == 0) ? 0 : strlen(text + a) - 1),
+                              StringToCompare(text + b, 1, 0, (strlen(text + b) == 0) ? 0 : strlen(text + b) - 1));
+        });
+        FullFileReader::outputInFile(indexes, text, DistFileName, countOfLines, O_CREAT | O_WRONLY | O_TRUNC);
+    }
+
+    void outputAscendingFromEndText(size_t *indexes, size_t countOfLines, char *text, char *DistFileName) {
+        std::sort(indexes, indexes + countOfLines, [&text] (size_t a, size_t b) {
+            return comparator(StringToCompare(text + a, -1, (strlen(text + a) == 0) ? 0 : strlen(text + a) - 1, 0),
+                              StringToCompare(text + b, -1, (strlen(text + b) == 0) ? 0 : strlen(text + b) - 1, 0));
+        });
+        FullFileReader::outputInFile(indexes, text, DistFileName, countOfLines, O_WRONLY | O_APPEND);
+    }
+
+    void outputNormalText(size_t *indexes, size_t countOfLines, char *text, char *DistFileName) {
+        FullFileReader::outputInFile(indexes, text, DistFileName, countOfLines, O_WRONLY | O_APPEND);
     }
 
     void sortMyFile(char *SrcFileName, char *DistFileName) {
         char* text;
         FullFileReader::readFullFile(SrcFileName, &text);
-        size_t * indexes;
-        size_t countOfLines = FullFileReader::changeSlashesToNulles(text, &indexes);
+        size_t * standardIndexes;
+        size_t countOfLines = FullFileReader::changeSlashesToNulles(text, &standardIndexes);
 
-        size_t *standartIndexes = new size_t[countOfLines + 1];
-        std::copy(indexes, indexes + countOfLines, standartIndexes);
+        auto *indexes = new size_t[countOfLines + 1];
+        std::copy(standardIndexes, standardIndexes + countOfLines, indexes);
 
-        std::sort(indexes, indexes + countOfLines, [&text] (size_t a, size_t b) {
-            return comparator(text + a, text + b, 0, 0, 1, 1, (strlen(text + a) == 0) ? 0 : strlen(text + a) - 1,
-                              (strlen(text + b) == 0) ? 0 : strlen(text + b) - 1);
-        });
+        outputAscendingText(indexes, countOfLines, text, DistFileName);
 
-        FullFileReader::outputInFile(indexes, text, DistFileName, countOfLines, O_CREAT | O_WRONLY | O_TRUNC);
+        outputAscendingFromEndText(indexes, countOfLines, text, DistFileName);
 
-
-        std::sort(indexes, indexes + countOfLines, [&text] (size_t a, size_t b) {
-            return comparator(text + a, text + b, (strlen(text + a) == 0) ? 0 : strlen(text + a) - 1,
-                              (strlen(text + b) == 0) ? 0 : strlen(text + b) - 1, -1, -1, 0, 0);
-        });
-        FullFileReader::outputInFile(indexes, text, DistFileName, countOfLines, O_WRONLY | O_APPEND);
-
-
-        FullFileReader::outputInFile(standartIndexes, text, DistFileName, countOfLines, O_WRONLY | O_APPEND);
+        outputNormalText(standardIndexes, countOfLines, text, DistFileName);
 
     }
 

@@ -3,4 +3,4 @@ project(StringSorting)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(StringSorting main.cpp SortString/StringSorter.cpp SortString/StringSorter.h ReadFullFile/FullFileReader.cpp ReadFullFile/FullFileReader.h)
+add_executable(StringSorting main.cpp SortString/StringSorter.cpp SortString/StringSorter.h ReadFullFile/FullFileReader.cpp ReadFullFile/FullFileReader.h SortString/StringToCompare.h)

@@ -12,47 +12,39 @@
 #include "../ReadFullFile/FullFileReader.h"
 
 namespace StringSorter {
-    class StringToCompare {
-    private:
-        const char* data;
-        int increment;
-        size_t firstElement;
-        size_t lastElement;
-        size_t currentElement;
-    public:
-        explicit StringToCompare(const char *data_, int increment_, size_t firstElement_, size_t lastElement_)
-                : data(data_), increment(increment_), firstElement(firstElement_), lastElement(lastElement_),
-                  currentElement(firstElement_) {}
 
-        bool isEmpty() {
-            return firstElement == lastElement;
-        }
+    StringToCompare::StringToCompare(const char *data_, int increment_, size_t firstElement_, size_t lastElement_)
+            : data(data_), increment(increment_), firstElement(firstElement_), lastElement(lastElement_),
+              currentElement(firstElement_) {}
 
-        bool hasNext() {
-            return currentElement != lastElement;
-        }
+    bool StringToCompare::isEmpty() {
+        return firstElement == lastElement;
+    }
 
-        bool isNextSpecial() {
-            char b = data[currentElement + increment];
-            return !((b >= 'a' && b <= 'z') || (b >= 'A' && b <= 'Z'));
-        }
+    bool StringToCompare::hasNext() {
+        return currentElement != lastElement;
+    }
 
-        char next() {
-            char b = data[currentElement];
-            currentElement += increment;
-            return b;
-        }
+    bool StringToCompare::isNextSpecial() {
+        char b = data[currentElement + increment];
+        return !((b >= 'a' && b <= 'z') || (b >= 'A' && b <= 'Z'));
+    }
 
-        void skipSpecial() {
-            while(hasNext()) {
-                if (isNextSpecial()) {
-                    next();
-                } else {
-                    break;
-                }
+    char StringToCompare::next() {
+        char b = data[currentElement];
+        currentElement += increment;
+        return b;
+    }
+
+    void StringToCompare::skipSpecial() {
+        while(hasNext()) {
+            if (isNextSpecial()) {
+                next();
+            } else {
+                break;
             }
         }
-    };
+    }
 
     bool comparator(StringToCompare&& a, StringToCompare&& b) {
         if (a.isEmpty()) {

@@ -21,6 +21,8 @@ void \hyperlink{namespaceStringSorter_aef5de617e1c1d77d92224c3f98924dc3}{output\
 \item 
 void \hyperlink{namespaceStringSorter_a8884132688cb022da1f41dac3eb21d75}{output\+Normal\+Text} (size\+\_\+t $\ast$indexes, size\+\_\+t count\+Of\+Lines, char $\ast$text, char $\ast$Dist\+File\+Name)
 \item 
+void \hyperlink{namespaceStringSorter_a49226981ae6a4fcc57865d9e2ba82d76}{free\+Text} (char $\ast$text, size\+\_\+t $\ast$indexes, size\+\_\+t count\+Of\+Lines)
+\item 
 void \hyperlink{namespaceStringSorter_a2e107a1808086f5e183cd5c9c48fe824}{sort\+My\+File} (char $\ast$Src\+File\+Name, char $\ast$Dist\+File\+Name)
 \end{DoxyCompactItemize}
 
@@ -45,6 +47,19 @@ compare two objects
 \begin{DoxyReturn}{Returns}
 -\/ true, if object a starting from a.\+first\+Element and iterating with + a.\+increment is bigger than b starting from b.\+first\+Elemnt iterating with + b.\+increment Empty char$\ast$ -\/$>$ at the end else, else 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespaceStringSorter_a49226981ae6a4fcc57865d9e2ba82d76}\label{namespaceStringSorter_a49226981ae6a4fcc57865d9e2ba82d76}} 
+\index{String\+Sorter@{String\+Sorter}!free\+Text@{free\+Text}}
+\index{free\+Text@{free\+Text}!String\+Sorter@{String\+Sorter}}
+\subsubsection{\texorpdfstring{free\+Text()}{freeText()}}
+{\footnotesize\ttfamily void String\+Sorter\+::free\+Text (\begin{DoxyParamCaption}\item[{char $\ast$}]{text,  }\item[{size\+\_\+t $\ast$}]{indexes,  }\item[{size\+\_\+t}]{count\+Of\+Lines }\end{DoxyParamCaption})}
+
+free space where text is 
+\begin{DoxyParams}{Parameters}
+{\em text} & -\/ pointer to first elemt of char \\
+\hline
+{\em indexes} & -\/ pointer to array of indexes, where in left side \textbackslash{}0 was put \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{namespaceStringSorter_aef5de617e1c1d77d92224c3f98924dc3}\label{namespaceStringSorter_aef5de617e1c1d77d92224c3f98924dc3}} 
 \index{String\+Sorter@{String\+Sorter}!output\+Ascending\+From\+End\+Text@{output\+Ascending\+From\+End\+Text}}
 \index{output\+Ascending\+From\+End\+Text@{output\+Ascending\+From\+End\+Text}!String\+Sorter@{String\+Sorter}}

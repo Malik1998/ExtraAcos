@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "cfhinors",
   1: "s",
   2: "fs",
-  3: "chinors"
+  3: "cfhinors"
 };
 
 var indexSectionNames =

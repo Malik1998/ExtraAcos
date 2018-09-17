@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hasnext',['hasNext',['../classStringSorter_1_1StringToCompare.html#a60f405ee55a463629c87015d74691998',1,'StringSorter::StringToCompare']]]
+  ['freetext',['freeText',['../namespaceStringSorter.html#a49226981ae6a4fcc57865d9e2ba82d76',1,'StringSorter']]]
 ];

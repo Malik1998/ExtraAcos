@@ -84,6 +84,8 @@ Functions</h2></td></tr>
 <tr class="separator:aef5de617e1c1d77d92224c3f98924dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8884132688cb022da1f41dac3eb21d75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceStringSorter.html#a8884132688cb022da1f41dac3eb21d75">outputNormalText</a> (size_t *indexes, size_t countOfLines, char *text, char *DistFileName)</td></tr>
 <tr class="separator:a8884132688cb022da1f41dac3eb21d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49226981ae6a4fcc57865d9e2ba82d76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceStringSorter.html#a49226981ae6a4fcc57865d9e2ba82d76">freeText</a> (char *text, size_t *indexes, size_t countOfLines)</td></tr>
+<tr class="separator:a49226981ae6a4fcc57865d9e2ba82d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e107a1808086f5e183cd5c9c48fe824"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceStringSorter.html#a2e107a1808086f5e183cd5c9c48fe824">sortMyFile</a> (char *SrcFileName, char *DistFileName)</td></tr>
 <tr class="separator:a2e107a1808086f5e183cd5c9c48fe824"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -123,6 +125,47 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>- true, if object a starting from a.firstElement and iterating with + a.increment is bigger than b starting from b.firstElemnt iterating with + b.increment Empty char* -&gt; at the end else, else </dd></dl>
+
+</div>
+</div>
+<a id="a49226981ae6a4fcc57865d9e2ba82d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49226981ae6a4fcc57865d9e2ba82d76">&#9670;&nbsp;</a></span>freeText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StringSorter::freeText </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>indexes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>countOfLines</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>free space where text is </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>- pointer to first elemt of char </td></tr>
+    <tr><td class="paramname">indexes</td><td>- pointer to array of indexes, where in left side \0 was put </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

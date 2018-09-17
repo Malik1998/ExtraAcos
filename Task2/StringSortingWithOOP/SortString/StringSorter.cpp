@@ -26,8 +26,8 @@ namespace StringSorter {
     }
 
     bool StringToCompare::isNextSpecial() {
-        char b = data[currentElement + increment];
-        return !((b >= 'a' && b <= 'z') || (b >= 'A' && b <= 'Z'));
+        char b = static_cast<char>(tolower(data[currentElement]));
+        return !(b >= 'a' && b <= 'z');
     }
 
     char StringToCompare::next() {
@@ -62,8 +62,8 @@ namespace StringSorter {
                     b.skipSpecial();
                 }
             } else {
-                char aChar = a.next();
-                char bChar = b.next();
+                char aChar = static_cast<char>(tolower(a.next()));
+                char bChar = static_cast<char>(tolower(b.next()));
                 if (aChar != bChar) {
                     return aChar < bChar;
                 }

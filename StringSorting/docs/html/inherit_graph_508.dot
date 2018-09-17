@@ -1,7 +1,0 @@
-digraph "Graphical Class Hierarchy"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node0 [label="tests.libs.googletest\l-master.googletest.scripts.pump.\lForNode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtests_1_1libs_1_1googletest-master_1_1googletest_1_1scripts_1_1pump_1_1ForNode.html"];
-}

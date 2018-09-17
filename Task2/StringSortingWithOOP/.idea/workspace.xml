@@ -60,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/ReadFullFile/FullFileReader.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="554">
-              <caret line="51" column="46" lean-forward="true" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+              <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
               <folding>
                 <element signature="e#39#56#0" expanded="true" />
               </folding>
@@ -205,16 +205,15 @@
       <workItem from="1536956954424" duration="5527000" />
       <workItem from="1537097364333" duration="15113000" />
       <workItem from="1537212715435" duration="1591000" />
-      <workItem from="1537218221133" duration="937000" />
+      <workItem from="1537218221133" duration="1085000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35176000" />
+    <option name="totallyTimeSpent" value="35324000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24959569" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -226,7 +225,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997955" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997955" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -617,7 +616,7 @@
     <entry file="file://$PROJECT_DIR$/ReadFullFile/FullFileReader.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="554">
-          <caret line="51" column="46" lean-forward="true" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+          <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
           <folding>
             <element signature="e#39#56#0" expanded="true" />
           </folding>

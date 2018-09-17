@@ -1,0 +1,22 @@
+\hypertarget{classAdHocTestResultTest}{}\section{Ad\+Hoc\+Test\+Result\+Test Class Reference}
+\label{classAdHocTestResultTest}\index{Ad\+Hoc\+Test\+Result\+Test@{Ad\+Hoc\+Test\+Result\+Test}}
+
+
+Inheritance diagram for Ad\+Hoc\+Test\+Result\+Test\+:
+% FIG 0
+
+
+Collaboration diagram for Ad\+Hoc\+Test\+Result\+Test\+:
+% FIG 1
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAdHocTestResultTest_a0955d04d3dd7994561930c83489914a3}\label{classAdHocTestResultTest_a0955d04d3dd7994561930c83489914a3}} 
+static void {\bfseries Set\+Up\+Test\+Case} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/libs/googletest-\/master/googletest/test/gtest\+\_\+unittest.\+cc\end{DoxyCompactItemize}

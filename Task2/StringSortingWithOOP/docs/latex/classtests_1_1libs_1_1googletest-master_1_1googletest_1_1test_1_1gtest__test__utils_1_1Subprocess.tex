@@ -1,0 +1,61 @@
+\hypertarget{classtests_1_1libs_1_1googletest-master_1_1googletest_1_1test_1_1gtest__test__utils_1_1Subprocess}{}\section{tests.\+libs.\+googletest-\/master.googletest.\+test.\+gtest\+\_\+test\+\_\+utils.\+Subprocess Class Reference}
+\label{classtests_1_1libs_1_1googletest-master_1_1googletest_1_1test_1_1gtest__test__utils_1_1Subprocess}\index{tests.\+libs.\+googletest-\/master.\+googletest.\+test.\+gtest\+\_\+test\+\_\+utils.\+Subprocess@{tests.\+libs.\+googletest-\/master.\+googletest.\+test.\+gtest\+\_\+test\+\_\+utils.\+Subprocess}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classtests_1_1libs_1_1googletest-master_1_1googletest_1_1test_1_1gtest__test__utils_1_1Subprocess_ac913db50cc2668a5b36a4e7036b6e846}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, command, working\+\_\+dir=None, capture\+\_\+stderr=True, env=None)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtests_1_1libs_1_1googletest-master_1_1googletest_1_1test_1_1gtest__test__utils_1_1Subprocess_a35758e56b22fe61458247354a2e774fe}\label{classtests_1_1libs_1_1googletest-master_1_1googletest_1_1test_1_1gtest__test__utils_1_1Subprocess_a35758e56b22fe61458247354a2e774fe}} 
+{\bfseries output}
+\item 
+\mbox{\Hypertarget{classtests_1_1libs_1_1googletest-master_1_1googletest_1_1test_1_1gtest__test__utils_1_1Subprocess_a097fbfc1881d87c15ba957c5fd1842bf}\label{classtests_1_1libs_1_1googletest-master_1_1googletest_1_1test_1_1gtest__test__utils_1_1Subprocess_a097fbfc1881d87c15ba957c5fd1842bf}} 
+{\bfseries terminated\+\_\+by\+\_\+signal}
+\item 
+\mbox{\Hypertarget{classtests_1_1libs_1_1googletest-master_1_1googletest_1_1test_1_1gtest__test__utils_1_1Subprocess_a814f93c212728f914b1dc689e75c38ca}\label{classtests_1_1libs_1_1googletest-master_1_1googletest_1_1test_1_1gtest__test__utils_1_1Subprocess_a814f93c212728f914b1dc689e75c38ca}} 
+{\bfseries exited}
+\item 
+\mbox{\Hypertarget{classtests_1_1libs_1_1googletest-master_1_1googletest_1_1test_1_1gtest__test__utils_1_1Subprocess_a5cf5cb84df683c11965d04e509d16f92}\label{classtests_1_1libs_1_1googletest-master_1_1googletest_1_1test_1_1gtest__test__utils_1_1Subprocess_a5cf5cb84df683c11965d04e509d16f92}} 
+{\bfseries signal}
+\item 
+\mbox{\Hypertarget{classtests_1_1libs_1_1googletest-master_1_1googletest_1_1test_1_1gtest__test__utils_1_1Subprocess_ab459aba5070a387b75f308d982706d5f}\label{classtests_1_1libs_1_1googletest-master_1_1googletest_1_1test_1_1gtest__test__utils_1_1Subprocess_ab459aba5070a387b75f308d982706d5f}} 
+{\bfseries exit\+\_\+code}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtests_1_1libs_1_1googletest-master_1_1googletest_1_1test_1_1gtest__test__utils_1_1Subprocess_ac913db50cc2668a5b36a4e7036b6e846}\label{classtests_1_1libs_1_1googletest-master_1_1googletest_1_1test_1_1gtest__test__utils_1_1Subprocess_ac913db50cc2668a5b36a4e7036b6e846}} 
+\index{tests\+::libs\+::googletest-\/master\+::googletest\+::test\+::gtest\+\_\+test\+\_\+utils\+::\+Subprocess@{tests\+::libs\+::googletest-\/master\+::googletest\+::test\+::gtest\+\_\+test\+\_\+utils\+::\+Subprocess}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!tests\+::libs\+::googletest-\/master\+::googletest\+::test\+::gtest\+\_\+test\+\_\+utils\+::\+Subprocess@{tests\+::libs\+::googletest-\/master\+::googletest\+::test\+::gtest\+\_\+test\+\_\+utils\+::\+Subprocess}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def tests.\+libs.\+googletest-\/master.\+googletest.\+test.\+gtest\+\_\+test\+\_\+utils.\+Subprocess.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{command,  }\item[{}]{working\+\_\+dir = {\ttfamily None},  }\item[{}]{capture\+\_\+stderr = {\ttfamily True},  }\item[{}]{env = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Changes into a specified directory, if provided, and executes a command.
+
+Restores the old directory afterwards.
+
+Args:
+  command:        The command to run, in the form of sys.argv.
+  working_dir:    The directory to change into.
+  capture_stderr: Determines whether to capture stderr in the output member
+              or to discard it.
+  env:            Dictionary with environment to pass to the subprocess.
+
+Returns:
+  An object that represents outcome of the executed process. It has the
+  following attributes:
+terminated_by_signal   True iff the child process has been terminated
+                       by a signal.
+signal                 Sygnal that terminated the child process.
+exited                 True iff the child process exited normally.
+exit_code              The code with which the child process exited.
+output                 Child process's stdout and stderr output
+                       combined in a string.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/libs/googletest-\/master/googletest/test/gtest\+\_\+test\+\_\+utils.\+py\end{DoxyCompactItemize}

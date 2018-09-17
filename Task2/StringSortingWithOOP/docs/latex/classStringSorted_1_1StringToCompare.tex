@@ -1,0 +1,89 @@
+\hypertarget{classStringSorted_1_1StringToCompare}{}\section{String\+Sorted\+:\+:String\+To\+Compare Class Reference}
+\label{classStringSorted_1_1StringToCompare}\index{String\+Sorted\+::\+String\+To\+Compare@{String\+Sorted\+::\+String\+To\+Compare}}
+
+
+{\ttfamily \#include $<$String\+To\+Compare.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStringSorted_1_1StringToCompare_aae55688e16c82fc29aa6f91dd24f7292}{String\+To\+Compare} (const char $\ast$data\+\_\+, int increment\+\_\+, size\+\_\+t first\+Element\+\_\+, size\+\_\+t last\+Element\+\_\+)
+\item 
+bool \hyperlink{classStringSorted_1_1StringToCompare_a6776b71fc621a8c3d2d3d8320f4d9d8a}{is\+Empty} ()
+\item 
+bool \hyperlink{classStringSorted_1_1StringToCompare_ab0e3d5662e01e96218838e24c4f70f04}{has\+Next} ()
+\item 
+bool \hyperlink{classStringSorted_1_1StringToCompare_ae57d0863b00ea31b7a4e92b4d5d60253}{is\+Next\+Special} ()
+\item 
+char \hyperlink{classStringSorted_1_1StringToCompare_ac95630111cf77e6c725364bfeb26f8bc}{next} ()
+\item 
+\mbox{\Hypertarget{classStringSorted_1_1StringToCompare_a1cfb96a9267ecd7ba618390c78278fd0}\label{classStringSorted_1_1StringToCompare_a1cfb96a9267ecd7ba618390c78278fd0}} 
+void \hyperlink{classStringSorted_1_1StringToCompare_a1cfb96a9267ecd7ba618390c78278fd0}{skip\+Special} ()
+\begin{DoxyCompactList}\small\item\em make current\+Element point to element that is going after special symbols \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class that will be used in comparator It will help to interate through char$\ast$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStringSorted_1_1StringToCompare_aae55688e16c82fc29aa6f91dd24f7292}\label{classStringSorted_1_1StringToCompare_aae55688e16c82fc29aa6f91dd24f7292}} 
+\index{String\+Sorted\+::\+String\+To\+Compare@{String\+Sorted\+::\+String\+To\+Compare}!String\+To\+Compare@{String\+To\+Compare}}
+\index{String\+To\+Compare@{String\+To\+Compare}!String\+Sorted\+::\+String\+To\+Compare@{String\+Sorted\+::\+String\+To\+Compare}}
+\subsubsection{\texorpdfstring{String\+To\+Compare()}{StringToCompare()}}
+{\footnotesize\ttfamily String\+Sorted\+::\+String\+To\+Compare\+::\+String\+To\+Compare (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data\+\_\+,  }\item[{int}]{increment\+\_\+,  }\item[{size\+\_\+t}]{first\+Element\+\_\+,  }\item[{size\+\_\+t}]{last\+Element\+\_\+ }\end{DoxyParamCaption})}
+
+constructor that will set current\+Element = first\+Element\+\_\+ 
+\begin{DoxyParams}{Parameters}
+{\em data\+\_\+} & -\/ char$\ast$ to be compared \\
+\hline
+{\em increment\+\_\+} & -\/ how we iterate through char$\ast$ \\
+\hline
+{\em first\+Element\+\_\+} & -\/ index of start \\
+\hline
+{\em last\+Element\+\_\+} & -\/ index of end \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classStringSorted_1_1StringToCompare_ab0e3d5662e01e96218838e24c4f70f04}\label{classStringSorted_1_1StringToCompare_ab0e3d5662e01e96218838e24c4f70f04}} 
+\index{String\+Sorted\+::\+String\+To\+Compare@{String\+Sorted\+::\+String\+To\+Compare}!has\+Next@{has\+Next}}
+\index{has\+Next@{has\+Next}!String\+Sorted\+::\+String\+To\+Compare@{String\+Sorted\+::\+String\+To\+Compare}}
+\subsubsection{\texorpdfstring{has\+Next()}{hasNext()}}
+{\footnotesize\ttfamily bool String\+Sorted\+::\+String\+To\+Compare\+::has\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+check if we can further as\+: current\+Element + increment \begin{DoxyReturn}{Returns}
+true if current\+Element + increment != last\+Element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStringSorted_1_1StringToCompare_a6776b71fc621a8c3d2d3d8320f4d9d8a}\label{classStringSorted_1_1StringToCompare_a6776b71fc621a8c3d2d3d8320f4d9d8a}} 
+\index{String\+Sorted\+::\+String\+To\+Compare@{String\+Sorted\+::\+String\+To\+Compare}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!String\+Sorted\+::\+String\+To\+Compare@{String\+Sorted\+::\+String\+To\+Compare}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily bool String\+Sorted\+::\+String\+To\+Compare\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+check if given char$\ast$ is empty \begin{DoxyReturn}{Returns}
+true -\/ if empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStringSorted_1_1StringToCompare_ae57d0863b00ea31b7a4e92b4d5d60253}\label{classStringSorted_1_1StringToCompare_ae57d0863b00ea31b7a4e92b4d5d60253}} 
+\index{String\+Sorted\+::\+String\+To\+Compare@{String\+Sorted\+::\+String\+To\+Compare}!is\+Next\+Special@{is\+Next\+Special}}
+\index{is\+Next\+Special@{is\+Next\+Special}!String\+Sorted\+::\+String\+To\+Compare@{String\+Sorted\+::\+String\+To\+Compare}}
+\subsubsection{\texorpdfstring{is\+Next\+Special()}{isNextSpecial()}}
+{\footnotesize\ttfamily bool String\+Sorted\+::\+String\+To\+Compare\+::is\+Next\+Special (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+check if next element (current\+Element + increment), is not in A..Za..z Call only if \hyperlink{classStringSorted_1_1StringToCompare_ab0e3d5662e01e96218838e24c4f70f04}{has\+Next()} -\/ true!!! \begin{DoxyReturn}{Returns}
+true -\/ if next char is not A..Za..z 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStringSorted_1_1StringToCompare_ac95630111cf77e6c725364bfeb26f8bc}\label{classStringSorted_1_1StringToCompare_ac95630111cf77e6c725364bfeb26f8bc}} 
+\index{String\+Sorted\+::\+String\+To\+Compare@{String\+Sorted\+::\+String\+To\+Compare}!next@{next}}
+\index{next@{next}!String\+Sorted\+::\+String\+To\+Compare@{String\+Sorted\+::\+String\+To\+Compare}}
+\subsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily char String\+Sorted\+::\+String\+To\+Compare\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+call only if current\+Element is adequate \begin{DoxyReturn}{Returns}
+current char 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Sort\+String/String\+To\+Compare.\+h\end{DoxyCompactItemize}

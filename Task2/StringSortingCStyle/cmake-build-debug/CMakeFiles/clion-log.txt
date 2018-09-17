@@ -1,0 +1,4 @@
+/home/user/IDE/clion-2018.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task2/StringSortingCStyle"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task2/StringSortingCStyle/cmake-build-debug

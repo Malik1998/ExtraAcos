@@ -1,0 +1,97 @@
+\hypertarget{namespaceStringSorter}{}\section{String\+Sorter Namespace Reference}
+\label{namespaceStringSorter}\index{String\+Sorter@{String\+Sorter}}
+
+
+sort text  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{namespaceStringSorter_a289a1da05701ddcfc48d1f52079a59c6}{is\+Special} (char i)
+\item 
+bool \hyperlink{namespaceStringSorter_a88d9e7a6c97c437c529420a37e8670fa}{comparator} (const char $\ast$a, const char $\ast$b, size\+\_\+t first\+Start, size\+\_\+t second\+Start, int first\+Increment, int second\+Increment, size\+\_\+t first\+End, size\+\_\+t second\+End)
+\item 
+void \hyperlink{namespaceStringSorter_a0126ee4bad155337dd96dea4c5be66c5}{free\+Text} (char $\ast$text, char $\ast$$\ast$indexes, size\+\_\+t count\+Of\+Lines)
+\item 
+void \hyperlink{namespaceStringSorter_a16b92b697d5f8640ad8ba629d0b1afc3}{sort\+My\+File} (const char $\ast$Src\+File\+Name, const char $\ast$Dist\+File\+Name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+sort text 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceStringSorter_a88d9e7a6c97c437c529420a37e8670fa}\label{namespaceStringSorter_a88d9e7a6c97c437c529420a37e8670fa}} 
+\index{String\+Sorter@{String\+Sorter}!comparator@{comparator}}
+\index{comparator@{comparator}!String\+Sorter@{String\+Sorter}}
+\subsubsection{\texorpdfstring{comparator()}{comparator()}}
+{\footnotesize\ttfamily bool String\+Sorter\+::comparator (\begin{DoxyParamCaption}\item[{const char $\ast$}]{a,  }\item[{const char $\ast$}]{b,  }\item[{size\+\_\+t}]{first\+Start,  }\item[{size\+\_\+t}]{second\+Start,  }\item[{int}]{first\+Increment,  }\item[{int}]{second\+Increment,  }\item[{size\+\_\+t}]{first\+End,  }\item[{size\+\_\+t}]{second\+End }\end{DoxyParamCaption})}
+
+compare two objects 
+\begin{DoxyParams}{Parameters}
+{\em a} & -\/ first String\+To\+Compare object to be compared \\
+\hline
+{\em b} & -\/ String\+To\+Compare object to be compared compare to char$\ast$ \\
+\hline
+{\em a} & -\/ first char$\ast$ \\
+\hline
+{\em b} & -\/ second char$\ast$ \\
+\hline
+{\em first\+Start} & -\/ index to the first letter of first char$\ast$ \\
+\hline
+{\em second\+Start} & -\/ index to the first letter of second char$\ast$ \\
+\hline
+{\em first\+Increment} & -\/ way to go through first char$\ast$ \\
+\hline
+{\em second\+Increment} & -\/ way to go through second char$\ast$ \\
+\hline
+{\em first\+End} & -\/ index to the last letter of first char$\ast$ \\
+\hline
+{\em second\+End} & -\/ index to the last letter of second char$\ast$ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ true, if char$\ast$ a starting from first\+Start and iterating with + first\+Increment is bigger than b starting from second\+Start iterating with + second\+Increment Empty char$\ast$ -\/$>$ at the end else, else 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceStringSorter_a0126ee4bad155337dd96dea4c5be66c5}\label{namespaceStringSorter_a0126ee4bad155337dd96dea4c5be66c5}} 
+\index{String\+Sorter@{String\+Sorter}!free\+Text@{free\+Text}}
+\index{free\+Text@{free\+Text}!String\+Sorter@{String\+Sorter}}
+\subsubsection{\texorpdfstring{free\+Text()}{freeText()}}
+{\footnotesize\ttfamily void String\+Sorter\+::free\+Text (\begin{DoxyParamCaption}\item[{char $\ast$}]{text,  }\item[{char $\ast$$\ast$}]{indexes,  }\item[{size\+\_\+t}]{count\+Of\+Lines }\end{DoxyParamCaption})}
+
+free space where text is 
+\begin{DoxyParams}{Parameters}
+{\em text} & -\/ pointer to first elemt of char \\
+\hline
+{\em indexes} & -\/ pointer to array of indexes, where in left side \textbackslash{}0 was put \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceStringSorter_a289a1da05701ddcfc48d1f52079a59c6}\label{namespaceStringSorter_a289a1da05701ddcfc48d1f52079a59c6}} 
+\index{String\+Sorter@{String\+Sorter}!is\+Special@{is\+Special}}
+\index{is\+Special@{is\+Special}!String\+Sorter@{String\+Sorter}}
+\subsubsection{\texorpdfstring{is\+Special()}{isSpecial()}}
+{\footnotesize\ttfamily bool String\+Sorter\+::is\+Special (\begin{DoxyParamCaption}\item[{char}]{i }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceStringSorter_a16b92b697d5f8640ad8ba629d0b1afc3}\label{namespaceStringSorter_a16b92b697d5f8640ad8ba629d0b1afc3}} 
+\index{String\+Sorter@{String\+Sorter}!sort\+My\+File@{sort\+My\+File}}
+\index{sort\+My\+File@{sort\+My\+File}!String\+Sorter@{String\+Sorter}}
+\subsubsection{\texorpdfstring{sort\+My\+File()}{sortMyFile()}}
+{\footnotesize\ttfamily void String\+Sorter\+::sort\+My\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{Src\+File\+Name,  }\item[{const char $\ast$}]{Dist\+File\+Name }\end{DoxyParamCaption})}
+
+Text read to the variable, ~\newline
+ changed to \textbackslash{}0 and then outputs Ascending\+Text outputs Ascending\+From\+End\+Text outputs Normal\+Text are called with appropriate parametres 
+\begin{DoxyParams}{Parameters}
+{\em Src\+File\+Name} & -\/ file where text must be got \\
+\hline
+{\em Dist\+File\+Name} & -\/ file where sorted text must be put \\
+\hline
+\end{DoxyParams}

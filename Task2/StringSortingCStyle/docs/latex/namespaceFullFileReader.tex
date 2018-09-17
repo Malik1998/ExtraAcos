@@ -1,0 +1,72 @@
+\hypertarget{namespaceFullFileReader}{}\section{Full\+File\+Reader Namespace Reference}
+\label{namespaceFullFileReader}\index{Full\+File\+Reader@{Full\+File\+Reader}}
+
+
+Change full file into variable and manupulate with it.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespaceFullFileReader_a8a8460ef01d33cf06aa7418ff53d329c}{read\+Full\+File} (const char $\ast$File\+Name, char $\ast$$\ast$text)
+\item 
+size\+\_\+t \hyperlink{namespaceFullFileReader_a807082694773777924d2268aed960966}{change\+Slashes\+To\+Nulles} (char $\ast$text, char $\ast$$\ast$$\ast$indexes)
+\item 
+void \hyperlink{namespaceFullFileReader_a11be8a00a0b68356ad8b2e1ccb5ee8b5}{output\+In\+File} (char $\ast$$\ast$indexes, const char $\ast$File\+Name, size\+\_\+t count\+Of\+Lines, int type\+Of\+Writing)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Change full file into variable and manupulate with it. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceFullFileReader_a807082694773777924d2268aed960966}\label{namespaceFullFileReader_a807082694773777924d2268aed960966}} 
+\index{Full\+File\+Reader@{Full\+File\+Reader}!change\+Slashes\+To\+Nulles@{change\+Slashes\+To\+Nulles}}
+\index{change\+Slashes\+To\+Nulles@{change\+Slashes\+To\+Nulles}!Full\+File\+Reader@{Full\+File\+Reader}}
+\subsubsection{\texorpdfstring{change\+Slashes\+To\+Nulles()}{changeSlashesToNulles()}}
+{\footnotesize\ttfamily size\+\_\+t Full\+File\+Reader\+::change\+Slashes\+To\+Nulles (\begin{DoxyParamCaption}\item[{char $\ast$}]{text,  }\item[{char $\ast$$\ast$$\ast$}]{indexes }\end{DoxyParamCaption})}
+
+change ~\newline
+ to \textbackslash{}0 
+\begin{DoxyParams}{Parameters}
+{\em text} & -\/ variable pointing to text, where ~\newline
+ to be changed \\
+\hline
+{\em indexes} & -\/ array where elemnts will index to the new tokens \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+count of elemnts in indexes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceFullFileReader_a11be8a00a0b68356ad8b2e1ccb5ee8b5}\label{namespaceFullFileReader_a11be8a00a0b68356ad8b2e1ccb5ee8b5}} 
+\index{Full\+File\+Reader@{Full\+File\+Reader}!output\+In\+File@{output\+In\+File}}
+\index{output\+In\+File@{output\+In\+File}!Full\+File\+Reader@{Full\+File\+Reader}}
+\subsubsection{\texorpdfstring{output\+In\+File()}{outputInFile()}}
+{\footnotesize\ttfamily void Full\+File\+Reader\+::output\+In\+File (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{indexes,  }\item[{const char $\ast$}]{File\+Name,  }\item[{size\+\_\+t}]{count\+Of\+Lines,  }\item[{int}]{type\+Of\+Writing }\end{DoxyParamCaption})}
+
+write text to file with order written in indexes array to the File\+Name file 
+\begin{DoxyParams}{Parameters}
+{\em indexes} & -\/ array with order \\
+\hline
+{\em text} & -\/ text where we will read \\
+\hline
+{\em File\+Name} & -\/ file where to safe file \\
+\hline
+{\em count\+Of\+Lines} & -\/ count of elements in indexes \\
+\hline
+{\em type\+Of\+Writing} & -\/ parametres to open the file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceFullFileReader_a8a8460ef01d33cf06aa7418ff53d329c}\label{namespaceFullFileReader_a8a8460ef01d33cf06aa7418ff53d329c}} 
+\index{Full\+File\+Reader@{Full\+File\+Reader}!read\+Full\+File@{read\+Full\+File}}
+\index{read\+Full\+File@{read\+Full\+File}!Full\+File\+Reader@{Full\+File\+Reader}}
+\subsubsection{\texorpdfstring{read\+Full\+File()}{readFullFile()}}
+{\footnotesize\ttfamily void Full\+File\+Reader\+::read\+Full\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{File\+Name,  }\item[{char $\ast$$\ast$}]{text }\end{DoxyParamCaption})}
+
+read file to text pointer 
+\begin{DoxyParams}{Parameters}
+{\em File\+Name} & -\/ name of the file to be read \\
+\hline
+{\em text} & -\/ variable, that will point to text \\
+\hline
+\end{DoxyParams}

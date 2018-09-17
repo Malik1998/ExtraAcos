@@ -1,0 +1,70 @@
+\begin{theindex}
+
+  \item {change\+Slashes\+To\+Nulles}
+    \subitem {Full\+File\+Reader}, \hyperpage{5}
+  \item {comparator}
+    \subitem {String\+Sorter}, \hyperpage{7}
+
+  \indexspace
+
+  \item {free\+Text}
+    \subitem {String\+Sorter}, \hyperpage{7}
+  \item {Full\+File\+Reader}, \hyperpage{5}
+    \subitem {change\+Slashes\+To\+Nulles}, \hyperpage{5}
+    \subitem {output\+In\+File}, \hyperpage{6}
+    \subitem {read\+Full\+File}, \hyperpage{6}
+
+  \indexspace
+
+  \item {has\+Next}
+    \subitem {String\+Sorter\+::\+String\+To\+Compare}, \hyperpage{12}
+
+  \indexspace
+
+  \item {is\+Empty}
+    \subitem {String\+Sorter\+::\+String\+To\+Compare}, \hyperpage{12}
+  \item {is\+Next\+Special}
+    \subitem {String\+Sorter\+::\+String\+To\+Compare}, \hyperpage{12}
+
+  \indexspace
+
+  \item {next}
+    \subitem {String\+Sorter\+::\+String\+To\+Compare}, \hyperpage{12}
+
+  \indexspace
+
+  \item {output\+Ascending\+From\+End\+Text}
+    \subitem {String\+Sorter}, \hyperpage{8}
+  \item {output\+Ascending\+Text}
+    \subitem {String\+Sorter}, \hyperpage{8}
+  \item {output\+In\+File}
+    \subitem {Full\+File\+Reader}, \hyperpage{6}
+  \item {output\+Normal\+Text}
+    \subitem {String\+Sorter}, \hyperpage{8}
+
+  \indexspace
+
+  \item {read\+Full\+File}
+    \subitem {Full\+File\+Reader}, \hyperpage{6}
+
+  \indexspace
+
+  \item {sort\+My\+File}
+    \subitem {String\+Sorter}, \hyperpage{9}
+  \item {String\+Sorter}, \hyperpage{6}
+    \subitem {comparator}, \hyperpage{7}
+    \subitem {free\+Text}, \hyperpage{7}
+    \subitem {output\+Ascending\+From\+End\+Text}, \hyperpage{8}
+    \subitem {output\+Ascending\+Text}, \hyperpage{8}
+    \subitem {output\+Normal\+Text}, \hyperpage{8}
+    \subitem {sort\+My\+File}, \hyperpage{9}
+  \item {String\+Sorter\+::\+String\+To\+Compare}, \hyperpage{11}
+    \subitem {has\+Next}, \hyperpage{12}
+    \subitem {is\+Empty}, \hyperpage{12}
+    \subitem {is\+Next\+Special}, \hyperpage{12}
+    \subitem {next}, \hyperpage{12}
+    \subitem {String\+To\+Compare}, \hyperpage{11}
+  \item {String\+To\+Compare}
+    \subitem {String\+Sorter\+::\+String\+To\+Compare}, \hyperpage{11}
+
+\end{theindex}

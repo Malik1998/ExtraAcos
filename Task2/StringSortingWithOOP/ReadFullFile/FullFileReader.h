@@ -10,7 +10,7 @@ namespace FullFileReader {
     /// read file to text pointer
     /// \param FileName - name of the file to be read
     /// \param text - variable, that will point to text
-    void readFullFile(char* FileName, char ** text);
+    void readFullFile(const char *FileName, char ** text);
 
     /// change \n to \0
     /// \param text - variable pointing to text, where \n to be changed
@@ -25,7 +25,7 @@ namespace FullFileReader {
     /// \param FileName - file where to safe file
     /// \param countOfLines - count of elements in indexes
     /// \param typeOfWriting - parametres to open the file
-    void outputInFile(size_t * indexes, const char *text, char* FileName, size_t countOfLines, int typeOfWriting);
+    void outputInFile(size_t * indexes, const char *text, const char *FileName, size_t countOfLines, int typeOfWriting);
 };
 
 

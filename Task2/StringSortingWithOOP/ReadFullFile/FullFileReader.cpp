@@ -12,11 +12,11 @@
 #include <cstring>
 
 namespace FullFileReader {
-    void readFullFile(char* FileName, char ** text) {
+    void readFullFile(const char *FileName, char ** text) {
         int fileDescriptor = open(FileName, O_RDONLY);
         struct stat st;
         fstat(fileDescriptor, &st);
-        size_t fullTextSize = static_cast<size_t>(st.st_size);
+        auto fullTextSize = static_cast<size_t>(st.st_size);
         (*text) = new char[fullTextSize + 1]; // Maybe - maybe
         read(fileDescriptor, *text, fullTextSize);
         close(fileDescriptor);
@@ -46,7 +46,7 @@ namespace FullFileReader {
         return countOfLines;
     }
 
-    void outputInFile(size_t * indexes, const char *text, char* FileName, size_t countOfLines, int typeOfWriting) {
+    void outputInFile(size_t * indexes, const char *text, const char *FileName, size_t countOfLines, int typeOfWriting) {
         int fileDescriptor = open(FileName, typeOfWriting, 0666);
         for (size_t i = 0; i < countOfLines - 1; ++i) {
             write(fileDescriptor, text + indexes[i], strlen(&text[indexes[i]]));

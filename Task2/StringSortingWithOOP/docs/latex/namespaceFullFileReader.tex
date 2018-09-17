@@ -8,11 +8,11 @@ Change full file into variable and manupulate with it.
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{namespaceFullFileReader_af67fbec2a4664b05e1252f99ee75d780}{read\+Full\+File} (char $\ast$File\+Name, char $\ast$$\ast$text)
+void \hyperlink{namespaceFullFileReader_a8a8460ef01d33cf06aa7418ff53d329c}{read\+Full\+File} (const char $\ast$File\+Name, char $\ast$$\ast$text)
 \item 
 size\+\_\+t \hyperlink{namespaceFullFileReader_afefb39a3a7630f4961134c7fcf9ee629}{change\+Slashes\+To\+Nulles} (char $\ast$text, size\+\_\+t $\ast$$\ast$indexes)
 \item 
-void \hyperlink{namespaceFullFileReader_a2637b7673675980863dcca5d268c330a}{output\+In\+File} (size\+\_\+t $\ast$indexes, const char $\ast$text, char $\ast$File\+Name, size\+\_\+t count\+Of\+Lines, int type\+Of\+Writing)
+void \hyperlink{namespaceFullFileReader_ad68368b822d1c1085e8facc9124fd646}{output\+In\+File} (size\+\_\+t $\ast$indexes, const char $\ast$text, const char $\ast$File\+Name, size\+\_\+t count\+Of\+Lines, int type\+Of\+Writing)
 \end{DoxyCompactItemize}
 
 
@@ -38,11 +38,11 @@ change ~\newline
 \begin{DoxyReturn}{Returns}
 count of elemnts in indexes 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespaceFullFileReader_a2637b7673675980863dcca5d268c330a}\label{namespaceFullFileReader_a2637b7673675980863dcca5d268c330a}} 
+\mbox{\Hypertarget{namespaceFullFileReader_ad68368b822d1c1085e8facc9124fd646}\label{namespaceFullFileReader_ad68368b822d1c1085e8facc9124fd646}} 
 \index{Full\+File\+Reader@{Full\+File\+Reader}!output\+In\+File@{output\+In\+File}}
 \index{output\+In\+File@{output\+In\+File}!Full\+File\+Reader@{Full\+File\+Reader}}
 \subsubsection{\texorpdfstring{output\+In\+File()}{outputInFile()}}
-{\footnotesize\ttfamily void Full\+File\+Reader\+::output\+In\+File (\begin{DoxyParamCaption}\item[{size\+\_\+t $\ast$}]{indexes,  }\item[{const char $\ast$}]{text,  }\item[{char $\ast$}]{File\+Name,  }\item[{size\+\_\+t}]{count\+Of\+Lines,  }\item[{int}]{type\+Of\+Writing }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Full\+File\+Reader\+::output\+In\+File (\begin{DoxyParamCaption}\item[{size\+\_\+t $\ast$}]{indexes,  }\item[{const char $\ast$}]{text,  }\item[{const char $\ast$}]{File\+Name,  }\item[{size\+\_\+t}]{count\+Of\+Lines,  }\item[{int}]{type\+Of\+Writing }\end{DoxyParamCaption})}
 
 write text to file with order written in indexes array to the File\+Name file 
 \begin{DoxyParams}{Parameters}
@@ -57,11 +57,11 @@ write text to file with order written in indexes array to the File\+Name file
 {\em type\+Of\+Writing} & -\/ parametres to open the file \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{namespaceFullFileReader_af67fbec2a4664b05e1252f99ee75d780}\label{namespaceFullFileReader_af67fbec2a4664b05e1252f99ee75d780}} 
+\mbox{\Hypertarget{namespaceFullFileReader_a8a8460ef01d33cf06aa7418ff53d329c}\label{namespaceFullFileReader_a8a8460ef01d33cf06aa7418ff53d329c}} 
 \index{Full\+File\+Reader@{Full\+File\+Reader}!read\+Full\+File@{read\+Full\+File}}
 \index{read\+Full\+File@{read\+Full\+File}!Full\+File\+Reader@{Full\+File\+Reader}}
 \subsubsection{\texorpdfstring{read\+Full\+File()}{readFullFile()}}
-{\footnotesize\ttfamily void Full\+File\+Reader\+::read\+Full\+File (\begin{DoxyParamCaption}\item[{char $\ast$}]{File\+Name,  }\item[{char $\ast$$\ast$}]{text }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Full\+File\+Reader\+::read\+Full\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{File\+Name,  }\item[{char $\ast$$\ast$}]{text }\end{DoxyParamCaption})}
 
 read file to text pointer 
 \begin{DoxyParams}{Parameters}

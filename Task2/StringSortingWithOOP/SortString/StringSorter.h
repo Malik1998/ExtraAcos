@@ -66,27 +66,27 @@ namespace StringSorter {
     /// \param countOfLines - count of elements in indexes
     /// \param text -  full text
     /// \param DistFileName - file where text must be printed
-    void outputAscendingText(size_t *indexes, size_t countOfLines, char *text, char *DistFileName);
+    void outputAscendingText(size_t *indexes, size_t countOfLines, char *text, const char *DistFileName);
 
     /// Append to file DistFileName text sorted Ascending starting from the end of line
     /// \param indexes - array where sorted indexes will be
     /// \param countOfLines - count of elements in indexes
     /// \param text -  full text
     /// \param DistFileName - file where text must be printed
-    void outputAscendingFromEndText(size_t *indexes, size_t countOfLines, char *text, char *DistFileName);
+    void outputAscendingFromEndText(size_t *indexes, size_t countOfLines, char *text, const char *DistFileName);
 
     /// Append to file DistFileName full text
     /// \param indexes - array where sorted indexes will be
     /// \param countOfLines - count of elements in indexes
     /// \param text -  full text
     /// \param DistFileName - file where text must be printed
-    void outputNormalText(size_t *indexes, size_t countOfLines, char *text, char *DistFileName);
+    void outputNormalText(size_t *indexes, size_t countOfLines, char *text, const char *DistFileName);
 
     /// Text read to the variable, \n changed to \0 and then outputAscendingText outputAscendingFromEndText outputNormalText
     /// are called with appropriate parametres
     /// \param SrcFileName - file where text must be got
     /// \param DistFileName - file where sorted text must be put
-    void sortMyFile(char *SrcFileName, char *DistFileName);
+    void sortMyFile(const char *SrcFileName, const char *DistFileName);
 
     /// free space where text is
     /// \param text - pointer to first elemt of char

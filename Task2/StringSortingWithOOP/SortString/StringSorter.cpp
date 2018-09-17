@@ -73,7 +73,7 @@ namespace StringSorter {
         return a.hasNext();
     }
 
-    void outputAscendingText(size_t *indexes, size_t countOfLines, char *text, char *DistFileName) {
+    void outputAscendingText(size_t *indexes, size_t countOfLines, char *text, const char *DistFileName) {
         std::sort(indexes, indexes + countOfLines, [&text] (size_t a, size_t b) {
             return comparator(StringToCompare(text + a, 1, 0, (strlen(text + a) == 0) ? 0 : strlen(text + a) - 1),
                               StringToCompare(text + b, 1, 0, (strlen(text + b) == 0) ? 0 : strlen(text + b) - 1));
@@ -81,7 +81,7 @@ namespace StringSorter {
         FullFileReader::outputInFile(indexes, text, DistFileName, countOfLines, O_CREAT | O_WRONLY | O_TRUNC);
     }
 
-    void outputAscendingFromEndText(size_t *indexes, size_t countOfLines, char *text, char *DistFileName) {
+    void outputAscendingFromEndText(size_t *indexes, size_t countOfLines, char *text, const char *DistFileName) {
         std::sort(indexes, indexes + countOfLines, [&text] (size_t a, size_t b) {
             return comparator(StringToCompare(text + a, -1, (strlen(text + a) == 0) ? 0 : strlen(text + a) - 1, 0),
                               StringToCompare(text + b, -1, (strlen(text + b) == 0) ? 0 : strlen(text + b) - 1, 0));
@@ -89,7 +89,7 @@ namespace StringSorter {
         FullFileReader::outputInFile(indexes, text, DistFileName, countOfLines, O_WRONLY | O_APPEND);
     }
 
-    void outputNormalText(size_t *indexes, size_t countOfLines, char *text, char *DistFileName) {
+    void outputNormalText(size_t *indexes, size_t countOfLines, char *text, const char *DistFileName) {
         FullFileReader::outputInFile(indexes, text, DistFileName, countOfLines, O_WRONLY | O_APPEND);
     }
 
@@ -102,7 +102,7 @@ namespace StringSorter {
         free(text);
     }
 
-    void sortMyFile(char *SrcFileName, char *DistFileName) {
+    void sortMyFile(const char *SrcFileName, const char *DistFileName) {
         char* text;
         FullFileReader::readFullFile(SrcFileName, &text);
         size_t * standardIndexes;

@@ -1,0 +1,98 @@
+\hypertarget{namespaceLinearEquationSolver}{}\section{Linear\+Equation\+Solver Namespace Reference}
+\label{namespaceLinearEquationSolver}\index{Linear\+Equation\+Solver@{Linear\+Equation\+Solver}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::array$<$ double, 2 $>$ \hyperlink{namespaceLinearEquationSolver_a5860ff179b02727c12c41318a84079da}{solve} (double a, double b)
+\item 
+void \hyperlink{namespaceLinearEquationSolver_a164725181a9e9f5bf9c30409f1220279}{set\+Presicion} (double eps)
+\item 
+double \hyperlink{namespaceLinearEquationSolver_a915e0340ab887a3f94c990760eb476ca}{get\+Presison} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{namespaceLinearEquationSolver_a68d53d56e98cc83087dcfbc7e9b0ecc7}{P\+R\+E\+C\+I\+S\+I\+ON} = 1e-\/9
+\item 
+std\+::array$<$ double, 2 $>$ {\bfseries N\+O\+\_\+\+R\+O\+O\+TS}
+\item 
+std\+::array$<$ double, 2 $>$ {\bfseries I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+R\+O\+O\+TS}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Solves Linear Equations and returns roots as array Default precision 1e-\/9 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceLinearEquationSolver_a915e0340ab887a3f94c990760eb476ca}\label{namespaceLinearEquationSolver_a915e0340ab887a3f94c990760eb476ca}} 
+\index{Linear\+Equation\+Solver@{Linear\+Equation\+Solver}!get\+Presison@{get\+Presison}}
+\index{get\+Presison@{get\+Presison}!Linear\+Equation\+Solver@{Linear\+Equation\+Solver}}
+\subsubsection{\texorpdfstring{get\+Presison()}{getPresison()}}
+{\footnotesize\ttfamily double Linear\+Equation\+Solver\+::get\+Presison (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get current precision \begin{DoxyReturn}{Returns}
+current precision -\/ default = 1e-\/9 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceLinearEquationSolver_a164725181a9e9f5bf9c30409f1220279}\label{namespaceLinearEquationSolver_a164725181a9e9f5bf9c30409f1220279}} 
+\index{Linear\+Equation\+Solver@{Linear\+Equation\+Solver}!set\+Presicion@{set\+Presicion}}
+\index{set\+Presicion@{set\+Presicion}!Linear\+Equation\+Solver@{Linear\+Equation\+Solver}}
+\subsubsection{\texorpdfstring{set\+Presicion()}{setPresicion()}}
+{\footnotesize\ttfamily void Linear\+Equation\+Solver\+::set\+Presicion (\begin{DoxyParamCaption}\item[{double}]{eps }\end{DoxyParamCaption})}
+
+Set presion of calculating roots to eps 
+\begin{DoxyParams}{Parameters}
+{\em eps} & -\/ new precision -\/ default = 1e-\/9 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceLinearEquationSolver_a5860ff179b02727c12c41318a84079da}\label{namespaceLinearEquationSolver_a5860ff179b02727c12c41318a84079da}} 
+\index{Linear\+Equation\+Solver@{Linear\+Equation\+Solver}!solve@{solve}}
+\index{solve@{solve}!Linear\+Equation\+Solver@{Linear\+Equation\+Solver}}
+\subsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily std\+::array$<$ double, 2 $>$ Linear\+Equation\+Solver\+::solve (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b }\end{DoxyParamCaption})}
+
+Solve equation a $\ast$ x + b = 0 
+\begin{DoxyParams}{Parameters}
+{\em a} & -\/ parametr of x \\
+\hline
+{\em b} & -\/ parametr -\/ free \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ array with size 2, if roots are Infinity, first,second index -\/ std\+::numeric\+\_\+limits$<$double$>$\+::max() if root is one, where first index -\/ is root, second std\+::numeric\+\_\+limits$<$double$>$\+::max() if root -\/ none, first,second index std\+::numeric\+\_\+limits$<$double$>$\+::min() 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceLinearEquationSolver_a6cd24fa235d48f5dcf6c7a4c1765294a}\label{namespaceLinearEquationSolver_a6cd24fa235d48f5dcf6c7a4c1765294a}} 
+\index{Linear\+Equation\+Solver@{Linear\+Equation\+Solver}!I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+R\+O\+O\+TS@{I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+R\+O\+O\+TS}}
+\index{I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+R\+O\+O\+TS@{I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+R\+O\+O\+TS}!Linear\+Equation\+Solver@{Linear\+Equation\+Solver}}
+\subsubsection{\texorpdfstring{I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+R\+O\+O\+TS}{INFINITY\_ROOTS}}
+{\footnotesize\ttfamily std\+::array$<$ double, 2 $>$ Linear\+Equation\+Solver\+::\+I\+N\+F\+I\+N\+I\+T\+Y\+\_\+\+R\+O\+O\+TS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= std::array<double, 2>    \{
+            std::numeric\_limits<double>::max(),
+            std::numeric\_limits<double>::max(),
+    \}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceLinearEquationSolver_aff05fb63db0bf28f25867085c3c21dd5}\label{namespaceLinearEquationSolver_aff05fb63db0bf28f25867085c3c21dd5}} 
+\index{Linear\+Equation\+Solver@{Linear\+Equation\+Solver}!N\+O\+\_\+\+R\+O\+O\+TS@{N\+O\+\_\+\+R\+O\+O\+TS}}
+\index{N\+O\+\_\+\+R\+O\+O\+TS@{N\+O\+\_\+\+R\+O\+O\+TS}!Linear\+Equation\+Solver@{Linear\+Equation\+Solver}}
+\subsubsection{\texorpdfstring{N\+O\+\_\+\+R\+O\+O\+TS}{NO\_ROOTS}}
+{\footnotesize\ttfamily std\+::array$<$ double, 2 $>$ Linear\+Equation\+Solver\+::\+N\+O\+\_\+\+R\+O\+O\+TS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= std::array<double, 2>    \{
+            std::numeric\_limits<double>::min(),
+            std::numeric\_limits<double>::min(),
+    \}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceLinearEquationSolver_a68d53d56e98cc83087dcfbc7e9b0ecc7}\label{namespaceLinearEquationSolver_a68d53d56e98cc83087dcfbc7e9b0ecc7}} 
+\index{Linear\+Equation\+Solver@{Linear\+Equation\+Solver}!P\+R\+E\+C\+I\+S\+I\+ON@{P\+R\+E\+C\+I\+S\+I\+ON}}
+\index{P\+R\+E\+C\+I\+S\+I\+ON@{P\+R\+E\+C\+I\+S\+I\+ON}!Linear\+Equation\+Solver@{Linear\+Equation\+Solver}}
+\subsubsection{\texorpdfstring{P\+R\+E\+C\+I\+S\+I\+ON}{PRECISION}}
+{\footnotesize\ttfamily double Linear\+Equation\+Solver\+::\+P\+R\+E\+C\+I\+S\+I\+ON = 1e-\/9}
+
+Precisoion used to compare with 0; Default precision 1e-\/9 

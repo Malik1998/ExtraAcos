@@ -1,0 +1,70 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/LinearEquationSolver/LinearEquationSolver.cpp
+LinearEquationSolver.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/LinearEquationSolver/LinearEquationSolver.h
+../common_libs/Result/Result.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/common_libs/Result/Result.h
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/LinearEquationSolver/LinearEquationSolver.h
+../common_libs/Result/Result.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/common_libs/Result/Result.h
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/QuadraticEquationSolver/QuadraticEquationSolver.cpp
+QuadraticEquationSolver.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/QuadraticEquationSolver/QuadraticEquationSolver.h
+../LinearEquationSolver/LinearEquationSolver.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/LinearEquationSolver/LinearEquationSolver.h
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/QuadraticEquationSolver/QuadraticEquationSolver.h
+../common_libs/Result/Result.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/common_libs/Result/Result.h
+cmath
+-
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp
+QuadraticEquationSolverTest.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.h
+gtest/gtest.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/Tests/QuadraticEquatationSolver/gtest/gtest.h
+../../common_libs/Result/Result.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/common_libs/Result/Result.h
+../../QuadraticEquationSolver/QuadraticEquationSolver.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/QuadraticEquationSolver/QuadraticEquationSolver.h
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.h
+gtest/gtest.h
+-
+../../main.cpp
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/main.cpp
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/common_libs/Result/Result.cpp
+assert.h
+-
+iostream
+-
+Result.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/common_libs/Result/Result.h
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/common_libs/Result/Result.h
+cstdio
+-
+set
+-
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithOverOOP/main.cpp
+iostream
+-
+set
+-
+cmath
+-
+assert.h
+-
+

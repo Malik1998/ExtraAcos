@@ -1,4 +1,0 @@
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug/CMakeFiles/test.dir
-/home/user/Desktop/Studying/MIPT/term 5/extra acos/hw/ExtraAcos/EquationSolver/cmake-build-debug/CMakeFiles/QuadraticEquationSolverTest.dir

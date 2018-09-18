@@ -1,0 +1,64 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithNamespaces/LinearEquationSolver/LinearEquationSolver.cpp
+assert.h
+-
+limits
+-
+cmath
+-
+LinearEquationSolver.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithNamespaces/LinearEquationSolver/LinearEquationSolver.h
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithNamespaces/LinearEquationSolver/LinearEquationSolver.h
+array
+-
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithNamespaces/QuadraticEquationSolver/QuadraticEquationSolver.cpp
+assert.h
+-
+array
+-
+limits
+-
+QuadraticEquationSolver.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithNamespaces/QuadraticEquationSolver/QuadraticEquationSolver.h
+../LinearEquationSolver/LinearEquationSolver.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithNamespaces/LinearEquationSolver/LinearEquationSolver.h
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithNamespaces/QuadraticEquationSolver/QuadraticEquationSolver.h
+cmath
+-
+array
+-
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithNamespaces/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.cpp
+QuadraticEquationSolverTest.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithNamespaces/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.h
+gtest/gtest.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithNamespaces/Tests/QuadraticEquatationSolver/gtest/gtest.h
+../../QuadraticEquationSolver/QuadraticEquationSolver.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithNamespaces/QuadraticEquationSolver/QuadraticEquationSolver.h
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithNamespaces/Tests/QuadraticEquatationSolver/QuadraticEquationSolverTest.h
+gtest/gtest.h
+-
+../../main.cpp
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithNamespaces/main.cpp
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task1/EquationSolverWithNamespaces/main.cpp
+iostream
+-
+set
+-
+cmath
+-
+assert.h
+-
+

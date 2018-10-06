@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/SafeStackCStyle.dir/main.cpp.o CMakeFiles/SafeStackCStyle.dir/SafeStack/SafeStack.cpp.o  -o SafeStackCStyle 

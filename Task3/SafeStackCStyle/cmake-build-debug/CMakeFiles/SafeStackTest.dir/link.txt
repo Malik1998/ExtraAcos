@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/SafeStackTest.dir/Tests/SafeStackTester/SafeStackTest.cpp.o CMakeFiles/SafeStackTest.dir/SafeStack/SafeStack.cpp.o  -o SafeStackTest -lgtest -lgtest_main -lpthread 

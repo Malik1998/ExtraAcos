@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task3/SafeStackCStyle/SafeStack/SafeStack.cpp
+functional
+-
+SafeStack.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task3/SafeStackCStyle/SafeStack/SafeStack.h
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task3/SafeStackCStyle/SafeStack/SafeStack.h
+cstdio
+-
+utility
+-
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task3/SafeStackCStyle/Tests/SafeStackTester/SafeStackTest.cpp
+SafeStackTest.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task3/SafeStackCStyle/Tests/SafeStackTester/SafeStackTest.h
+gtest/gtest.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task3/SafeStackCStyle/Tests/SafeStackTester/gtest/gtest.h
+../../SafeStack/SafeStack.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task3/SafeStackCStyle/SafeStack/SafeStack.h
+../../SafeStack/SafeStack.cpp
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task3/SafeStackCStyle/SafeStack/SafeStack.cpp
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task3/SafeStackCStyle/Tests/SafeStackTester/SafeStackTest.h
+gtest/gtest.h
+-
+

@@ -8,6 +8,7 @@
 
 #include <cstdio>
 #include <utility>
+#include <ostream>
 
 #define MAX_SIZE 100
 #define SIMPLE_NUMBER 11
@@ -38,7 +39,7 @@ public:
         ErrorPush, //!< Container is full // 5
         ErroKanareika //!< Kanareika is not equal to 0xBEDABEDA // 6
     };
-
+private:
     /// Kaanreika after variables
     size_t KANAREIKA_ENDING = 0xBEDABEDA;
 
@@ -67,6 +68,11 @@ public:
     std::pair<Type, ErrorCodes> getFrontSafe();
 
 private:
+#ifdef DEBUG
+    /// Show all relevant information of object, IF DEBUG MODE
+    /// \param out - stream to write
+    void dump(std::ostream& out) const;
+#endif
     /// checksum calculation
     /// \return current checksum
     size_t getCheckSum() const;

@@ -1,4 +1,4 @@
 /home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task3/SafeStackCStyle/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task3/SafeStackCStyle/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task3/SafeStackCStyle/cmake-build-debug/CMakeFiles/test.dir
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task3/SafeStackCStyle/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task3/SafeStackCStyle/cmake-build-debug/CMakeFiles/SafeStackTest.dir

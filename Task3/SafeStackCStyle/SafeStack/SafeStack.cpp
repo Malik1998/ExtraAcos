@@ -3,11 +3,24 @@
 //
 
 #include <functional>
+#include <ostream>
 #include "SafeStack.h"
+#include <fstream>
+#include <iostream>
+#include <typeinfo>
+#include <cstdlib>
+#ifdef DEBUG
+#define DUMP \
+         dump(std::cout); \
+
+#else
+#define DUMP
+#endif
 
 #define CHECK_BEFORE(block) \
         auto codeOfIsUnchanged = isUnchanged(); \
         if (codeOfIsUnchanged != 0) {   \
+         DUMP \
          return codeOfIsUnchanged; \
         }   \
         block  \
@@ -16,6 +29,7 @@
 #define CHECK_BEFORE_PAIR(block) \
         auto codeOfIsUnchanged = isUnchanged(); \
         if (codeOfIsUnchanged != 0) {   \
+         DUMP \
          return std::make_pair(POISON, codeOfIsUnchanged); \
         }   \
         block  \
@@ -70,6 +84,7 @@ typename SafeStack<Type>::ErrorCodes SafeStack<Type>::isUnchanged() const {
 template<typename Type>
 typename SafeStack<Type>::ErrorCodes SafeStack<Type>::pop() {
     if (count == 0) {
+        DUMP
         return ErrorPop; // Nothing to POP
     }
     CHECK_BEFORE({count--; container[count] = POISON;});
@@ -79,6 +94,7 @@ typename SafeStack<Type>::ErrorCodes SafeStack<Type>::pop() {
 template<typename Type>
 typename SafeStack<Type>::ErrorCodes SafeStack<Type>::push(Type element) {
     if (count == MAX_SIZE) {
+        DUMP
         return ErrorPush; // Container is full
     }
     CHECK_BEFORE(container[count] = element; count++;);
@@ -111,3 +127,36 @@ SafeStack<Type>::SafeStack(Type poison_) {
     }
     setCheckSum();
 }
+
+#ifdef DEBUG
+template<typename Type>
+void SafeStack<Type>::dump(std::ostream &out) const {
+
+    out << "class SafeStack {" << std::endl;
+    out << "    /// Kanareika Before variables" << std::endl;
+    out << "    size_t KANAREIKA_STARTING = " << KANAREIKA_STARTING << " --- MUST BE " << 0xBEDABEDA << std::endl;
+    out << "    /// Stack - container" << std::endl;
+    out << "    "<< typeid(Type).name()  << " container[MAX_SIZE] { " << std::endl;
+
+    for(size_t i = 0; i < MAX_SIZE; i++) {
+        out << "    container[" << i << "] = " << container[i];
+        if (i >= count) {
+            out << " * <---- MUST BE POISON, " << "We SUPPOSE THAT POISON = " << POISON;
+        }
+        out << std::endl;
+    }
+
+
+    out << "     }" << std::endl;
+    out << "    /// Real count of elemnts now in stack" << std::endl;
+    out << "    size_t count = " << count << std::endl;
+    out << "    /// Poisn value that can be used in stack" << std::endl;
+    out << "    " << typeid(Type).name() << " POISON = " << POISON << std::endl;
+    out << "    /// CurrentChecksum" << std::endl;
+    out << "    size_t checkSum = " << checkSum << std::endl;
+    out << "    /// Kaanreika after variables" << std::endl;
+    out << "   size_t KANAREIKA_ENDING = " << KANAREIKA_ENDING << " --- MUST BE " << 0xBEDABEDA << std::endl;
+    out << "}" << std::endl;
+
+}
+#endif

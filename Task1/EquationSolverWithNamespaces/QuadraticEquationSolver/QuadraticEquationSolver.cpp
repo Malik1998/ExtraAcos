@@ -14,8 +14,11 @@ namespace QuadraticEquationSolver {
         if (isNotQuadratic(a, b, c)) {
             double lastLinearPresicion = LinearEquationSolver::getPresison();
             LinearEquationSolver::setPresicion(PRECISION);
+
             auto resultFromLinear = LinearEquationSolver::solve(b, c);
+
             LinearEquationSolver::setPresicion(lastLinearPresicion);
+
             return std::array<double, 3> {
                 resultFromLinear[0],
                 resultFromLinear[1],

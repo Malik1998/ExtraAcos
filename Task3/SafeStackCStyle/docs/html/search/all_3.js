@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kanareika_5fending',['KANAREIKA_ENDING',['../classSafeStack.html#ac2a2301af942ea33d7c8ca4f3740fd2e',1,'SafeStack']]]
+  ['ok',['OK',['../classSafeStack.html#a3a6ee072918bd0a2c09fa0ea12c1ab64a93f2888c3bca456c946b0ccab748c528',1,'SafeStack']]]
 ];

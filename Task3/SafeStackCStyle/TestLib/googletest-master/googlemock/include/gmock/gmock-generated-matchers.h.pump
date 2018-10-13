@@ -264,8 +264,8 @@ Args(const InnerMatcher& matcher) {
 
 
 ]]
-// ElementsAre(e_1, e_2, ... e_n) matches an STL-style container with
-// n elements, where the i-th element in the container must
+// ElementsAre(e_1, e_2, ... e_n) matches an STL-style container_ with
+// n elements, where the i-th element in the container_ must
 // match the i-th argument in the list.  Each argument of
 // ElementsAre() can be either a value or a matcher.  We support up to
 // $n arguments.

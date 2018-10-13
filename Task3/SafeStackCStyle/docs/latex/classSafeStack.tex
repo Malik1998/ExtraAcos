@@ -29,16 +29,10 @@ enum \hyperlink{classSafeStack_a3a6ee072918bd0a2c09fa0ea12c1ab64}{Error\+Codes} 
 \item 
 \hyperlink{classSafeStack_a3a6ee072918bd0a2c09fa0ea12c1ab64}{Error\+Codes} \hyperlink{classSafeStack_a4ecd17feae41fe142535f281a80a6a6c}{push} (Type element)
 \item 
-Type \hyperlink{classSafeStack_ad3ebe85bc788378690144800418e761d}{get\+Front\+Unsafe} ()
+Type \hyperlink{classSafeStack_ae6e2abc9e3718a8f426ad55fff7720c2}{get\+Front\+Unsafe} () const
 \item 
 std\+::pair$<$ Type, \hyperlink{classSafeStack_a3a6ee072918bd0a2c09fa0ea12c1ab64}{Error\+Codes} $>$ \hyperlink{classSafeStack_a5b4c56ff55c462bd746f4f36258d46e0}{get\+Front\+Safe} ()
 \end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{classSafeStack_ac2a2301af942ea33d7c8ca4f3740fd2e}\label{classSafeStack_ac2a2301af942ea33d7c8ca4f3740fd2e}} 
-size\+\_\+t \hyperlink{classSafeStack_ac2a2301af942ea33d7c8ca4f3740fd2e}{K\+A\+N\+A\+R\+E\+I\+K\+A\+\_\+\+E\+N\+D\+I\+NG} = 0x\+B\+E\+D\+A\+B\+E\+DA
-\begin{DoxyCompactList}\small\item\em Kaanreika after variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -118,12 +112,12 @@ std\+::pair$<$ Type, typename \hyperlink{classSafeStack}{Safe\+Stack}$<$ Type $>
 \begin{DoxyReturn}{Returns}
 pair where first element -\/ is Front element if exists, else Poison value. second -\/ Error\+Code 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classSafeStack_ad3ebe85bc788378690144800418e761d}\label{classSafeStack_ad3ebe85bc788378690144800418e761d}} 
+\mbox{\Hypertarget{classSafeStack_ae6e2abc9e3718a8f426ad55fff7720c2}\label{classSafeStack_ae6e2abc9e3718a8f426ad55fff7720c2}} 
 \index{Safe\+Stack@{Safe\+Stack}!get\+Front\+Unsafe@{get\+Front\+Unsafe}}
 \index{get\+Front\+Unsafe@{get\+Front\+Unsafe}!Safe\+Stack@{Safe\+Stack}}
 \subsubsection{\texorpdfstring{get\+Front\+Unsafe()}{getFrontUnsafe()}}
 {\footnotesize\ttfamily template$<$typename Type $>$ \\
-Type \hyperlink{classSafeStack}{Safe\+Stack}$<$ Type $>$\+::get\+Front\+Unsafe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+Type \hyperlink{classSafeStack}{Safe\+Stack}$<$ Type $>$\+::get\+Front\+Unsafe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 C\+A\+U\+T\+I\+O\+N!!! -\/ Not use it if you are not sure!!! \begin{DoxyReturn}{Returns}
 front element without checking 

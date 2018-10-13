@@ -1,11 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "egikops",
+  0: "egiops",
   1: "s",
   2: "gips",
-  3: "k",
-  4: "e",
-  5: "eo"
+  3: "e",
+  4: "eo"
 };
 
 var indexSectionNames =
@@ -13,9 +12,8 @@ var indexSectionNames =
   0: "all",
   1: "classes",
   2: "functions",
-  3: "variables",
-  4: "enums",
-  5: "enumvalues"
+  3: "enums",
+  4: "enumvalues"
 };
 
 var indexSectionLabels =
@@ -23,8 +21,7 @@ var indexSectionLabels =
   0: "All",
   1: "Classes",
   2: "Functions",
-  3: "Variables",
-  4: "Enumerations",
-  5: "Enumerator"
+  3: "Enumerations",
+  4: "Enumerator"
 };
 

@@ -85,8 +85,8 @@ TEST_P(FooTest, HasBlahBlah) {
 //                               begin+step+step, ...}. The values do not
 //                               include end. step defaults to 1.
 //  Values(v1, v2, ..., vN)    - Yields values {v1, v2, ..., vN}.
-//  ValuesIn(container)        - Yields values from a C-style array, an STL
-//  ValuesIn(begin,end)          container, or an iterator range [begin, end).
+//  ValuesIn(container_)        - Yields values from a C-style array, an STL
+//  ValuesIn(begin,end)          container_, or an iterator range [begin, end).
 //  Bool()                     - Yields sequence {false, true}.
 //  Combine(g1, g2, ..., gN)   - Yields all combinations (the Cartesian product
 //                               for the math savvy) of the values generated
@@ -243,15 +243,15 @@ internal::ParamGenerator<T> Range(T start, T end) {
 }
 
 // ValuesIn() function allows generation of tests with parameters coming from
-// a container.
+// a container_.
 //
 // Synopsis:
 // ValuesIn(const T (&array)[N])
 //   - returns a generator producing sequences with elements from
 //     a C-style array.
-// ValuesIn(const Container& container)
+// ValuesIn(const Container& container_)
 //   - returns a generator producing sequences with elements from
-//     an STL-style container.
+//     an STL-style container_.
 // ValuesIn(Iterator begin, Iterator end)
 //   - returns a generator producing sequences with elements from
 //     a range [begin, end) defined by a pair of STL-style iterators. These
@@ -314,8 +314,8 @@ internal::ParamGenerator<T> ValuesIn(const T (&array)[N]) {
 
 template <class Container>
 internal::ParamGenerator<typename Container::value_type> ValuesIn(
-    const Container& container) {
-  return ValuesIn(container.begin(), container.end());
+    const Container& container_) {
+  return ValuesIn(container_.begin(), container_.end());
 }
 
 // Values() allows generating tests from explicitly specified list of

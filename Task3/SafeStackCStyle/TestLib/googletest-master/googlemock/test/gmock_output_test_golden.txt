@@ -150,18 +150,18 @@ FILE:#: pre-requisite #1
 [  FAILED  ] GMockOutputTest.UnsatisfiedPrerequisites
 [ RUN      ] GMockOutputTest.UnsatisfiedWith
 FILE:#: Failure
-Actual function call count doesn't match EXPECT_CALL(foo_, Bar2(_, _))...
+Actual function call count_ doesn't match EXPECT_CALL(foo_, Bar2(_, _))...
     Expected args: are a pair where the first >= the second
          Expected: to be called once
            Actual: never called - unsatisfied and active
 [  FAILED  ] GMockOutputTest.UnsatisfiedWith
 [ RUN      ] GMockOutputTest.UnsatisfiedExpectation
 FILE:#: Failure
-Actual function call count doesn't match EXPECT_CALL(foo_, Bar2(0, _))...
+Actual function call count_ doesn't match EXPECT_CALL(foo_, Bar2(0, _))...
          Expected: to be called twice
            Actual: called once - unsatisfied and active
 FILE:#: Failure
-Actual function call count doesn't match EXPECT_CALL(foo_, Bar(_, _, _))...
+Actual function call count_ doesn't match EXPECT_CALL(foo_, Bar(_, _, _))...
          Expected: to be called once
            Actual: never called - unsatisfied and active
 [  FAILED  ] GMockOutputTest.UnsatisfiedExpectation

@@ -157,7 +157,7 @@ struct Types$i {
 }  // namespace internal
 
 // We don't want to require the users to write TypesN<...> directly,
-// as that would require them to count the length.  Types<...> is much
+// as that would require them to count_ the length.  Types<...> is much
 // easier to write, but generates horrible messages when there is a
 // compiler error, as gcc insists on printing out each template
 // argument, even if it has the default value (this means Types<int>
@@ -255,7 +255,7 @@ struct Templates$i {
 ]]
 
 // We don't want to require the users to write TemplatesN<...> directly,
-// as that would require them to count the length.  Templates<...> is much
+// as that would require them to count_ the length.  Templates<...> is much
 // easier to write, but generates horrible messages when there is a
 // compiler error, as gcc insists on printing out each template
 // argument, even if it has the default value (this means Templates<list>

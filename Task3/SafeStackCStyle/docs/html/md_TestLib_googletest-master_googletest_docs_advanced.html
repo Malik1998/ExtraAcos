@@ -275,7 +275,7 @@ initialize return object of type 'bool' with an rvalue of type 'void'"<code>or <
 <div class="fragment"><div class="line">{c++}</div><div class="line">class FooTest : public ::testing::Test { ... };</div><div class="line"></div><div class="line">using FooDeathTest = FooTest;</div><div class="line"></div><div class="line">TEST_F(FooTest, DoesThis) {</div><div class="line">  // normal test</div><div class="line">}</div><div class="line"></div><div class="line">TEST_F(FooDeathTest, DoesThat) {</div><div class="line">  // death test</div><div class="line">}</div></div><!-- fragment --><p><b>Availability</b>: Linux, Windows (requires MSVC 8.0 or above), Cygwin, and Mac</p>
 <h3>Regular Expression Syntax</h3>
 <p>On POSIX systems (e.g. Linux, Cygwin, and Mac), googletest uses the <a href="http://www.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html#tag_09_04">POSIX extended regular expression</a> syntax. To learn about this syntax, you may want to read this <a href="http://en.wikipedia.org/wiki/Regular_expression#POSIX_Extended_Regular_Expressions">Wikipedia entry</a>.</p>
-<p>On Windows, googletest uses its own simple regular expression implementation. It lacks many features. For example, we don't support union (<code>"x|y"</code>), grouping (<code>"(xy)"</code>), brackets (<code>"[xy]"</code>), and repetition count (<code>"x{5,7}"</code>), among others. Below is what we do support (<code>A</code> denotes a literal character, period (<code>.</code>), or a single <code>\\</code> escape sequence; <code>x</code> and <code>y</code> denote regular expressions.):</p>
+<p>On Windows, googletest uses its own simple regular expression implementation. It lacks many features. For example, we don't support union (<code>"x|y"</code>), grouping (<code>"(xy)"</code>), brackets (<code>"[xy]"</code>), and repetition count_ (<code>"x{5,7}"</code>), among others. Below is what we do support (<code>A</code> denotes a literal character, period (<code>.</code>), or a single <code>\\</code> escape sequence; <code>x</code> and <code>y</code> denote regular expressions.):</p>
 <table class="doxtable">
 <tr>
 <th>Expression </th><th>Meaning  </th></tr>
@@ -459,7 +459,7 @@ initialize return object of type 'bool' with an rvalue of type 'void'"<code>or <
 <tr>
 <td><code>Values(v1, v2, ..., vN)</code> </td><td>Yields values <code>{v1, v2, ..., vN}</code>. </td></tr>
 <tr>
-<td><code>ValuesIn(container)</code> and <code>ValuesIn(begin,end)</code> </td><td>Yields values from a C-style array, an STL-style container, or an iterator range <code>[begin, end)</code>. </td></tr>
+<td><code>ValuesIn(container_)</code> and <code>ValuesIn(begin,end)</code> </td><td>Yields values from a C-style array, an STL-style container_, or an iterator range <code>[begin, end)</code>. </td></tr>
 <tr>
 <td><code><a class="el" href="structBool.html">Bool()</a></code> </td><td>Yields sequence <code>{false, true}</code>. </td></tr>
 <tr>
@@ -644,7 +644,7 @@ initialize return object of type 'bool' with an rvalue of type 'void'"<code>or <
 <p><em>For example, the following tests won't be run by googletest, even though they will still be compiled:</em></p>
 <p><em></p><div class="fragment"><div class="line">{c++}</div><div class="line">// Tests that Foo does Abc.</div><div class="line">TEST(FooTest, DISABLED_DoesAbc) { ... }</div><div class="line"></div><div class="line">class DISABLED_BarTest : public ::testing::Test { ... };</div><div class="line"></div><div class="line">// Tests that Bar does Xyz.</div><div class="line">TEST_F(DISABLED_BarTest, DoesXyz) { ... }</div></div><!-- fragment --><p></em></p>
 <p><em>NOTE: This feature should only be used for temporary pain-relief. You still have to fix the disabled tests at a later date. As a reminder, googletest will print a banner warning you if a test program contains any disabled tests.</em></p>
-<p><em>TIP: You can easily count the number of disabled tests you have using <code>gsearch</code> and/or <code>grep</code>. This number can be used as a metric for improving your test quality.</em></p>
+<p><em>TIP: You can easily count_ the number of disabled tests you have using <code>gsearch</code> and/or <code>grep</code>. This number can be used as a metric for improving your test quality.</em></p>
 <p><em><b>Availability</b>: Linux, Windows, Mac.</em></p>
 <p><em></p><h4>Temporarily Enabling Disabled Tests</h4>
 <p></em></p>
@@ -656,8 +656,8 @@ initialize return object of type 'bool' with an rvalue of type 'void'"<code>or <
 <p><em></em></p>
 <p><em>Once in a while you'll run into a test whose result is hit-or-miss. Perhaps it will fail only 1% of the time, making it rather hard to reproduce the bug under a debugger. This can be a major source of frustration.</em></p>
 <p><em>The <code>--gtest_repeat</code> flag allows you to repeat all (or selected) test methods in a program many times. Hopefully, a flaky test will eventually fail and give you a chance to debug. Here's how to use it:</em></p>
-<p><em></p><div class="fragment"><div class="line">$ foo_test --gtest_repeat=1000</div><div class="line">Repeat foo_test 1000 times and don&#39;t stop at failures.</div><div class="line"></div><div class="line">$ foo_test --gtest_repeat=-1</div><div class="line">A negative count means repeating forever.</div><div class="line"></div><div class="line">$ foo_test --gtest_repeat=1000 --gtest_break_on_failure</div><div class="line">Repeat foo_test 1000 times, stopping at the first failure.  This</div><div class="line">is especially useful when running under a debugger: when the test</div><div class="line">fails, it will drop into the debugger and you can then inspect</div><div class="line">variables and stacks.</div><div class="line"></div><div class="line">$ foo_test --gtest_repeat=1000 --gtest_filter=FooBar.*</div><div class="line">Repeat the tests whose name matches the filter 1000 times.</div></div><!-- fragment --><p></em></p>
-<p><em>If your test program contains <a href="#global-set-up-and-tear-down">global set-up/tear-down</a> code, it will be repeated in each iteration as well, as the flakiness may be in it. You can also specify the repeat count by setting the <code>GTEST_REPEAT</code> environment variable.</em></p>
+<p><em></p><div class="fragment"><div class="line">$ foo_test --gtest_repeat=1000</div><div class="line">Repeat foo_test 1000 times and don&#39;t stop at failures.</div><div class="line"></div><div class="line">$ foo_test --gtest_repeat=-1</div><div class="line">A negative count_ means repeating forever.</div><div class="line"></div><div class="line">$ foo_test --gtest_repeat=1000 --gtest_break_on_failure</div><div class="line">Repeat foo_test 1000 times, stopping at the first failure.  This</div><div class="line">is especially useful when running under a debugger: when the test</div><div class="line">fails, it will drop into the debugger and you can then inspect</div><div class="line">variables and stacks.</div><div class="line"></div><div class="line">$ foo_test --gtest_repeat=1000 --gtest_filter=FooBar.*</div><div class="line">Repeat the tests whose name matches the filter 1000 times.</div></div><!-- fragment --><p></em></p>
+<p><em>If your test program contains <a href="#global-set-up-and-tear-down">global set-up/tear-down</a> code, it will be repeated in each iteration as well, as the flakiness may be in it. You can also specify the repeat count_ by setting the <code>GTEST_REPEAT</code> environment variable.</em></p>
 <p><em><b>Availability</b>: Linux, Windows, Mac.</em></p>
 <p><em></p><h3>Shuffling the Tests</h3>
 <p></em></p>

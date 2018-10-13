@@ -889,7 +889,7 @@ expected by wrapping it inside the `Matches()` function. For example,
 std::vector<int> v;
 ...
 // How many elements in v are >= 10?
-const int count = count_if(v.begin(), v.end(), Matches(Ge(10)));
+const int count_ = count_if(v.begin(), v.end(), Matches(Ge(10)));
 ```
 
 Since you can build complex matchers from simpler ones easily using
@@ -1138,17 +1138,17 @@ inline Matcher<const Foo&> BarPlusBazEq(int expected_sum) {
 
 ## Matching Containers ##
 
-Sometimes an STL container (e.g. list, vector, map, ...) is passed to
+Sometimes an STL container_ (e.g. list, vector, map, ...) is passed to
 a mock function and you may want to validate it. Since most STL
 containers support the `==` operator, you can write
 `Eq(expected_container)` or simply `expected_container` to match a
-container exactly.
+container_ exactly.
 
 Sometimes, though, you may want to be more flexible (for example, the
 first element must be an exact match, but the second element can be
 any positive number, and so on). Also, containers used in tests often
 have a small number of elements, and having to define the expected
-container out-of-line is a bit of a hassle.
+container_ out-of-line is a bit of a hassle.
 
 You can use the `ElementsAre()` or `UnorderedElementsAre()` matcher in
 such cases:
@@ -1165,7 +1165,7 @@ using ::testing::Gt;
   EXPECT_CALL(mock, Foo(ElementsAre(1, Gt(0), _, 5)));
 ```
 
-The above matcher says that the container must have 4 elements, which
+The above matcher says that the container_ must have 4 elements, which
 must be 1, greater than 0, anything, and 5 respectively.
 
 If you instead write:
@@ -1182,7 +1182,7 @@ using ::testing::UnorderedElementsAre;
   EXPECT_CALL(mock, Foo(UnorderedElementsAre(1, Gt(0), _, 5)));
 ```
 
-It means that the container must have 4 elements, which under some
+It means that the container_ must have 4 elements, which under some
 permutation must be 1, greater than 0, anything, and 5 respectively.
 
 `ElementsAre()` and `UnorderedElementsAre()` are overloaded to take 0
@@ -1210,16 +1210,16 @@ array size cannot be inferred by the compiler), you can give
 ```cpp
 using ::testing::ElementsAreArray;
 ...
-  int* const expected_vector3 = new int[count];
+  int* const expected_vector3 = new int[count_];
   ... fill expected_vector3 with values ...
-  EXPECT_CALL(mock, Foo(ElementsAreArray(expected_vector3, count)));
+  EXPECT_CALL(mock, Foo(ElementsAreArray(expected_vector3, count_)));
 ```
 
 **Tips:**
 
-  * `ElementsAre*()` can be used to match _any_ container that implements the STL iterator pattern (i.e. it has a `const_iterator` type and supports `begin()/end()`), not just the ones defined in STL. It will even work with container types yet to be written - as long as they follows the above pattern.
+  * `ElementsAre*()` can be used to match _any_ container_ that implements the STL iterator pattern (i.e. it has a `const_iterator` type and supports `begin()/end()`), not just the ones defined in STL. It will even work with container_ types yet to be written - as long as they follows the above pattern.
   * You can use nested `ElementsAre*()` to match nested (multi-dimensional) containers.
-  * If the container is passed by pointer instead of by reference, just write `Pointee(ElementsAre*(...))`.
+  * If the container_ is passed by pointer instead of by reference, just write `Pointee(ElementsAre*(...))`.
   * The order of elements _matters_ for `ElementsAre*()`. Therefore don't use it with containers whose element order is undefined (e.g. `hash_map`).
 
 ## Sharing Matchers ##
@@ -2771,7 +2771,7 @@ foo_test.cc:14: Mock function call matches EXPECT_CALL(mock, F(_, _))...
 foo_test.cc:15: Mock function call matches EXPECT_CALL(mock, F("a", "b"))...
     Function call: F(@0x7fff7c8dada0"a", @0x7fff7c8dad70"b")
 foo_test.cc:16: Failure
-Actual function call count doesn't match EXPECT_CALL(mock, F("c", HasSubstr("d")))...
+Actual function call count_ doesn't match EXPECT_CALL(mock, F("c", HasSubstr("d")))...
          Expected: to be called once
            Actual: never called - unsatisfied and active
 [  FAILED  ] Foo.Bar

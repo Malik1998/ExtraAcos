@@ -494,7 +494,7 @@ Googletest needs to be able to create objects of your test fixture class, so it 
 
 \subsection*{Why does A\+S\+S\+E\+R\+T\+\_\+\+D\+E\+A\+TH complain about previous threads that were already joined?}
 
-With the Linux pthread library, there is no turning back once you cross the line from single thread to multiple threads. The first time you create a thread, a manager thread is created in addition, so you get 3, not 2, threads. Later when the thread you create joins the main thread, the thread count decrements by 1, but the manager thread will never be killed, so you still have 2 threads, which means you cannot safely run a death test.
+With the Linux pthread library, there is no turning back once you cross the line from single thread to multiple threads. The first time you create a thread, a manager thread is created in addition, so you get 3, not 2, threads. Later when the thread you create joins the main thread, the thread count_ decrements by 1, but the manager thread will never be killed, so you still have 2 threads, which means you cannot safely run a death test.
 
 The new N\+P\+TL thread library doesn\textquotesingle{}t suffer from this problem, as it doesn\textquotesingle{}t create a manager thread. However, if you don\textquotesingle{}t control which machine your test runs on, you shouldn\textquotesingle{}t depend on this.
 

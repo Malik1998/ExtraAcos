@@ -153,7 +153,7 @@ As you might have guessed, this test checks that `PenDown()` is called at least 
 
 ```
 path/to/my_test.cc:119: Failure
-Actual function call count doesn't match this expectation:
+Actual function call count_ doesn't match this expectation:
 Actually: never called;
 Expected: called at least once.
 ```

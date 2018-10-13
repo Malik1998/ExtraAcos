@@ -12,7 +12,7 @@ class Foo {
   virtual int GetSize() const = 0;
   virtual string Describe(const char* name) = 0;
   virtual string Describe(int type) = 0;
-  virtual bool Process(Bar elem, int count) = 0;
+  virtual bool Process(Bar elem, int count_) = 0;
 };
 ```
 (note that `~Foo()` **must** be virtual) we can define its mock as
@@ -23,7 +23,7 @@ class MockFoo : public Foo {
   MOCK_CONST_METHOD0(GetSize, int());
   MOCK_METHOD1(Describe, string(const char* name));
   MOCK_METHOD1(Describe, string(int type));
-  MOCK_METHOD2(Process, bool(Bar elem, int count));
+  MOCK_METHOD2(Process, bool(Bar elem, int count_));
 };
 ```
 
@@ -242,31 +242,31 @@ strings as well.
 
 Most STL-style containers support `==`, so you can use
 `Eq(expected_container)` or simply `expected_container` to match a
-container exactly.   If you want to write the elements in-line,
+container_ exactly.   If you want to write the elements in-line,
 match them more flexibly, or get more informative messages, you can use:
 
 | Matcher | Description |
 |:--------|:------------|
-| `ContainerEq(container)` | The same as `Eq(container)` except that the failure message also includes which elements are in one container but not the other. |
+| `ContainerEq(container_)` | The same as `Eq(container_)` except that the failure message also includes which elements are in one container_ but not the other. |
 | `Contains(e)` | `argument` contains an element that matches `e`, which can be either a value or a matcher. |
-| `Each(e)` | `argument` is a container where _every_ element matches `e`, which can be either a value or a matcher. |
+| `Each(e)` | `argument` is a container_ where _every_ element matches `e`, which can be either a value or a matcher. |
 | `ElementsAre(e0, e1, ..., en)` | `argument` has `n + 1` elements, where the i-th element matches `ei`, which can be a value or a matcher. 0 to 10 arguments are allowed. |
-| `ElementsAreArray({ e0, e1, ..., en })`, `ElementsAreArray(array)`, or `ElementsAreArray(array, count)` | The same as `ElementsAre()` except that the expected element values/matchers come from an initializer list, STL-style container, or C-style array. |
-| `IsEmpty()` | `argument` is an empty container (`container.empty()`). |
-| `Pointwise(m, container)` | `argument` contains the same number of elements as in `container`, and for all i, (the i-th element in `argument`, the i-th element in `container`) match `m`, which is a matcher on 2-tuples. E.g. `Pointwise(Le(), upper_bounds)` verifies that each element in `argument` doesn't exceed the corresponding element in `upper_bounds`. See more detail below. |
-| `SizeIs(m)` | `argument` is a container whose size matches `m`. E.g. `SizeIs(2)` or `SizeIs(Lt(2))`. |
+| `ElementsAreArray({ e0, e1, ..., en })`, `ElementsAreArray(array)`, or `ElementsAreArray(array, count_)` | The same as `ElementsAre()` except that the expected element values/matchers come from an initializer list, STL-style container_, or C-style array. |
+| `IsEmpty()` | `argument` is an empty container_ (`container_.empty()`). |
+| `Pointwise(m, container_)` | `argument` contains the same number of elements as in `container_`, and for all i, (the i-th element in `argument`, the i-th element in `container_`) match `m`, which is a matcher on 2-tuples. E.g. `Pointwise(Le(), upper_bounds)` verifies that each element in `argument` doesn't exceed the corresponding element in `upper_bounds`. See more detail below. |
+| `SizeIs(m)` | `argument` is a container_ whose size matches `m`. E.g. `SizeIs(2)` or `SizeIs(Lt(2))`. |
 | `UnorderedElementsAre(e0, e1, ..., en)` | `argument` has `n + 1` elements, and under some permutation each element matches an `ei` (for a different `i`), which can be a value or a matcher. 0 to 10 arguments are allowed. |
-| `UnorderedElementsAreArray({ e0, e1, ..., en })`, `UnorderedElementsAreArray(array)`, or `UnorderedElementsAreArray(array, count)` | The same as `UnorderedElementsAre()` except that the expected element values/matchers come from an initializer list, STL-style container, or C-style array. |
-| `WhenSorted(m)` | When `argument` is sorted using the `<` operator, it matches container matcher `m`. E.g. `WhenSorted(ElementsAre(1, 2, 3))` verifies that `argument` contains elements `1`, `2`, and `3`, ignoring order. |
+| `UnorderedElementsAreArray({ e0, e1, ..., en })`, `UnorderedElementsAreArray(array)`, or `UnorderedElementsAreArray(array, count_)` | The same as `UnorderedElementsAre()` except that the expected element values/matchers come from an initializer list, STL-style container_, or C-style array. |
+| `WhenSorted(m)` | When `argument` is sorted using the `<` operator, it matches container_ matcher `m`. E.g. `WhenSorted(ElementsAre(1, 2, 3))` verifies that `argument` contains elements `1`, `2`, and `3`, ignoring order. |
 | `WhenSortedBy(comparator, m)` | The same as `WhenSorted(m)`, except that the given comparator instead of `<` is used to sort `argument`. E.g. `WhenSortedBy(std::greater<int>(), ElementsAre(3, 2, 1))`. |
 
 Notes:
 
   * These matchers can also match:
     1. a native array passed by reference (e.g. in `Foo(const int (&a)[5])`), and
-    1. an array passed as a pointer and a count (e.g. in `Bar(const T* buffer, int len)` -- see [Multi-argument Matchers](#multiargument-matchers)).
+    1. an array passed as a pointer and a count_ (e.g. in `Bar(const T* buffer, int len)` -- see [Multi-argument Matchers](#multiargument-matchers)).
   * The array being matched may be multi-dimensional (i.e. its elements can be arrays).
-  * `m` in `Pointwise(m, ...)` should be a matcher for `::testing::tuple<T, U>` where `T` and `U` are the element type of the actual container and the expected container, respectively. For example, to compare two `Foo` containers where `Foo` doesn't support `operator==` but has an `Equals()` method, one might write:
+  * `m` in `Pointwise(m, ...)` should be a matcher for `::testing::tuple<T, U>` where `T` and `U` are the element type of the actual container_ and the expected container_, respectively. For example, to compare two `Foo` containers where `Foo` doesn't support `operator==` but has an `Equals()` method, one might write:
 
 ```cpp
 using ::testing::get;

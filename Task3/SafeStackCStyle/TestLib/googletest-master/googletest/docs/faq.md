@@ -613,7 +613,7 @@ However, there are cases where you have to define your own:
 With the Linux pthread library, there is no turning back once you cross the line
 from single thread to multiple threads. The first time you create a thread, a
 manager thread is created in addition, so you get 3, not 2, threads. Later when
-the thread you create joins the main thread, the thread count decrements by 1,
+the thread you create joins the main thread, the thread count_ decrements by 1,
 but the manager thread will never be killed, so you still have 2 threads, which
 means you cannot safely run a death test.
 

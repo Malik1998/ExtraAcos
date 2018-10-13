@@ -21,10 +21,10 @@ typeinfo
 -
 cstdlib
 -
+algorithm
+-
 
 /home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task3/SafeStackCStyle/SafeStack/SafeStack.h
-cstdio
--
 utility
 -
 ostream

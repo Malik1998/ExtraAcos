@@ -818,7 +818,7 @@ Luckily, you can use a matcher where a unary predicate functor is expected by wr
 std::vector<int> v;
 ...
 \textcolor{comment}{// How many elements in v are >= 10?}
-const \textcolor{keywordtype}{int} count = count\_if(v.begin(), v.end(), Matches(Ge(10)));
+const \textcolor{keywordtype}{int} count_ = count_\_if(v.begin(), v.end(), Matches(Ge(10)));
 \end{DoxyCode}
 
 
@@ -1045,9 +1045,9 @@ using ::testing::MatchResultListener;
 
 \subsection*{Matching Containers}
 
-Sometimes an S\+TL container (e.\+g. list, vector, map, ...) is passed to a mock function and you may want to validate it. Since most S\+TL containers support the {\ttfamily ==} operator, you can write {\ttfamily Eq(expected\+\_\+container)} or simply {\ttfamily expected\+\_\+container} to match a container exactly.
+Sometimes an S\+TL container_ (e.\+g. list, vector, map, ...) is passed to a mock function and you may want to validate it. Since most S\+TL containers support the {\ttfamily ==} operator, you can write {\ttfamily Eq(expected\+\_\+container_)} or simply {\ttfamily expected\+\_\+container_} to match a container_ exactly.
 
-Sometimes, though, you may want to be more flexible (for example, the first element must be an exact match, but the second element can be any positive number, and so on). Also, containers used in tests often have a small number of elements, and having to define the expected container out-\/of-\/line is a bit of a hassle.
+Sometimes, though, you may want to be more flexible (for example, the first element must be an exact match, but the second element can be any positive number, and so on). Also, containers used in tests often have a small number of elements, and having to define the expected container_ out-\/of-\/line is a bit of a hassle.
 
 You can use the {\ttfamily Elements\+Are()} or {\ttfamily Unordered\+Elements\+Are()} matcher in such cases\+:
 
@@ -1065,7 +1065,7 @@ using ::testing::Gt;
 \end{DoxyCode}
 
 
-The above matcher says that the container must have 4 elements, which must be 1, greater than 0, anything, and 5 respectively.
+The above matcher says that the container_ must have 4 elements, which must be 1, greater than 0, anything, and 5 respectively.
 
 If you instead write\+:
 
@@ -1083,7 +1083,7 @@ using ::testing::UnorderedElementsAre;
 \end{DoxyCode}
 
 
-It means that the container must have 4 elements, which under some permutation must be 1, greater than 0, anything, and 5 respectively.
+It means that the container_ must have 4 elements, which under some permutation must be 1, greater than 0, anything, and 5 respectively.
 
 {\ttfamily Elements\+Are()} and {\ttfamily Unordered\+Elements\+Are()} are overloaded to take 0 to 10 arguments. If more are needed, you can place them in a C-\/style array and use {\ttfamily Elements\+Are\+Array()} or {\ttfamily Unordered\+Elements\+Are\+Array()} instead\+:
 
@@ -1108,9 +1108,9 @@ In case the array needs to be dynamically created (and therefore the array size 
 \begin{DoxyCode}
 using ::testing::ElementsAreArray;
 ...
-  \textcolor{keywordtype}{int}* \textcolor{keyword}{const} expected\_vector3 = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[count];
+  \textcolor{keywordtype}{int}* \textcolor{keyword}{const} expected\_vector3 = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[count_];
   ... fill expected\_vector3 with values ...
-  EXPECT\_CALL(mock, Foo(ElementsAreArray(expected\_vector3, count)));
+  EXPECT\_CALL(mock, Foo(ElementsAreArray(expected\_vector3, count_)));
 \end{DoxyCode}
 
 
@@ -1118,9 +1118,9 @@ using ::testing::ElementsAreArray;
 
 
 \begin{DoxyItemize}
-\item {\ttfamily Elements\+Are$\ast$()} can be used to match {\itshape any} container that implements the S\+TL iterator pattern (i.\+e. it has a {\ttfamily const\+\_\+iterator} type and supports {\ttfamily begin()/end()}), not just the ones defined in S\+TL. It will even work with container types yet to be written -\/ as long as they follows the above pattern.
+\item {\ttfamily Elements\+Are$\ast$()} can be used to match {\itshape any} container_ that implements the S\+TL iterator pattern (i.\+e. it has a {\ttfamily const\+\_\+iterator} type and supports {\ttfamily begin()/end()}), not just the ones defined in S\+TL. It will even work with container_ types yet to be written -\/ as long as they follows the above pattern.
 \item You can use nested {\ttfamily Elements\+Are$\ast$()} to match nested (multi-\/dimensional) containers.
-\item If the container is passed by pointer instead of by reference, just write {\ttfamily Pointee(Elements\+Are$\ast$(...))}.
+\item If the container_ is passed by pointer instead of by reference, just write {\ttfamily Pointee(Elements\+Are$\ast$(...))}.
 \item The order of elements {\itshape matters} for {\ttfamily Elements\+Are$\ast$()}. Therefore don\textquotesingle{}t use it with containers whose element order is undefined (e.\+g. {\ttfamily hash\+\_\+map}).
 \end{DoxyItemize}
 
@@ -2508,7 +2508,7 @@ foo\_test.cc:14: Mock function call matches EXPECT\_CALL(mock, F(\_, \_))...
 foo\_test.cc:15: Mock function call matches EXPECT\_CALL(mock, F("a", "b"))...
     Function call: F(@0x7fff7c8dada0"a", @0x7fff7c8dad70"b")
 foo\_test.cc:16: Failure
-Actual function call count doesn't match EXPECT\_CALL(mock, F("c", HasSubstr("d")))...
+Actual function call count_ doesn't match EXPECT\_CALL(mock, F("c", HasSubstr("d")))...
          Expected: to be called once
            Actual: never called - unsatisfied and active
 [  FAILED  ] Foo.Bar

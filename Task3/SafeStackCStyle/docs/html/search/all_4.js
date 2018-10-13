@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ok',['OK',['../classSafeStack.html#a3a6ee072918bd0a2c09fa0ea12c1ab64a93f2888c3bca456c946b0ccab748c528',1,'SafeStack']]]
+  ['pop',['pop',['../classSafeStack.html#a7add18e30f467b9b08233feeed6544df',1,'SafeStack']]],
+  ['push',['push',['../classSafeStack.html#a4ecd17feae41fe142535f281a80a6a6c',1,'SafeStack']]]
 ];

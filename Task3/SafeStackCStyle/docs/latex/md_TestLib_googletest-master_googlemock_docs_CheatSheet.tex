@@ -8,7 +8,7 @@ Given
   \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} GetSize() \textcolor{keyword}{const} = 0;
   \textcolor{keyword}{virtual} \textcolor{keywordtype}{string} Describe(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name) = 0;
   \textcolor{keyword}{virtual} \textcolor{keywordtype}{string} Describe(\textcolor{keywordtype}{int} type) = 0;
-  \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} Process(Bar elem, \textcolor{keywordtype}{int} count) = 0;
+  \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} Process(Bar elem, \textcolor{keywordtype}{int} count_) = 0;
 \};
 \end{DoxyCode}
  (note that {\ttfamily $\sim$\+Foo()} {\bfseries must} be virtual) we can define its mock as 
@@ -19,7 +19,7 @@ Given
   MOCK\_CONST\_METHOD0(GetSize, \textcolor{keywordtype}{int}());
   MOCK\_METHOD1(Describe, \textcolor{keywordtype}{string}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name));
   MOCK\_METHOD1(Describe, \textcolor{keywordtype}{string}(\textcolor{keywordtype}{int} type));
-  MOCK\_METHOD2(Process, \textcolor{keywordtype}{bool}(Bar elem, \textcolor{keywordtype}{int} count));
+  MOCK\_METHOD2(Process, \textcolor{keywordtype}{bool}(Bar elem, \textcolor{keywordtype}{int} count_));
 \};
 \end{DoxyCode}
 
@@ -283,7 +283,7 @@ The {\ttfamily argument} can be either a C string or a C++ string object\+:
 
 \subsection*{Container Matchers}
 
-Most S\+T\+L-\/style containers support {\ttfamily ==}, so you can use {\ttfamily Eq(expected\+\_\+container)} or simply {\ttfamily expected\+\_\+container} to match a container exactly. If you want to write the elements in-\/line, match them more flexibly, or get more informative messages, you can use\+:
+Most S\+T\+L-\/style containers support {\ttfamily ==}, so you can use {\ttfamily Eq(expected\+\_\+container_)} or simply {\ttfamily expected\+\_\+container_} to match a container_ exactly. If you want to write the elements in-\/line, match them more flexibly, or get more informative messages, you can use\+:
 
 \tabulinesep=1mm
 \begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
@@ -295,17 +295,17 @@ Most S\+T\+L-\/style containers support {\ttfamily ==}, so you can use {\ttfamil
 \hline
 \rowcolor{\tableheadbgcolor}\textbf{ Matcher }&\textbf{ Description  }\\\cline{1-2}
 \endhead
-{\ttfamily Container\+Eq(container)} &The same as {\ttfamily Eq(container)} except that the failure message also includes which elements are in one container but not the other. \\\cline{1-2}
+{\ttfamily Container\+Eq(container_)} &The same as {\ttfamily Eq(container_)} except that the failure message also includes which elements are in one container_ but not the other. \\\cline{1-2}
 {\ttfamily Contains(e)} &{\ttfamily argument} contains an element that matches {\ttfamily e}, which can be either a value or a matcher. \\\cline{1-2}
-{\ttfamily Each(e)} &{\ttfamily argument} is a container where {\itshape every} element matches {\ttfamily e}, which can be either a value or a matcher. \\\cline{1-2}
+{\ttfamily Each(e)} &{\ttfamily argument} is a container_ where {\itshape every} element matches {\ttfamily e}, which can be either a value or a matcher. \\\cline{1-2}
 {\ttfamily Elements\+Are(e0, e1, ..., en)} &{\ttfamily argument} has {\ttfamily n + 1} elements, where the i-\/th element matches {\ttfamily ei}, which can be a value or a matcher. 0 to 10 arguments are allowed. \\\cline{1-2}
-{\ttfamily Elements\+Are\+Array(\{ e0, e1, ..., en \})}, {\ttfamily Elements\+Are\+Array(array)}, or {\ttfamily Elements\+Are\+Array(array, count)} &The same as {\ttfamily Elements\+Are()} except that the expected element values/matchers come from an initializer list, S\+T\+L-\/style container, or C-\/style array. \\\cline{1-2}
-{\ttfamily Is\+Empty()} &{\ttfamily argument} is an empty container ({\ttfamily container.\+empty()}). \\\cline{1-2}
-{\ttfamily Pointwise(m, container)} &{\ttfamily argument} contains the same number of elements as in {\ttfamily container}, and for all i, (the i-\/th element in {\ttfamily argument}, the i-\/th element in {\ttfamily container}) match {\ttfamily m}, which is a matcher on 2-\/tuples. E.\+g. {\ttfamily Pointwise(\+Le(), upper\+\_\+bounds)} verifies that each element in {\ttfamily argument} doesn\textquotesingle{}t exceed the corresponding element in {\ttfamily upper\+\_\+bounds}. See more detail below. \\\cline{1-2}
-{\ttfamily Size\+Is(m)} &{\ttfamily argument} is a container whose size matches {\ttfamily m}. E.\+g. {\ttfamily Size\+Is(2)} or {\ttfamily Size\+Is(\+Lt(2))}. \\\cline{1-2}
+{\ttfamily Elements\+Are\+Array(\{ e0, e1, ..., en \})}, {\ttfamily Elements\+Are\+Array(array)}, or {\ttfamily Elements\+Are\+Array(array, count_)} &The same as {\ttfamily Elements\+Are()} except that the expected element values/matchers come from an initializer list, S\+T\+L-\/style container_, or C-\/style array. \\\cline{1-2}
+{\ttfamily Is\+Empty()} &{\ttfamily argument} is an empty container_ ({\ttfamily container_.\+empty()}). \\\cline{1-2}
+{\ttfamily Pointwise(m, container_)} &{\ttfamily argument} contains the same number of elements as in {\ttfamily container_}, and for all i, (the i-\/th element in {\ttfamily argument}, the i-\/th element in {\ttfamily container_}) match {\ttfamily m}, which is a matcher on 2-\/tuples. E.\+g. {\ttfamily Pointwise(\+Le(), upper\+\_\+bounds)} verifies that each element in {\ttfamily argument} doesn\textquotesingle{}t exceed the corresponding element in {\ttfamily upper\+\_\+bounds}. See more detail below. \\\cline{1-2}
+{\ttfamily Size\+Is(m)} &{\ttfamily argument} is a container_ whose size matches {\ttfamily m}. E.\+g. {\ttfamily Size\+Is(2)} or {\ttfamily Size\+Is(\+Lt(2))}. \\\cline{1-2}
 {\ttfamily Unordered\+Elements\+Are(e0, e1, ..., en)} &{\ttfamily argument} has {\ttfamily n + 1} elements, and under some permutation each element matches an {\ttfamily ei} (for a different {\ttfamily i}), which can be a value or a matcher. 0 to 10 arguments are allowed. \\\cline{1-2}
-{\ttfamily Unordered\+Elements\+Are\+Array(\{ e0, e1, ..., en \})}, {\ttfamily Unordered\+Elements\+Are\+Array(array)}, or {\ttfamily Unordered\+Elements\+Are\+Array(array, count)} &The same as {\ttfamily Unordered\+Elements\+Are()} except that the expected element values/matchers come from an initializer list, S\+T\+L-\/style container, or C-\/style array. \\\cline{1-2}
-{\ttfamily When\+Sorted(m)} &When {\ttfamily argument} is sorted using the {\ttfamily $<$} operator, it matches container matcher {\ttfamily m}. E.\+g. {\ttfamily When\+Sorted(\+Elements\+Are(1, 2, 3))} verifies that {\ttfamily argument} contains elements {\ttfamily 1}, {\ttfamily 2}, and {\ttfamily 3}, ignoring order. \\\cline{1-2}
+{\ttfamily Unordered\+Elements\+Are\+Array(\{ e0, e1, ..., en \})}, {\ttfamily Unordered\+Elements\+Are\+Array(array)}, or {\ttfamily Unordered\+Elements\+Are\+Array(array, count_)} &The same as {\ttfamily Unordered\+Elements\+Are()} except that the expected element values/matchers come from an initializer list, S\+T\+L-\/style container_, or C-\/style array. \\\cline{1-2}
+{\ttfamily When\+Sorted(m)} &When {\ttfamily argument} is sorted using the {\ttfamily $<$} operator, it matches container_ matcher {\ttfamily m}. E.\+g. {\ttfamily When\+Sorted(\+Elements\+Are(1, 2, 3))} verifies that {\ttfamily argument} contains elements {\ttfamily 1}, {\ttfamily 2}, and {\ttfamily 3}, ignoring order. \\\cline{1-2}
 {\ttfamily When\+Sorted\+By(comparator, m)} &The same as {\ttfamily When\+Sorted(m)}, except that the given comparator instead of {\ttfamily $<$} is used to sort {\ttfamily argument}. E.\+g. {\ttfamily When\+Sorted\+By(std\+::greater$<$int$>$(), Elements\+Are(3, 2, 1))}. \\\cline{1-2}
 \end{longtabu}
 Notes\+:
@@ -317,10 +317,10 @@ Notes\+:
 \item a native array passed by reference (e.\+g. in {\ttfamily Foo(const int (\&a)\mbox{[}5\mbox{]})}), and
 \end{DoxyEnumerate}
 \begin{DoxyEnumerate}
-\item an array passed as a pointer and a count (e.\+g. in {\ttfamily Bar(const T$\ast$ buffer, int len)} -- see \href{#multiargument-matchers}{\tt Multi-\/argument Matchers}).
+\item an array passed as a pointer and a count_ (e.\+g. in {\ttfamily Bar(const T$\ast$ buffer, int len)} -- see \href{#multiargument-matchers}{\tt Multi-\/argument Matchers}).
 \end{DoxyEnumerate}
 \item The array being matched may be multi-\/dimensional (i.\+e. its elements can be arrays).
-\item {\ttfamily m} in {\ttfamily Pointwise(m, ...)} should be a matcher for {\ttfamily \+::testing\+::tuple$<$T, U$>$} where {\ttfamily T} and {\ttfamily U} are the element type of the actual container and the expected container, respectively. For example, to compare two {\ttfamily Foo} containers where {\ttfamily Foo} doesn\textquotesingle{}t support {\ttfamily operator==} but has an {\ttfamily Equals()} method, one might write\+:
+\item {\ttfamily m} in {\ttfamily Pointwise(m, ...)} should be a matcher for {\ttfamily \+::testing\+::tuple$<$T, U$>$} where {\ttfamily T} and {\ttfamily U} are the element type of the actual container_ and the expected container_, respectively. For example, to compare two {\ttfamily Foo} containers where {\ttfamily Foo} doesn\textquotesingle{}t support {\ttfamily operator==} but has an {\ttfamily Equals()} method, one might write\+:
 \end{DoxyItemize}
 
 

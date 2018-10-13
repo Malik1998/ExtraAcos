@@ -5,29 +5,34 @@
 #ifndef SAFESTACKCSTYLE_SAFESTACK_H
 #define SAFESTACKCSTYLE_SAFESTACK_H
 
-
-#include <cstdio>
 #include <utility>
 #include <ostream>
 
-#define MAX_SIZE 100
-#define SIMPLE_NUMBER 11
-#define MODULE 1000001
 
 /// SafeStack not look for own memory carefully
 /// \tparam Type - type of elements in stack must have hash() function
 template <typename Type> class SafeStack {
     /// Kanareika Before variables
-    size_t KANAREIKA_STARTING = 0xBEDABEDA;
+    size_t KANAREIKA_STARTING_ = 0xBEDABEDA;
+
+    /// max size of stack container
+    static const size_t MAX_SIZE_ = 100;
+    /// simple number to calculate checksum
+    static const size_t SIMPLE_NUMBER_ = 11;
+    /// module to calculate checksum
+    static const size_t MODULE_ = 10000001;
+
     /// Stack - container
-    Type container[MAX_SIZE];
+    Type container_[MAX_SIZE_];
     /// Real count of elemnts now in stack
-    size_t count = 0;
+    size_t count_ = 0;
     /// Poisn value that can be used in stack
-    Type POISON;
+    Type POISON_;
 
     /// CurrentChecksum
-    size_t checkSum = 0xBEDABEDA;
+    size_t checkSum_ = 0xBEDABEDA;
+    /// Kaanreika after variables
+    size_t KANAREIKA_ENDING_ = 0xBEDABEDA;
 
 public:
     enum ErrorCodes {
@@ -39,9 +44,7 @@ public:
         ErrorPush, //!< Container is full // 5
         ErroKanareika //!< Kanareika is not equal to 0xBEDABEDA // 6
     };
-private:
-    /// Kaanreika after variables
-    size_t KANAREIKA_ENDING = 0xBEDABEDA;
+
 
 
 public:
@@ -62,7 +65,7 @@ public:
     ErrorCodes push(Type element);
     /// CAUTION!!! - Not use it if you are not sure!!!
     /// \return front element  without checking
-    Type getFrontUnsafe();
+    Type getFrontUnsafe() const;
     ///
     /// \return pair where first element - is Front element if exists, else Poison value. second - ErrorCode
     std::pair<Type, ErrorCodes> getFrontSafe();

@@ -63,7 +63,7 @@ internal::ParamGenerator<T> ValuesIn(const T (&array)[N]);
 
 template <class Container>
 internal::ParamGenerator<typename Container::value_type> ValuesIn(
-    const Container& container);
+    const Container& container_);
 
 namespace internal {
 

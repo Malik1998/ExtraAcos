@@ -103,9 +103,9 @@ namespace StringSorter {
     }
 
     void sortMyFile(const char *SrcFileName, const char *DistFileName) {
-        char* text;
+        char* text = nullptr;
         FullFileReader::readFullFile(SrcFileName, &text);
-        size_t * standardIndexes;
+        size_t * standardIndexes = nullptr;
         size_t countOfLines = FullFileReader::changeSlashesToNulles(text, &standardIndexes);
 
         auto *indexes = new size_t[countOfLines + 1];

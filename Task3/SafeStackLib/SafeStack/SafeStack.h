@@ -5,61 +5,29 @@
 #ifndef SAFESTACKCSTYLE_SAFESTACK_H
 #define SAFESTACKCSTYLE_SAFESTACK_H
 
+
+#include <cstdio>
 #include <utility>
 #include <ostream>
 
-#ifdef DEBUG
-#define DUMP \
-         dump(std::cout); \
-
-#else
-#define DUMP
-#endif
-
-#define CHECK_BEFORE_AND_SET_CHECKSUM(block) \
-        auto codeOfIsUnchanged = isUnchanged(); \
-        if (codeOfIsUnchanged != 0) {   \
-         DUMP \
-         return codeOfIsUnchanged; \
-        }   \
-        block  \
-        setCheckSum();  \
-
-#define CHECK_BEFORE_PAIR_AND_SET_CHECKSUM(block) \
-        auto codeOfIsUnchanged = isUnchanged(); \
-        if (codeOfIsUnchanged != 0) {   \
-         DUMP \
-         return std::make_pair(POISON_, codeOfIsUnchanged); \
-        }   \
-        block  \
-        setCheckSum();  \
-
-
+#define MAX_SIZE 100
+#define SIMPLE_NUMBER 11
+#define MODULE 1000001
 
 /// SafeStack not look for own memory carefully
 /// \tparam Type - type of elements in stack must have hash() function
 template <typename Type> class SafeStack {
     /// Kanareika Before variables
-    size_t KANAREIKA_STARTING_ = 0xBEDABEDA;
-
-    /// max size of stack container
-    static const size_t MAX_SIZE_ = 100;
-    /// simple number to calculate checksum
-    static const size_t SIMPLE_NUMBER_ = 11;
-    /// module to calculate checksum
-    static const size_t MODULE_ = 10000001;
-
+    size_t KANAREIKA_STARTING = 0xBEDABEDA;
     /// Stack - container
-    Type container_[MAX_SIZE_];
+    Type container[MAX_SIZE];
     /// Real count of elemnts now in stack
-    size_t count_ = 0;
+    size_t count = 0;
     /// Poisn value that can be used in stack
-    Type POISON_;
+    Type POISON;
 
     /// CurrentChecksum
-    size_t checkSum_ = 0xBEDABEDA;
-    /// Kaanreika after variables
-    size_t KANAREIKA_ENDING_ = 0xBEDABEDA;
+    size_t checkSum = 0xBEDABEDA;
 
 public:
     enum ErrorCodes {
@@ -71,137 +39,48 @@ public:
         ErrorPush, //!< Container is full // 5
         ErroKanareika //!< Kanareika is not equal to 0xBEDABEDA // 6
     };
-
+private:
+    /// Kaanreika after variables
+    size_t KANAREIKA_ENDING = 0xBEDABEDA;
 
 
 public:
     /// Fill container with poison_ value, count checksum
     /// \param poison_ - element that will not be in stack
-    SafeStack(Type poison_) : POISON_(poison_) {
-        std::fill(container_, container_ + MAX_SIZE_, POISON_);
-        setCheckSum();
-    }
+    SafeStack(Type poison_);
     /// Check if checksum not changed
     /// \return ErrorCode
-    ErrorCodes isUnchanged() const {
-        auto codeOfIsValide = isValid();
-        if (codeOfIsValide != 0) {
-            return codeOfIsValide;
-        }
-
-        size_t currentCheckSum = getCheckSum();
-        if (currentCheckSum != checkSum_) {
-            return ErrorCheckSum; // checkSum_ != currentCheckSum
-        }
-
-        return OK; // everything is OK
-    }
+    ErrorCodes isUnchanged() const;
     /// Remove Last element
     /// If it has no last element error returned
     /// \return ErrorCode
-    ErrorCodes pop() {
-        if (count_ == 0) {
-            DUMP
-            return ErrorPop; // Nothing to POP
-        }
-        CHECK_BEFORE_AND_SET_CHECKSUM({count_--; container_[count_] = POISON_;});
-        return OK;
-    }
+    ErrorCodes pop();
     /// Add element to front
     /// If stack is full returns Error
     /// \param element - element to push
     /// \return ErrorCode
-    ErrorCodes push(Type element) {
-        if (count_ == MAX_SIZE_) {
-            DUMP
-            return ErrorPush; // Container is full
-        }
-        CHECK_BEFORE_AND_SET_CHECKSUM(container_[count_] = element; count_++;);
-        return OK;
-    }
+    ErrorCodes push(Type element);
     /// CAUTION!!! - Not use it if you are not sure!!!
     /// \return front element  without checking
-    Type getFrontUnsafe() const {
-        if (count_ >= 1) {
-            return container_[count_ - 1];
-        }
-        // ERROR!!!!
-    }
+    Type getFrontUnsafe();
     ///
     /// \return pair where first element - is Front element if exists, else Poison value. second - ErrorCode
-    std::pair<Type, ErrorCodes> getFrontSafe()     {
-        if (count_ == 0) {
-        return std::make_pair(POISON_, ErrorPop); // Nothing to show
-    }
-    CHECK_BEFORE_PAIR_AND_SET_CHECKSUM()
-
-    return std::make_pair(getFrontUnsafe(), OK);
-}
+    std::pair<Type, ErrorCodes> getFrontSafe();
 
 private:
 #ifdef DEBUG
     /// Show all relevant information of object, IF DEBUG MODE
     /// \param out - stream to write
-    void dump(std::ostream& out) const {
-
-    out << "class SafeStack {" << std::endl;
-    out << "    /// Kanareika Before variables" << std::endl;
-    out << "    size_t KANAREIKA_STARTING_ = " << KANAREIKA_STARTING_ << " --- MUST BE " << 0xBEDABEDA << std::endl;
-    out << "    /// Stack - container_" << std::endl;
-    out << "    "<< typeid(Type).name()  << " container_[MAX_SIZE_] { " << std::endl;
-
-    for(size_t i = 0; i < MAX_SIZE_; i++) {
-        out << "    container_[" << i << "] = " << container_[i];
-        if (i >= count_) {
-            out << " * <---- MUST BE POISON_, " << "We SUPPOSE THAT POISON_ = " << POISON_;
-        }
-        out << std::endl;
-    }
-
-
-    out << "     }" << std::endl;
-    out << "    /// Real count_ of elemnts now in stack" << std::endl;
-    out << "    size_t count_ = " << count_ << std::endl;
-    out << "    /// Poisn value that can be used in stack" << std::endl;
-    out << "    " << typeid(Type).name() << " POISON_ = " << POISON_ << std::endl;
-    out << "    /// CurrentChecksum" << std::endl;
-    out << "    size_t checkSum_ = " << checkSum_ << std::endl;
-    out << "    /// Kaanreika after variables" << std::endl;
-    out << "   size_t KANAREIKA_ENDING_ = " << KANAREIKA_ENDING_ << " --- MUST BE " << 0xBEDABEDA << std::endl;
-    out << "}" << std::endl;
-
-}
+    void dump(std::ostream& out) const;
 #endif
     /// checksum calculation
     /// \return current checksum
-    size_t getCheckSum() const {
-        size_t cacheSum  = 5;
-        std::hash<Type> hashFunc;
-        for (size_t i = 0; i < count_; i++) {
-            cacheSum = ((cacheSum * SIMPLE_NUMBER_) + hashFunc(container_[i])) % MODULE_;
-        }
-        return cacheSum;
-    }
+    size_t getCheckSum() const;
     /// Calculate and set new checksum
-    void setCheckSum() {
-        checkSum_ = getCheckSum();
-    }
+    void setCheckSum();
     /// Check if kanareika is not changed, array not changed, etc.
     /// \return ErrorCode
-    ErrorCodes isValid() const {
-        if (count_ < 0 || count_ >= MAX_SIZE_) {
-            return ErrorCountSize; // error in size of count_
-        }
-        if (KANAREIKA_STARTING_ != KANAREIKA_ENDING_ || KANAREIKA_ENDING_ != 0xBEDABEDA) {
-            return ErroKanareika; // Error with Kanareika
-        }
-        for (size_t i = count_; i < MAX_SIZE_; i++) {
-            if (container_[i] != POISON_) {
-                return ErrorPoison; // POISON_ VALUE NOT IN ARRAY
-            }
-        }
-        return OK; // everything is OK
-    }
+    ErrorCodes isValid() const;
 
 };
 

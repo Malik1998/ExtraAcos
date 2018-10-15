@@ -59,15 +59,16 @@ namespace StringSorter {
     }
 
     void sortMyFile(const char *SrcFileName, const char *DistFileName) {
-        char* text;
+        char* text = nullptr;
         FullFileReader::readFullFile(SrcFileName, &text);
-        char ** standartIndexes;
+
+        char ** standartIndexes = nullptr;
         size_t countOfLines = FullFileReader::changeSlashesToNulles(text, &standartIndexes);
 
         char **indexes = new char*[countOfLines + 1];
         std::copy(standartIndexes, standartIndexes + countOfLines, indexes);
 
-        std::sort(indexes, indexes + countOfLines, [&text] (char *a, char *b) {
+        std::sort(indexes, indexes + countOfLines, [] (char *a, char *b) {
             return comparator(a, b, 0, 0, 1, 1, (strlen(a) == 0) ? 0 : strlen(a) - 1,
                               (strlen(b) == 0) ? 0 : strlen(b) - 1);
         });
@@ -75,7 +76,7 @@ namespace StringSorter {
         FullFileReader::outputInFile(indexes, DistFileName, countOfLines, O_CREAT | O_WRONLY | O_TRUNC);
 
 
-        std::sort(indexes, indexes + countOfLines, [&text] (char *a, char *b) {
+        std::sort(indexes, indexes + countOfLines, [] (char *a, char *b) {
             return comparator(a, b, (strlen(a) == 0) ? 0 : strlen(a) - 1,
                               (strlen(b) == 0) ? 0 : strlen(b) - 1,
                               -1, -1, 0, 0);

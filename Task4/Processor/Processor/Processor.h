@@ -6,19 +6,22 @@
 #define PROCESSOR_PROCESSOR_H
 
 #include "../../../Task3/SafeStackCStyle/SafeStack/SafeStack.cpp"
+#include "CommandService/CommandService.h"
+
+#define SIZE_OF_STACK 100
 
 class Processor {
     SafeStack<int> stack;
-    enum Command {
-        push,
-        pop,
-        add,
-        sub,
-        multiply,
-        div,
-        in,
-        out,
-        end
+    char* programm;
+    size_t sizeOfProgram;
+    std::istream& cin;
+    std::ostream& cout;
+
+public:
+    enum TypeOfProgram {
+        BYTECODE,
+        DECODED_COMMANDS,
+        WORD_COMMANDS
     };
 
     enum AnswerFromServe {
@@ -28,8 +31,11 @@ class Processor {
         END
     };
 
-    AnswerFromServe serveCommand(Command command, int number);
+   // ProcessorTest(std::istream& in, TypeOfProgram typeOfProgram);
+    Processor(char* filename, TypeOfProgram typeOfProgram, std::istream& in = std::cin, std::ostream& out = std::cout);
+    void execute();
 
+    int getNumber(char *string);
 };
 
 

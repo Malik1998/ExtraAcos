@@ -12,7 +12,7 @@
 #include <cstring>
 
 namespace FullFileReader {
-    void readFullFile(const char *FileName, char ** text) {
+    size_t readFullFile(const char *FileName, char ** text) {
         int fileDescriptor = open(FileName, O_RDONLY);
         struct stat st;
         fstat(fileDescriptor, &st);
@@ -20,6 +20,7 @@ namespace FullFileReader {
         (*text) = new char[fullTextSize + 1]; // Maybe - maybe
         read(fileDescriptor, *text, fullTextSize);
         close(fileDescriptor);
+        return fullTextSize;
     }
 
     size_t changeSlashesToNulles(char *text, size_t ** indexes) {

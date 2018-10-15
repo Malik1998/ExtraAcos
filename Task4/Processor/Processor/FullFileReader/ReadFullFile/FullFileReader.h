@@ -4,13 +4,14 @@
 
 #ifndef STRINGSORTING_FULLFILEREADER_H
 #define STRINGSORTING_FULLFILEREADER_H
+#include <cstdio>
 
 /// Change full file into variable and manupulate with it
 namespace FullFileReader {
     /// read file to text pointer
     /// \param FileName - name of the file to be read
     /// \param text - variable, that will point to text
-    void readFullFile(const char *FileName, char ** text);
+    size_t readFullFile(const char *FileName, char ** text);
 
     /// change \n to \0
     /// \param text - variable pointing to text, where \n to be changed

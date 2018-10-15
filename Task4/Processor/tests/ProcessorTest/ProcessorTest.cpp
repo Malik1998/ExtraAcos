@@ -4,31 +4,27 @@
 
 #include "ProcessorTest.h"
 #include "gtest/gtest.h"
-#include "../../SafeStack/SafeStack.h"
-#include "../../SafeStack/SafeStack.cpp"
+#include "../../Processor/Processor.h"
+#include "iostream"
 
-
-TEST(SafeStackTest, FULL_NESS) {
-    auto Stack = SafeStack<size_t >(-1);
-    for (size_t i = 0; i < 10000000; i++) {
-        auto error_code = Stack.push(i);
-        if (error_code != SafeStack<size_t >::OK) {
-            ASSERT_EQ(SafeStack<size_t >::ErrorPush, error_code);
-            break;
-        }
-    }
+TEST(ProcessorTest, SimpleTestOfAllComponentsWorkingAddPopPushInOut) {
+    std::stringstream in((char *)"5");
+    std::stringstream out;
+    Processor processor = Processor("CommandCode.txt", Processor::WORD_COMMANDS, in, out);
+    processor.execute();
+    int number = -3;
+    out >> number;
+    ASSERT_EQ(number, 112005);
 }
 
-TEST(SafeStackTest, CHANGE_FIRST_BYTES) {
-    auto Stack = SafeStack<size_t >(-1);
-    ((int *)(&Stack))[0] = 0;
-    for (size_t i = 0; i < 10000000; i++) {
-        auto error_code = Stack.push(i);
-        if (error_code != SafeStack<size_t >::OK) {
-            ASSERT_EQ(SafeStack<size_t >::ErroKanareika, error_code);
-            break;
-        }
-    }
+TEST(ProcessorTest, CHANGE_FIRST_BYTES) {
+    std::stringstream in((char *)"8");
+    std::stringstream out;
+    Processor processor = Processor("CommandCode.txt", Processor::WORD_COMMANDS, in, out);
+    processor.execute();
+    int number = -3;
+    out >> number;
+    ASSERT_EQ(number, 112008);
 }
 
 int main(int argc, char** argv) {

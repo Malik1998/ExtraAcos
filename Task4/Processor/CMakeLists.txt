@@ -3,16 +3,33 @@ project(Processor)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Processor main.cpp Processor/Processor.cpp Processor/Processor.h Processor/WordToCodeConverter/WordToCodeConverter.cpp Processor/WordToCodeConverter/WordToCodeConverter.h)
+include_directories(FullFileReader/ReadFullFile)
+
+#add_executable(FullFileReader ../../../Task2/StringSortingCStyle/FullFileReader/FullFileReader.cpp ../../../Task2/StringSortingCStyle/FullFileReader/FullFileReader.h)
+
+add_executable(Processor main.cpp Processor/Processor.cpp Processor/Processor.h
+        Processor/Converter/WordToCodeConverter/WordToCodeConverter.cpp Processor/Converter/WordToCodeConverter/WordToCodeConverter.h
+        Processor/CommandService/CommandService.cpp Processor/CommandService/CommandService.h
+        Processor/Converter/CodeToWordConverter/CodeToWordConverter.cpp Processor/Converter/CodeToWordConverter/CodeToWordConverter.h
+        Processor/FullFileReader/ReadFullFile/FullFileReader.cpp Processor/FullFileReader/ReadFullFile/FullFileReader.h
+        Processor/Converter/CodeToByteConverter/CodeToByteConverter.cpp Processor/Converter/CodeToByteConverter/CodeToByteConverter.h Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.cpp Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.h)
+
+
+include_directories(
+        External Libs/googletest-master/googletest/googlemock/gtest
+)
+
+add_executable(ProcessorTest tests/ProcessorTest/ProcessorTest.cpp tests/ProcessorTest/ProcessorTest.h
+        Processor/Processor.cpp Processor/Processor.h
+        Processor/Converter/WordToCodeConverter/WordToCodeConverter.cpp Processor/Converter/WordToCodeConverter/WordToCodeConverter.h
+        Processor/CommandService/CommandService.cpp Processor/CommandService/CommandService.h
+        Processor/Converter/CodeToWordConverter/CodeToWordConverter.cpp Processor/Converter/CodeToWordConverter/CodeToWordConverter.h
+        Processor/FullFileReader/ReadFullFile/FullFileReader.cpp Processor/FullFileReader/ReadFullFile/FullFileReader.h
+        Processor/Converter/CodeToByteConverter/CodeToByteConverter.cpp Processor/Converter/CodeToByteConverter/CodeToByteConverter.h
+        Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.cpp Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.h)
 
 #
-#include_directories(
-#        External Libs/googletest-master/googletest/googlemock/gtest
-#)
-##add_compile_definitions(DEBUG)
-#add_executable(SafeStackTest Tests/SafeStackTester/SafeStackTest.cpp Tests/SafeStackTester/SafeStackTest.h SafeStack/SafeStack.cpp SafeStack/SafeStack.h)
-#
-#target_link_libraries(
-#        SafeStackTest gtest gtest_main pthread)
-#
-#enable_testing()
+target_link_libraries(
+        ProcessorTest gtest gtest_main pthread)
+
+enable_testing()

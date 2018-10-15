@@ -6,8 +6,16 @@
 #define PROCESSOR_BYTETOCODECONVERTER_H
 
 
-class ByteToCodeConverter {
+namespace ByteToCodeConverter {
+    enum ErrorCode {
+        FAIL,
+        OK
+    };
 
+    static const char* filename = "Byte.code";
+
+
+    ErrorCode convert(char* program, char* filename_ = const_cast<char *>("Byte.code"));
 };
 
 

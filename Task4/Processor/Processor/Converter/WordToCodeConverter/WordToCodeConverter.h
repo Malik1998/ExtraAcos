@@ -7,17 +7,18 @@
 
 
 #include <fstream>
-#include "../CommandService/CommandService.h"
+#include "../../CommandService/CommandService.h"
 
-class WordToCodeConverter {
+namespace WordToCodeConverter {
 
     enum ErrorCode {
         FAIL,
         OK
     };
 
-public:
-    ErrorCode convert(char* program, char* filename = (char *)"CodeProgram.code");
+    static const char* filename = "CodeProgram.code";
+
+    ErrorCode convert(char* program, char* filename_ = const_cast<char *>("CodeProgram.code"));
 
 };
 

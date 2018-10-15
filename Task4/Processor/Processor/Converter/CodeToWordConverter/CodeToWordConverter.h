@@ -6,7 +6,13 @@
 #define PROCESSOR_CODETOWORDCONVERTER_H
 
 
-class CodeToWordConverter {
+namespace CodeToWordConverter {
+    enum ErrorCode {
+        FAIL,
+        OK
+    };
+
+    ErrorCode convert(char* program, char* filename = (char *)"WordProgram.code");
 
 };
 

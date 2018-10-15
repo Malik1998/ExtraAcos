@@ -5,7 +5,8 @@
 #ifndef PROCESSOR_PROCESSOR_H
 #define PROCESSOR_PROCESSOR_H
 
-#include "../../../Task3/SafeStackCStyle/SafeStack/SafeStack.cpp"
+#include <iostream>
+#include "SafeStack/SafeStack.h"
 #include "CommandService/CommandService.h"
 
 #define SIZE_OF_STACK 100

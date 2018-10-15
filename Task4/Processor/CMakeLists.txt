@@ -8,6 +8,7 @@ include_directories(FullFileReader/ReadFullFile)
 #add_executable(FullFileReader ../../../Task2/StringSortingCStyle/FullFileReader/FullFileReader.cpp ../../../Task2/StringSortingCStyle/FullFileReader/FullFileReader.h)
 
 add_executable(Processor main.cpp Processor/Processor.cpp Processor/Processor.h
+        Processor/SafeStack/SafeStack.h
         Processor/Converter/WordToCodeConverter/WordToCodeConverter.cpp Processor/Converter/WordToCodeConverter/WordToCodeConverter.h
         Processor/CommandService/CommandService.cpp Processor/CommandService/CommandService.h
         Processor/Converter/CodeToWordConverter/CodeToWordConverter.cpp Processor/Converter/CodeToWordConverter/CodeToWordConverter.h
@@ -16,8 +17,10 @@ add_executable(Processor main.cpp Processor/Processor.cpp Processor/Processor.h
 
 
 include_directories(
+
         External Libs/googletest-master/googletest/googlemock/gtest
 )
+
 
 add_executable(ProcessorTest tests/ProcessorTest/ProcessorTest.cpp tests/ProcessorTest/ProcessorTest.h
         Processor/Processor.cpp Processor/Processor.h

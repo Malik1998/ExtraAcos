@@ -10,16 +10,15 @@
 
 namespace ByteToCodeConverter {
 
-    ErrorCode convert(char *program, char *filename) {
+    ErrorCode convert(char *program, char *filename, size_t length) {
 
         std::ofstream myfile;
-        myfile.open(filename, std::ios::binary | std::ios::out);
+        myfile.open(filename);
         size_t currentPosition = 0;
-        while (currentPosition != std::strlen(program)) {
+        while (currentPosition < length) {
             auto command = std::make_pair(CommandService::Command::no_such_command, 0);
-            command = CommandService::extractCommandCode(program + currentPosition);
-            char encodedCommand = static_cast<char>(command.first);
-            myfile.write(&encodedCommand, sizeof(encodedCommand));
+            command = CommandService::extractCommandByte(program + currentPosition);
+            myfile << command.first;
             if (command.first == CommandService::Command::end ||
                 command.first == CommandService::Command::no_such_command) {
                 if (command.first == CommandService::Command::end) {
@@ -36,17 +35,22 @@ namespace ByteToCodeConverter {
 
 
             if (command.first == CommandService::Command::push) {
-                int tempPosition = 0;
-                int number = -1;
-                if (sscanf(program + currentPosition, "%d%n", &number, &tempPosition)) {
-                    currentPosition += tempPosition;
-                    myfile.write(reinterpret_cast<const char *>(&number), sizeof(number));
+
+                if (currentPosition + 4 < length) {
+                    int number = int((unsigned char)(program[currentPosition]) |
+                                     (unsigned char)(program[currentPosition + 1]) << 8 |
+                                     (unsigned char)(program[currentPosition + 2]) << 16 |
+                                     (unsigned char)(program[currentPosition + 3]) << 24);
+                    currentPosition += 4;
+                    myfile << " " << number;
                 } else {
                     myfile << "---- Nothing to push --------";
                     myfile.close();
                     return FAIL;
                 }
             }
+
+            myfile << std::endl;
 
 
         }

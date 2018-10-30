@@ -13,7 +13,9 @@ TEST(SafeStackTest, FULL_NESS) {
     for (size_t i = 0; i < 10000000; i++) {
         auto error_code = Stack.push(i);
         if (error_code != SafeStack<size_t >::OK) {
+#ifdef DEBUG
             ASSERT_EQ(SafeStack<size_t >::ErrorPush, error_code);
+#endif
             break;
         }
     }
@@ -25,7 +27,9 @@ TEST(SafeStackTest, CHANGE_FIRST_BYTES) {
     for (size_t i = 0; i < 10000000; i++) {
         auto error_code = Stack.push(i);
         if (error_code != SafeStack<size_t >::OK) {
+#ifdef DEBUG
             ASSERT_EQ(SafeStack<size_t >::ErroKanareika, error_code);
+#endif
             break;
         }
     }

@@ -6,6 +6,8 @@
 #define PROCESSOR_CODETOBYTECONVERTER_H
 
 
+#include <map>
+
 namespace CodeToByteConverter {
     enum ErrorCode {
         FAIL,
@@ -15,6 +17,7 @@ namespace CodeToByteConverter {
     static const char* filename = "Byte.code";
 
 
+    std::map<int, int>  getLabels(char* program);
     ErrorCode convert(char* program, char* filename_ = const_cast<char *>("Byte.code"));
 };
 

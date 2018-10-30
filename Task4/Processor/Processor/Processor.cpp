@@ -8,17 +8,6 @@
 #include "Converter/WordToCodeConverter/WordToCodeConverter.h"
 #include "Converter/CodeToByteConverter/CodeToByteConverter.h"
 
-//#ifdef DEBUG
-//
-//#define READ_NUMBER std::cin>>number;
-//
-//#else
-//
-//#define READ_NUMBER  std::cin>>number;
-////scanf("%d", &number);
-//
-//#endif
-
 using namespace CommandService;
 Processor::Processor(char *filename, Processor::TypeOfProgram typeOfProgram,
         std::istream& in, std::ostream& out) : stack(-1),
@@ -46,10 +35,6 @@ Processor::Processor(char *filename, Processor::TypeOfProgram typeOfProgram,
         }
     }
 
-//    for(int i = 0; i < sizeOfProgram; i++) {
-//        std::cout << std::oct << int(programm[i]) << "\n";
-//    }
-
 }
 
 void Processor::execute() {
@@ -65,13 +50,81 @@ void Processor::execute() {
 
         switch (command.first) {
             case CommandService::Command::push : {
-                int number = getNumber(programm + i);
-                i += 4;
-                stack.push(number);
-                break;
+                auto typeOfMemory = CommandService::getTypeOfMemory(programm + i);
+                i += typeOfMemory.second;
+
+                switch (typeOfMemory.first) {
+                    case RAM: {
+                        int number = getNumber(programm + i);
+                        i += 5;
+                        stack.push(ram[number]);
+                        break;
+                    }
+                    case STACK: {
+                        int number = getNumber(programm + i);
+                        i += 4;
+                        stack.push(number);
+                        break;
+                    }
+                    default: {
+                        switch (typeOfMemory.first) {
+                            case RAX: {
+                                stack.push(rax);
+                                break;
+                            }
+                            case RBX: {
+                                stack.push(rbx);
+                                break;
+                            }
+                            case RCX: {
+                                stack.push(rcx);
+                                break;
+                            }
+                            case RDX: {
+                                stack.push(rdx);
+                                break;
+                            }
+                        }
+                    }
+                }
             }
             case CommandService::Command::pop : {
+                int a = stack.getFrontSafe().first;
                 stack.pop();
+                auto typeOfMemory = CommandService::getTypeOfMemory(programm + i);
+                i += typeOfMemory.second;
+                switch (typeOfMemory.first) {
+                    case RAM: {
+                        int number = getNumber(programm + i);
+                        i += 5;
+                        ram[number] = a;
+                        break;
+                    }
+                    case STACK: {
+                        // DEPRECATED
+                        break;
+                    }
+                    default: {
+                        switch (typeOfMemory.first) {
+                            case RAX: {
+                                rax = a;
+                                break;
+                            }
+                            case RBX: {
+                                rbx = a;
+                                break;
+                            }
+                            case RCX: {
+                                rcx = a;
+                                break;
+                            }
+                            case RDX: {
+                                rdx = a;
+                                break;
+                            }
+                        }
+                    }
+                }
                 break;
             }
             case CommandService::Command::sub : {
@@ -125,17 +178,62 @@ void Processor::execute() {
                 } while(errorCode == SafeStack<int>::ErrorCodes::OK);
                 break;
             }
+            case CommandService::jmp : {
+                auto number = static_cast<size_t>(getNumber(programm));
+                i = number;
+                break;
+            }
+            case CommandService::ja : {
+                conditionalJump(&i, CommandService::ja);
+                break;
+            }
+            case CommandService::je : {
+                conditionalJump(&i, CommandService::je);
+                break;
+            }
         }
 
     }
 
 }
 
+
+
 int Processor::getNumber(char *string) {
     return int((unsigned char)(string[0]) |
                 (unsigned char)(string[1]) << 8 |
                 (unsigned char)(string[2]) << 16 |
                 (unsigned char)(string[3]) << 24);
+}
+
+void Processor::conditionalJump(size_t *i, CommandService::Command command) {
+    auto number = static_cast<size_t>(getNumber(programm));
+    int fir = stack.getFrontSafe().first;
+    stack.pop();
+    int sec = stack.getFrontSafe().first;
+    stack.push(fir);
+
+    bool toJump  = false;
+
+    switch (command) {
+        case ja: {
+            if (fir > sec) {
+                toJump = true;
+            }
+        }
+        case je: {
+            if (fir == sec) {
+                toJump = true;
+            }
+            break;
+        }
+    }
+
+    if (toJump) {
+        (*i) = number;
+    } else {
+        (*i) += 4;
+    }
 }
 
 

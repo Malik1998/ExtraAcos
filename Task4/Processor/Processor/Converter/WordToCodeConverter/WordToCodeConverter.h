@@ -8,6 +8,7 @@
 
 #include <fstream>
 #include "../../CommandService/CommandService.h"
+#include <map>
 
 namespace WordToCodeConverter {
 
@@ -18,6 +19,7 @@ namespace WordToCodeConverter {
 
     static const char* filename = "CodeProgram.code";
 
+    std::map<std::string, int>  getLabels(char* program);
     ErrorCode convert(char* program, char* filename_ = const_cast<char *>("CodeProgram.code"));
 
 };

@@ -13,7 +13,7 @@
 
 namespace CommandService {
 
-    static const size_t number_of_commands = 10;
+    static const size_t number_of_commands = 17;
 
     enum Command {
         push = 0,
@@ -25,7 +25,23 @@ namespace CommandService {
         in = 6,
         out = 7,
         end = 8,
-        no_such_command = 9
+        jmp = 9,
+        ja = 10,
+        je = 11,
+        label = 12,
+        sqrt = 13,
+        ret = 14,
+        call = 15,
+        no_such_command = 16
+    };
+
+    enum TypeOfMemory {
+        RAM,
+        STACK,
+        RAX,
+        RBX,
+        RCX,
+        RDX
     };
 
     static const char* commands[number_of_commands] = {
@@ -38,12 +54,21 @@ namespace CommandService {
             "in",
             "out",
             "end",
+            "jmp",
+            "ja",
+            "je",
+            "label",
+            "sqrt",
+            "ret",
+            "call",
             "no_such_command"
     };
 
     std::pair<Command, int> extractCommandWord(char *in);
     std::pair<Command, int> extractCommandCode(char *in);
     std::pair<Command, int> extractCommandByte(char *in);
+    std::pair<TypeOfMemory, int> getTypeOfMemory(char *in);
+    std::pair<std::string, int> extractWord(char* program, int length = -1);
 };
 
 

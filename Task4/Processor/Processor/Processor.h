@@ -12,11 +12,17 @@
 #define SIZE_OF_STACK 100
 
 class Processor {
+private:
     SafeStack<int> stack;
+    SafeStack<int> stackOfCalls;
     char* programm;
     size_t sizeOfProgram;
     std::istream& cin;
     std::ostream& cout;
+    int rax, rbx, rcx, rdx;
+
+    static const int RAM_SIZE = 1024;
+    int ram[RAM_SIZE];
 
 public:
     enum TypeOfProgram {
@@ -36,7 +42,10 @@ public:
     Processor(char* filename, TypeOfProgram typeOfProgram, std::istream& in = std::cin, std::ostream& out = std::cout);
     void execute();
 
+private:
+    void conditionalJump(size_t *i, CommandService::Command command);
     int getNumber(char *string);
+    int getNumberChar(char *string, int length);
 };
 
 

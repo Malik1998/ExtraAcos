@@ -7,6 +7,7 @@
 
 
 #include <cstddef>
+#include <map>
 
 namespace ByteToCodeConverter {
     enum ErrorCode {
@@ -18,6 +19,8 @@ namespace ByteToCodeConverter {
 
 
     ErrorCode convert(char* program, char* filename_ = const_cast<char *>("Code.code"), size_t length = 0);
+    std::map<int, int>  getLabels(char* program, size_t length);
+    int getNumber(char *strin);
 };
 
 

@@ -6,15 +6,19 @@
 
 #include <fstream>
 #include <cstring>
+#include <iostream>
 #include "../../CommandService/CommandService.h"
 
 namespace ByteToCodeConverter {
 
     ErrorCode convert(char *program, char *filename, size_t length) {
 
+
+        std::map<int, int> labels = getLabels(program, length);
         std::ofstream myfile;
         myfile.open(filename);
         size_t currentPosition = 0;
+        size_t currentLine = 0;
         while (currentPosition < length) {
             auto command = std::make_pair(CommandService::Command::no_such_command, 0);
             command = CommandService::extractCommandByte(program + currentPosition);
@@ -33,29 +37,97 @@ namespace ByteToCodeConverter {
 
             currentPosition += command.second;
 
+            switch (command.first) {
+                case CommandService::Command::pop : {
+                }
+                case CommandService::Command::push : {
 
-            if (command.first == CommandService::Command::push) {
-
-                if (currentPosition + 4 < length) {
-                    int number = int((unsigned char)(program[currentPosition]) |
-                                     (unsigned char)(program[currentPosition + 1]) << 8 |
-                                     (unsigned char)(program[currentPosition + 2]) << 16 |
-                                     (unsigned char)(program[currentPosition + 3]) << 24);
+                    int length_to_read = getNumber(program + currentPosition);
                     currentPosition += 4;
-                    myfile << " " << number;
-                } else {
-                    myfile << "---- Nothing to push --------";
-                    myfile.close();
-                    return FAIL;
+
+                    auto pushPopString = CommandService::extractWord(program + currentPosition, length_to_read);
+                    currentPosition += length_to_read;
+
+                    myfile << " " << pushPopString.first;
+                    break;
+                }
+                case CommandService::Command::jmp : {
+                }
+                case CommandService::Command::call : {
+                }
+                case CommandService::Command::je : {
+                }
+                case CommandService::Command::ja : {
+                  //  std::string number = CommandService::extractWord(program + currentPosition, 4).first;
+                    int positionToJump = getNumber(program + currentPosition);
+                    myfile << " " << labels[positionToJump];
+                    currentPosition += 4;
+                    break;
                 }
             }
 
+
+
+
             myfile << std::endl;
 
+            currentLine++;
 
         }
         myfile << "--- NO ENDING -----";
         myfile.close();
         return FAIL;
+    }
+
+    std::map<int, int>  getLabels(char* program, size_t length) {
+        std::map<int, int> labels;
+        size_t currentPosition = 0;
+        size_t currentLine = 0;
+        while (currentPosition != length) {
+            labels[static_cast<int>(currentPosition)] = static_cast<int>(currentLine);
+            auto command = std::make_pair(CommandService::Command::no_such_command, 0);
+            command = CommandService::extractCommandByte(program + currentPosition);
+            if (command.first == CommandService::Command::end ||
+                command.first == CommandService::Command::no_such_command) {
+                break;
+            }
+
+
+
+            currentPosition += command.second;
+
+
+            switch (command.first) {
+                case CommandService::Command::pop : {
+                }
+                case CommandService::Command::push : {
+                    int length_of_command = getNumber(program + currentPosition);
+                    currentPosition += 4;
+                    currentPosition += length_of_command;
+                    break;
+                }
+                case CommandService::Command::jmp : {
+                }
+                case CommandService::Command::call : {
+                }
+                case CommandService::Command::je : {
+                }
+                case CommandService::Command::ja : {
+                    currentPosition += 4;
+                    break;
+                }
+            }
+
+            currentLine++;
+        }
+
+        return labels;
+    }
+
+    int getNumber(char *strin) {
+        return int((unsigned char)(strin[0]) |
+                   (unsigned char)(strin[1]) << 8 |
+                   (unsigned char)(strin[2]) << 16 |
+                   (unsigned char)(strin[3]) << 24);
     }
 }

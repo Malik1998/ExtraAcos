@@ -5,6 +5,8 @@
 #ifndef PROCESSOR_CODETOWORDCONVERTER_H
 #define PROCESSOR_CODETOWORDCONVERTER_H
 
+#include <map>
+#include "string"
 
 namespace CodeToWordConverter {
     enum ErrorCode {
@@ -13,6 +15,7 @@ namespace CodeToWordConverter {
     };
 
     ErrorCode convert(char* program, char* filename = (char *)"WordProgram.code");
+    std::map<int, int>  getLabels(char* program);
 
 };
 

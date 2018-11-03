@@ -3,24 +3,28 @@
 //
 
 #include <ostream>
+#include <map>
+#include <iostream>
 #include "cstring"
 #include "WordToCodeConverter.h"
 #define MAX_LINE_SIZE 256
 #define FILE_NAME CODE_COMMANDS
 
 namespace WordToCodeConverter {
-   ErrorCode convert(char *program, char *filename) {
+    ErrorCode convert(char *program, char *filename) {
 
+        std::map<std::string, int> labels = getLabels(program);
         std::ofstream myfile;
         myfile.open(filename);
         size_t currentPosition = 0;
+        size_t currentLine = 0;
         while (currentPosition != std::strlen(program)) {
             auto command = std::make_pair(CommandService::Command::no_such_command, 0);
             command = CommandService::extractCommandWord(program + currentPosition);
             if (command.first == CommandService::Command::end ||
                 command.first == CommandService::Command::no_such_command) {
                 if (command.first == CommandService::Command::end) {
-                    myfile << static_cast<size_t>(command.first) << std::endl;
+                    myfile << static_cast<size_t>(command.first);
                     myfile.close();
                     return OK;
                 } else {
@@ -32,26 +36,96 @@ namespace WordToCodeConverter {
 
             currentPosition += command.second;
 
-            myfile << static_cast<size_t>(command.first);
+            if (command.first != CommandService::Command::label) {
+                myfile << static_cast<size_t>(command.first);
+            }
 
-            if (command.first == CommandService::Command::push) {
-                int tempPosition = 0;
-                int number = -1;
-                if (sscanf(program + currentPosition, "%d%n", &number, &tempPosition)) {
-                    currentPosition += tempPosition;
-                    myfile << " " << number;
-                } else {
-                    myfile << "---- Nothing to push --------" << std::endl;
-                    myfile.close();
-                    return FAIL;
+            switch (command.first) {
+                case CommandService::Command::pop : {
+                }
+                case CommandService::Command::push : {
+                    auto pushPopString = CommandService::extractWord(program + currentPosition);
+                    currentPosition += pushPopString.second;
+
+                    myfile << " " << pushPopString.first;
+                    break;
+                }
+                case CommandService::Command::label : {
+                    auto labelName = CommandService::extractWord(program + currentPosition);
+                    currentLine--;
+                    break;
+                }
+                case CommandService::Command::jmp : {
+                }
+                case CommandService::Command::call : {
+                }
+                case CommandService::Command::je : {
+                }
+                case CommandService::Command::ja : {
+                    auto labelName = CommandService::extractWord(program + currentPosition);
+                    currentPosition += labelName.second;
+                    myfile << " " << labels[labelName.first];
+                    break;
                 }
             }
 
-            myfile << std::endl;
+            currentLine++;
+            if (command.first != CommandService::Command::label) {
+                myfile << std::endl;
+            }
 
         }
         myfile << "--- NO ENDING -----" << std::endl;
         myfile.close();
         return FAIL;
+    }
+
+    std::map<std::string, int>  getLabels(char* program) {
+        std::map<std::string, int> labels;
+        size_t currentPosition = 0;
+        size_t currentLine = 0;
+        size_t countLabels = 0;
+        while (currentPosition != std::strlen(program)) {
+            auto command = std::make_pair(CommandService::Command::no_such_command, 0);
+            command = CommandService::extractCommandWord(program + currentPosition);
+            if (command.first == CommandService::Command::end ||
+                command.first == CommandService::Command::no_such_command) {
+                break;
+            }
+
+            currentPosition += command.second;
+
+            switch (command.first) {
+                case CommandService::Command::pop : {
+                }
+                case CommandService::Command::push : {
+                    auto pushPopString = CommandService::extractWord(program + currentPosition);
+                    currentPosition += pushPopString.second;
+                    break;
+                }
+                case CommandService::Command::label : {
+                    std::string labelName = CommandService::extractWord(program + currentPosition - command.second).first;
+                    labels[labelName.substr(0, labelName.length() - 1)] = static_cast<int>(
+                            static_cast<int>(currentLine) - countLabels); // cause it's look like: 'label_name: '
+                    countLabels++;
+                    break;
+                }
+                case CommandService::Command::jmp : {
+                }
+                case CommandService::Command::call : {
+                }
+                case CommandService::Command::je : {
+                }
+                case CommandService::Command::ja : {
+                    auto labelName = CommandService::extractWord(program + currentPosition);
+                    currentPosition += labelName.second;
+                    break;
+                }
+            }
+
+            currentLine++;
+        }
+
+        return labels;
     }
 }

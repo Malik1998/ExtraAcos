@@ -9,31 +9,53 @@
 #include <iostream>
 #include <typeinfo>
 #include <cstdlib>
+
 #ifdef DEBUG
+
 #define DUMP \
          dump(std::cout); \
 
 #else
-#define DUMP
+
+#define DUMP ;
+
 #endif
 
-#define CHECK_BEFORE(block) \
-        auto codeOfIsUnchanged = isUnchanged(); \
+
+#ifdef DEBUG
+
+#define CHECK_STARTS  auto codeOfIsUnchanged = isUnchanged(); \
         if (codeOfIsUnchanged != 0) {   \
          DUMP \
          return codeOfIsUnchanged; \
         }   \
-        block  \
-        setCheckSum();  \
 
-#define CHECK_BEFORE_PAIR(block) \
-        auto codeOfIsUnchanged = isUnchanged(); \
+
+#define CHECK_ENDS setCheckSum();
+
+#define CHECK_STARTS_PAIR auto codeOfIsUnchanged = isUnchanged(); \
         if (codeOfIsUnchanged != 0) {   \
          DUMP \
          return std::make_pair(POISON, codeOfIsUnchanged); \
         }   \
-        block  \
-        setCheckSum();  \
+
+
+#define CHECK_ENDS_PAIR setCheckSum();
+
+#else
+
+#define CHECK_STARTS ;
+
+#define CHECK_STARTS_PAIR  ;
+
+#define CHECK_ENDS ;
+
+#define CHECK_ENDS_PAIR ;
+
+#endif
+
+
+
 
 template<typename Type>
 size_t SafeStack<Type>::getCheckSum() const {
@@ -83,21 +105,33 @@ typename SafeStack<Type>::ErrorCodes SafeStack<Type>::isUnchanged() const {
 
 template<typename Type>
 typename SafeStack<Type>::ErrorCodes SafeStack<Type>::pop() {
+    CHECK_STARTS
+
     if (count == 0) {
         DUMP
         return ErrorPop; // Nothing to POP
     }
-    CHECK_BEFORE({count--; container[count] = POISON;});
+    count--;
+    container[count] = POISON;
+
+    CHECK_ENDS
+
     return OK;
 }
 
 template<typename Type>
 typename SafeStack<Type>::ErrorCodes SafeStack<Type>::push(Type element) {
+    CHECK_STARTS
+
     if (count == MAX_SIZE) {
         DUMP
         return ErrorPush; // Container is full
     }
-    CHECK_BEFORE(container[count] = element; count++;);
+
+    container[count] = element;
+    count++;
+
+    CHECK_ENDS
     return OK;
 }
 
@@ -111,10 +145,13 @@ Type SafeStack<Type>::getFrontUnsafe() {
 
 template<typename Type>
 std::pair<Type, typename SafeStack<Type>::ErrorCodes> SafeStack<Type>::getFrontSafe() {
+    CHECK_STARTS_PAIR
+
     if (count == 0) {
         return std::make_pair(POISON, ErrorPop); // Nothing to show
     }
-    CHECK_BEFORE_PAIR()
+
+    CHECK_ENDS_PAIR
 
     return std::make_pair(getFrontUnsafe(), OK);
 }
@@ -129,6 +166,7 @@ SafeStack<Type>::SafeStack(Type poison_) {
 }
 
 #ifdef DEBUG
+
 template<typename Type>
 void SafeStack<Type>::dump(std::ostream &out) const {
 
@@ -159,4 +197,5 @@ void SafeStack<Type>::dump(std::ostream &out) const {
     out << "}" << std::endl;
 
 }
+
 #endif

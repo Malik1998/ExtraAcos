@@ -9,7 +9,7 @@ int main() {
 
   //  CodeToWordConverter::convert((char *)"0 5\n 8");
 
-    Processor processor = Processor("CommandCode.txt", Processor::WORD_COMMANDS);
+    Processor processor = Processor("CommandCodeJump", Processor::WORD_COMMANDS);
     processor.execute();
 
 }

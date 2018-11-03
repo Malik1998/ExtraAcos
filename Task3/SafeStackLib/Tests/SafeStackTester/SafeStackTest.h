@@ -4,7 +4,7 @@
 
 #ifndef SAFESTACK_SAFESTACKTEST_H
 #define SAFESTACK_SAFESTACKTEST_H
-//#define DEBUG
+#define DEBUG
 #include <gtest/gtest.h>
 
 class SafeStackTest : public ::testing::Test {

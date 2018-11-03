@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/FullFileReader.dir/home/user/Desktop/Studying/MIPT/term_5/extra_acos/hw/ExtraAcos/Task2/StringSortingCStyle/FullFileReader/FullFileReader.cpp.o  -o FullFileReader 

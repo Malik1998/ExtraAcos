@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Processor"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Processor">
+				<Option output="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Processor" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/FullFileReader/ReadFullFile"/>
+					<Add directory="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/External"/>
+					<Add directory="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Libs/googletest-master/googletest/googlemock/gtest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 Processor"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Processor/fast">
+				<Option output="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Processor" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/FullFileReader/ReadFullFile"/>
+					<Add directory="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/External"/>
+					<Add directory="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Libs/googletest-master/googletest/googlemock/gtest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 Processor/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test">
+				<Option working_dir="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ProcessorTest">
+				<Option output="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/ProcessorTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/FullFileReader/ReadFullFile"/>
+					<Add directory="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/External"/>
+					<Add directory="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Libs/googletest-master/googletest/googlemock/gtest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProcessorTest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ProcessorTest/fast">
+				<Option output="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/ProcessorTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/FullFileReader/ReadFullFile"/>
+					<Add directory="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/External"/>
+					<Add directory="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Libs/googletest-master/googletest/googlemock/gtest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProcessorTest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/user/Desktop/Studying/MIPT/term_5/extra\ acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/CommandService/CommandService.cpp">
+			<Option target="Processor"/>
+			<Option target="ProcessorTest"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/CommandService/CommandService.h">
+			<Option target="Processor"/>
+			<Option target="ProcessorTest"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.cpp">
+			<Option target="Processor"/>
+			<Option target="ProcessorTest"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.h">
+			<Option target="Processor"/>
+			<Option target="ProcessorTest"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/CodeToByteConverter/CodeToByteConverter.cpp">
+			<Option target="Processor"/>
+			<Option target="ProcessorTest"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/CodeToByteConverter/CodeToByteConverter.h">
+			<Option target="Processor"/>
+			<Option target="ProcessorTest"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/CodeToWordConverter/CodeToWordConverter.cpp">
+			<Option target="Processor"/>
+			<Option target="ProcessorTest"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/CodeToWordConverter/CodeToWordConverter.h">
+			<Option target="Processor"/>
+			<Option target="ProcessorTest"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/WordToCodeConverter/WordToCodeConverter.cpp">
+			<Option target="Processor"/>
+			<Option target="ProcessorTest"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/WordToCodeConverter/WordToCodeConverter.h">
+			<Option target="Processor"/>
+			<Option target="ProcessorTest"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/FullFileReader/ReadFullFile/FullFileReader.cpp">
+			<Option target="Processor"/>
+			<Option target="ProcessorTest"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/FullFileReader/ReadFullFile/FullFileReader.h">
+			<Option target="Processor"/>
+			<Option target="ProcessorTest"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Processor.cpp">
+			<Option target="Processor"/>
+			<Option target="ProcessorTest"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Processor.h">
+			<Option target="Processor"/>
+			<Option target="ProcessorTest"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/SafeStack/SafeStack.h">
+			<Option target="Processor"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/main.cpp">
+			<Option target="Processor"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/tests/ProcessorTest/ProcessorTest.cpp">
+			<Option target="ProcessorTest"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/tests/ProcessorTest/ProcessorTest.h">
+			<Option target="ProcessorTest"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,56 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/CommandService/CommandService.h
+iosfwd
+-
+string
+-
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/CodeToByteConverter/CodeToByteConverter.h
+map
+-
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/WordToCodeConverter/WordToCodeConverter.h
+fstream
+-
+../../CommandService/CommandService.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/CommandService/CommandService.h
+map
+-
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/FullFileReader/ReadFullFile/FullFileReader.h
+cstdio
+-
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Processor.cpp
+cstring
+-
+Processor.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Processor.h
+FullFileReader/ReadFullFile/FullFileReader.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/FullFileReader/ReadFullFile/FullFileReader.h
+Converter/WordToCodeConverter/WordToCodeConverter.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/WordToCodeConverter/WordToCodeConverter.h
+Converter/CodeToByteConverter/CodeToByteConverter.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/CodeToByteConverter/CodeToByteConverter.h
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Processor.h
+iostream
+-
+SafeStack/SafeStack.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/SafeStack/SafeStack.h
+CommandService/CommandService.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/CommandService/CommandService.h
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/SafeStack/SafeStack.h
+utility
+-
+ostream
+-
+

@@ -1,0 +1,9 @@
+push 2
+pop
+push 1
+push 111999
+add
+in
+add
+out
+end

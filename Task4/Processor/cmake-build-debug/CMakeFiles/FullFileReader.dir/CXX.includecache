@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task2/StringSortingCStyle/FullFileReader/FullFileReader.cpp
+cstdio
+-
+sys/stat.h
+-
+zconf.h
+-
+iostream
+-
+FullFileReader.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task2/StringSortingCStyle/FullFileReader/FullFileReader.h
+fcntl.h
+-
+stdio.h
+-
+cstring
+-
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task2/StringSortingCStyle/FullFileReader/FullFileReader.h
+

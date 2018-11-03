@@ -1,0 +1,5 @@
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/CMakeFiles/Processor.dir
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/CMakeFiles/test.dir
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/CMakeFiles/ProcessorTest.dir
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/cmake-build-debug/CMakeFiles/edit_cache.dir

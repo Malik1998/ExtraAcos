@@ -1,0 +1,37 @@
+in
+push 1
+push 1
+je 21
+4:
+pop rbx
+pop rbx
+push rcx
+push 1
+add
+push rdx
+multiply
+pop rdx
+push rcx
+push 1
+add
+pop rcx
+push rcx
+push rax
+ja 4
+ret
+21:
+pop rax
+pop rbx
+pop rax
+push 0
+pop rcx
+push 1
+pop rdx
+push 1
+push 1
+call 4
+pop rax
+pop rax
+push rdx
+out
+end

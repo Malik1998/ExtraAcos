@@ -1,0 +1,11 @@
+push 5
+v:
+push 3
+ja d
+push 2
+out
+push 1
+jmp v
+d:
+out
+end

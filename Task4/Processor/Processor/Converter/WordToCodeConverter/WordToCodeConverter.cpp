@@ -56,7 +56,8 @@ namespace WordToCodeConverter {
                     break;
                 }
                 case CommandService::Command::jmp : {
-
+                }
+                case CommandService::Command::call : {
                 }
                 case CommandService::Command::je : {
                 }
@@ -110,7 +111,8 @@ namespace WordToCodeConverter {
                     break;
                 }
                 case CommandService::Command::jmp : {
-
+                }
+                case CommandService::Command::call : {
                 }
                 case CommandService::Command::je : {
                 }

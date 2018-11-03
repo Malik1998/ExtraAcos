@@ -13,7 +13,7 @@
 
 namespace CommandService {
 
-    static const size_t number_of_commands = 14;
+    static const size_t number_of_commands = 17;
 
     enum Command {
         push = 0,
@@ -29,7 +29,10 @@ namespace CommandService {
         ja = 10,
         je = 11,
         label = 12,
-        no_such_command = 13
+        sqrt = 13,
+        ret = 14,
+        call = 15,
+        no_such_command = 16
     };
 
     enum TypeOfMemory {
@@ -55,6 +58,9 @@ namespace CommandService {
             "ja",
             "je",
             "label",
+            "sqrt",
+            "ret",
+            "call",
             "no_such_command"
     };
 

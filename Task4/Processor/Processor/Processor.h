@@ -14,6 +14,7 @@
 class Processor {
 private:
     SafeStack<int> stack;
+    SafeStack<int> stackOfCalls;
     char* programm;
     size_t sizeOfProgram;
     std::istream& cin;
@@ -44,6 +45,7 @@ public:
 private:
     void conditionalJump(size_t *i, CommandService::Command command);
     int getNumber(char *string);
+    int getNumberChar(char *string, int length);
 };
 
 

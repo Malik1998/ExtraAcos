@@ -42,20 +42,21 @@ namespace CodeToByteConverter {
                 case CommandService::Command::push : {
                     auto pushPopString = CommandService::extractWord(program + currentPosition);
                     currentPosition += pushPopString.second;
-                    int length = static_cast<int>(pushPopString.first.length());
+                    unsigned int length = static_cast<int>(pushPopString.first.length());
                     myfile.write(reinterpret_cast<const char *>(&length), sizeof(length));
                     myfile.write((pushPopString.first.c_str()), length);
                     break;
                 }
                 case CommandService::Command::jmp : {
-
+                }
+                case CommandService::Command::call : {
                 }
                 case CommandService::Command::je : {
                 }
                 case CommandService::Command::ja : {
                     auto labelName = CommandService::extractWord(program + currentPosition);
                     currentPosition += labelName.second;
-                    int labelPointer = static_cast<int>(labels[std::stoi(labelName.first)]);
+                    unsigned int labelPointer = static_cast<int>(labels[std::stoi(labelName.first)]);
 
                     myfile.write(reinterpret_cast<const char *>(&labelPointer), sizeof(labelPointer));
                     break;
@@ -74,6 +75,7 @@ namespace CodeToByteConverter {
         int pos = 0;
         int currentLine = 0;
         while (currentPosition != std::strlen(program)) {
+            labels[currentLine] = pos;
             auto command = std::make_pair(CommandService::Command::no_such_command, 0);
             command = CommandService::extractCommandCode(program + currentPosition);
             if (command.first == CommandService::Command::end ||
@@ -81,7 +83,6 @@ namespace CodeToByteConverter {
                 break;
             }
 
-            labels[currentLine] = pos;
             pos++;
             currentPosition += command.second;
 
@@ -95,7 +96,8 @@ namespace CodeToByteConverter {
                     break;
                 }
                 case CommandService::Command::jmp : {
-
+                }
+                case CommandService::Command::call : {
                 }
                 case CommandService::Command::je : {
                 }

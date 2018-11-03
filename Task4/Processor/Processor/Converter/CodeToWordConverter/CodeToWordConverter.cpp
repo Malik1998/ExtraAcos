@@ -21,6 +21,9 @@ using namespace CommandService;
         while (currentPosition != std::strlen(program)) {
             auto command = std::make_pair(CommandService::Command::no_such_command, 0);
             command = CommandService::extractCommandCode(program + currentPosition);
+            if (labels.find(static_cast<const int &>(currentLine)) != labels.end()) {
+                myfile << labels[static_cast<const int &>(currentLine)] << ":" << std::endl;
+            }
             if (command.first == CommandService::Command::end ||
                 command.first == CommandService::Command::no_such_command) {
                 if (command.first == CommandService::Command::end) {
@@ -35,29 +38,26 @@ using namespace CommandService;
             }
 
             currentPosition += command.second;
-            if (labels.find(static_cast<const int &>(currentLine)) != labels.end()) {
-                myfile << labels[static_cast<const int &>(currentLine)] << ":" << std::endl;
-            }
             myfile << commands[static_cast<size_t>(command.first)];
 
-            currentPosition += command.second;
             switch (command.first) {
                 case CommandService::Command::pop : {
                 }
                 case CommandService::Command::push : {
                     auto pushPopString = CommandService::extractWord(program + currentPosition);
-                    currentPosition += pushPopString.second + 1;
+                    currentPosition += pushPopString.second;
                     myfile << " " << pushPopString.first;
                     break;
                 }
                 case CommandService::Command::jmp : {
-
+                }
+                case CommandService::Command::call : {
                 }
                 case CommandService::Command::je : {
                 }
                 case CommandService::Command::ja : {
                     auto labelName = CommandService::extractWord(program + currentPosition);
-                    currentPosition += labelName.second + 1;
+                    currentPosition += labelName.second;
                     myfile << " " << labels[std::stoi(labelName.first)];
                     break;
                 }
@@ -96,7 +96,8 @@ using namespace CommandService;
                     break;
                 }
                 case CommandService::Command::jmp : {
-
+                }
+                case CommandService::Command::call : {
                 }
                 case CommandService::Command::je : {
                 }
@@ -117,15 +118,15 @@ using namespace CommandService;
         while (currentPosition != std::strlen(program)) {
             auto command = std::make_pair(CommandService::Command::no_such_command, 0);
             command = CommandService::extractCommandCode(program + currentPosition);
+            if (labels.find(static_cast<const int &>(currentLine)) != labels.end()) {
+                labels[static_cast<int>(currentLine)] = currentLine1;
+                currentLine1++;
+            }
             if (command.first == CommandService::Command::end ||
                 command.first == CommandService::Command::no_such_command) {
                 break;
             }
 
-            if (labels.find(static_cast<const int &>(currentLine)) != labels.end()) {
-                labels[static_cast<int>(currentLine)] = currentLine1;
-                currentLine1++;
-            }
             currentPosition += command.second;
 
             switch (command.first) {

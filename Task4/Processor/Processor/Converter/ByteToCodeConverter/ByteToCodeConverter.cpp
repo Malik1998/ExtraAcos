@@ -52,7 +52,8 @@ namespace ByteToCodeConverter {
                     break;
                 }
                 case CommandService::Command::jmp : {
-
+                }
+                case CommandService::Command::call : {
                 }
                 case CommandService::Command::je : {
                 }
@@ -83,6 +84,7 @@ namespace ByteToCodeConverter {
         size_t currentPosition = 0;
         size_t currentLine = 0;
         while (currentPosition != length) {
+            labels[static_cast<int>(currentPosition)] = static_cast<int>(currentLine);
             auto command = std::make_pair(CommandService::Command::no_such_command, 0);
             command = CommandService::extractCommandByte(program + currentPosition);
             if (command.first == CommandService::Command::end ||
@@ -91,7 +93,6 @@ namespace ByteToCodeConverter {
             }
 
 
-            labels[static_cast<int>(currentPosition)] = static_cast<int>(currentLine);
 
             currentPosition += command.second;
 
@@ -106,7 +107,8 @@ namespace ByteToCodeConverter {
                     break;
                 }
                 case CommandService::Command::jmp : {
-
+                }
+                case CommandService::Command::call : {
                 }
                 case CommandService::Command::je : {
                 }

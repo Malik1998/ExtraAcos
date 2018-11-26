@@ -16,7 +16,7 @@ private:
     SafeStack<int> stack;
     SafeStack<int> stackOfCalls;
     char* programm;
-    size_t sizeOfProgram;
+    int sizeOfProgram;
     std::istream& cin;
     std::ostream& cout;
     int rax, rbx, rcx, rdx;
@@ -43,7 +43,7 @@ public:
     void execute();
 
 private:
-    void conditionalJump(size_t *i, CommandService::Command command);
+    void conditionalJump(int *i, CommandService::Command command);
     int getNumber(char *string);
     int getNumberChar(char *string, int length);
 };

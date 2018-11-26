@@ -309,21 +309,27 @@ TEST(ProcessorTest, Factorial1Test) {
 }
 
 
-TEST(ProcessorTest, Factorial2) {
+TEST(ProcessorTest, Factorial5) {
     std::stringstream in((char *)"5"); // (x - 8) * (x + 4)
     Processor processor = Processor("Factorial", Processor::WORD_COMMANDS, in);
     processor.execute();
 }
 
-TEST(ProcessorTest, Factorial3) {
+TEST(ProcessorTest, Factorial10) {
     std::stringstream in((char *)"10"); // (x - 8) * (x + 4)
     Processor processor = Processor("Factorial", Processor::WORD_COMMANDS, in);
     processor.execute();
 }
 
-TEST(ProcessorTest, Factorial4) {
+TEST(ProcessorTest, Factorial11) {
     std::stringstream in((char *)"11"); // (x - 8) * (x + 4)
     Processor processor = Processor("Factorial", Processor::WORD_COMMANDS, in);
+    processor.execute();
+}
+
+TEST(ProcessorTest, FactorialWrongVersion) {
+    std::stringstream in((char *)"11"); // (x - 8) * (x + 4)
+    Processor processor = Processor("12.code", Processor::BYTECODE, in);
     processor.execute();
 }
 

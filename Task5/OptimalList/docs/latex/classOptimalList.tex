@@ -1,0 +1,153 @@
+\hypertarget{classOptimalList}{}\section{Optimal\+Node$<$ T $>$ Class Template Reference}
+\label{classOptimalList}\index{Optimal\+Node$<$ T $>$@{Optimal\+Node$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Optimal\+Node.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOptimalList_a30d03638f198e6ac9e52160ff7661dbd}{Optimal\+Node} (T Poison\+Value\+\_\+, size\+\_\+t max\+\_\+size\+\_\+)
+\item 
+\hyperlink{classList}{Node}$<$ T $>$ $\ast$ \hyperlink{classOptimalList_a00d74f7c423b28382c4ce7d0e962b30d}{get\+Front} ()
+\item 
+\hyperlink{classList}{Node}$<$ T $>$ $\ast$ \hyperlink{classOptimalList_ada40c2476927e5518a52874bc8dda530}{get\+Back} ()
+\item 
+void \hyperlink{classOptimalList_a5780692425a3653860f64cc59e26c657}{push\+Front} (\hyperlink{classList}{Node}$<$ T $>$ \&elem)
+\item 
+void \hyperlink{classOptimalList_aa7e86a832a4598304750fd3a0b0f9acb}{push\+Back} (\hyperlink{classList}{Node}$<$ T $>$ \&elem)
+\item 
+\mbox{\Hypertarget{classOptimalList_aea718f1cda1208c812028f6e23d9ba9e}\label{classOptimalList_aea718f1cda1208c812028f6e23d9ba9e}} 
+void \hyperlink{classOptimalList_aea718f1cda1208c812028f6e23d9ba9e}{pop\+Front} ()
+\begin{DoxyCompactList}\small\item\em Delete first element if exist. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOptimalList_a4032c2f90b225e007534c7bae916c34e}\label{classOptimalList_a4032c2f90b225e007534c7bae916c34e}} 
+void \hyperlink{classOptimalList_a4032c2f90b225e007534c7bae916c34e}{pop\+Back} ()
+\begin{DoxyCompactList}\small\item\em Delete last element if exist. \end{DoxyCompactList}\item 
+void \hyperlink{classOptimalList_a712d1c3f81c91ce3f55dda49e3f26229}{insert} (\hyperlink{classList}{Node}$<$ T $>$ $\ast$pos, \hyperlink{classList}{Node}$<$ T $>$ \&elem)
+\item 
+\hyperlink{classList}{Node}$<$ T $>$ $\ast$ \hyperlink{classOptimalList_aef25e96f7d379cd8c383e58e2179ddee}{get\+Next} (\hyperlink{classList}{Node}$<$ T $>$ $\ast$elem)
+\item 
+\hyperlink{classList}{Node}$<$ T $>$ $\ast$ \hyperlink{classOptimalList_a20ba639c8823ac7fbc486fbcfeb23514}{get\+Prev} (\hyperlink{classList}{Node}$<$ T $>$ $\ast$elem)
+\item 
+\mbox{\Hypertarget{classOptimalList_a1098f7493c0b9a01644dd54da5a5cfd0}\label{classOptimalList_a1098f7493c0b9a01644dd54da5a5cfd0}} 
+\hyperlink{classOptimalList_a1098f7493c0b9a01644dd54da5a5cfd0}{$\sim$\+Optimal\+Node} ()
+\begin{DoxyCompactList}\small\item\em Deleting allocated Memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Optimal\+Node$<$ T $>$}
+
+O\+P\+T\+I\+M\+AL L\+I\+ST All nodes in one place 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classOptimalList_a30d03638f198e6ac9e52160ff7661dbd}\label{classOptimalList_a30d03638f198e6ac9e52160ff7661dbd}} 
+\index{Optimal\+Node@{Optimal\+Node}!Optimal\+Node@{Optimal\+Node}}
+\index{Optimal\+Node@{Optimal\+Node}!Optimal\+Node@{Optimal\+Node}}
+\subsubsection{\texorpdfstring{Optimal\+Node()}{OptimalList()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classOptimalList}{Optimal\+Node}$<$ T $>$\+::\hyperlink{classOptimalList}{Optimal\+Node} (\begin{DoxyParamCaption}\item[{T}]{Poison\+Value\+\_\+,  }\item[{size\+\_\+t}]{max\+\_\+size\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor Of Optimal \hyperlink{classList}{Node}
+\begin{DoxyParams}{Parameters}
+{\em Poison\+Value\+\_\+} & -\/ value to catch errors \\
+\hline
+{\em max\+\_\+size\+\_\+} & -\/ size\+\_\+t maximum count of elements in list \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classOptimalList_ada40c2476927e5518a52874bc8dda530}\label{classOptimalList_ada40c2476927e5518a52874bc8dda530}} 
+\index{Optimal\+Node@{Optimal\+Node}!get\+Back@{get\+Back}}
+\index{get\+Back@{get\+Back}!Optimal\+Node@{Optimal\+Node}}
+\subsubsection{\texorpdfstring{get\+Back()}{getBack()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classList}{Node}$<$T$>$$\ast$ \hyperlink{classOptimalList}{Optimal\+Node}$<$ T $>$\+::get\+Back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return pointer to head, maybe null \begin{DoxyReturn}{Returns}
+tail 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOptimalList_a00d74f7c423b28382c4ce7d0e962b30d}\label{classOptimalList_a00d74f7c423b28382c4ce7d0e962b30d}} 
+\index{Optimal\+Node@{Optimal\+Node}!get\+Front@{get\+Front}}
+\index{get\+Front@{get\+Front}!Optimal\+Node@{Optimal\+Node}}
+\subsubsection{\texorpdfstring{get\+Front()}{getFront()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classList}{Node}$<$T$>$$\ast$ \hyperlink{classOptimalList}{Optimal\+Node}$<$ T $>$\+::get\+Front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return pointer to head, maybe null \begin{DoxyReturn}{Returns}
+head 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOptimalList_aef25e96f7d379cd8c383e58e2179ddee}\label{classOptimalList_aef25e96f7d379cd8c383e58e2179ddee}} 
+\index{Optimal\+Node@{Optimal\+Node}!get\+Next@{get\+Next}}
+\index{get\+Next@{get\+Next}!Optimal\+Node@{Optimal\+Node}}
+\subsubsection{\texorpdfstring{get\+Next()}{getNext()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classList}{Node}$<$T$>$$\ast$ \hyperlink{classOptimalList}{Optimal\+Node}$<$ T $>$\+::get\+Next (\begin{DoxyParamCaption}\item[{\hyperlink{classList}{Node}$<$ T $>$ $\ast$}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return next element after element 
+\begin{DoxyParams}{Parameters}
+{\em elem} & -\/ node to get next position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to next element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOptimalList_a20ba639c8823ac7fbc486fbcfeb23514}\label{classOptimalList_a20ba639c8823ac7fbc486fbcfeb23514}} 
+\index{Optimal\+Node@{Optimal\+Node}!get\+Prev@{get\+Prev}}
+\index{get\+Prev@{get\+Prev}!Optimal\+Node@{Optimal\+Node}}
+\subsubsection{\texorpdfstring{get\+Prev()}{getPrev()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classList}{Node}$<$T$>$$\ast$ \hyperlink{classOptimalList}{Optimal\+Node}$<$ T $>$\+::get\+Prev (\begin{DoxyParamCaption}\item[{\hyperlink{classList}{Node}$<$ T $>$ $\ast$}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return prev element after element 
+\begin{DoxyParams}{Parameters}
+{\em elem} & -\/ node to get prev position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to prev element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOptimalList_a712d1c3f81c91ce3f55dda49e3f26229}\label{classOptimalList_a712d1c3f81c91ce3f55dda49e3f26229}} 
+\index{Optimal\+Node@{Optimal\+Node}!insert@{insert}}
+\index{insert@{insert}!Optimal\+Node@{Optimal\+Node}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \hyperlink{classOptimalList}{Optimal\+Node}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{\hyperlink{classList}{Node}$<$ T $>$ $\ast$}]{pos,  }\item[{\hyperlink{classList}{Node}$<$ T $>$ \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add element after pos If there are now empty nodes, skip adding 
+\begin{DoxyParams}{Parameters}
+{\em pos} & -\/ position after what we must insert \\
+\hline
+{\em elem} & -\/ node to insert \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOptimalList_aa7e86a832a4598304750fd3a0b0f9acb}\label{classOptimalList_aa7e86a832a4598304750fd3a0b0f9acb}} 
+\index{Optimal\+Node@{Optimal\+Node}!push\+Back@{push\+Back}}
+\index{push\+Back@{push\+Back}!Optimal\+Node@{Optimal\+Node}}
+\subsubsection{\texorpdfstring{push\+Back()}{pushBack()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \hyperlink{classOptimalList}{Optimal\+Node}$<$ T $>$\+::push\+Back (\begin{DoxyParamCaption}\item[{\hyperlink{classList}{Node}$<$ T $>$ \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add element to the tail If there are now empty nodes, skip adding 
+\begin{DoxyParams}{Parameters}
+{\em elem} & -\/ node to insert \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOptimalList_a5780692425a3653860f64cc59e26c657}\label{classOptimalList_a5780692425a3653860f64cc59e26c657}} 
+\index{Optimal\+Node@{Optimal\+Node}!push\+Front@{push\+Front}}
+\index{push\+Front@{push\+Front}!Optimal\+Node@{Optimal\+Node}}
+\subsubsection{\texorpdfstring{push\+Front()}{pushFront()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \hyperlink{classOptimalList}{Optimal\+Node}$<$ T $>$\+::push\+Front (\begin{DoxyParamCaption}\item[{\hyperlink{classList}{Node}$<$ T $>$ \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add element to the head If there are now empty nodes, skip adding 
+\begin{DoxyParams}{Parameters}
+{\em elem} & -\/ node to insert \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Optimal\+Node/Optimal\+Node.\+h\end{DoxyCompactItemize}

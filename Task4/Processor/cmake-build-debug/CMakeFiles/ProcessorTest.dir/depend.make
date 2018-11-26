@@ -7,6 +7,7 @@ CMakeFiles/ProcessorTest.dir/Processor/CommandService/CommandService.cpp.o: ../P
 CMakeFiles/ProcessorTest.dir/Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.cpp.o: ../Processor/CommandService/CommandService.h
 CMakeFiles/ProcessorTest.dir/Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.cpp.o: ../Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.cpp
 CMakeFiles/ProcessorTest.dir/Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.cpp.o: ../Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.h
+CMakeFiles/ProcessorTest.dir/Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.cpp.o: ../Processor/Converter/CodeToByteConverter/CodeToByteConverter.h
 
 CMakeFiles/ProcessorTest.dir/Processor/Converter/CodeToByteConverter/CodeToByteConverter.cpp.o: ../Processor/CommandService/CommandService.h
 CMakeFiles/ProcessorTest.dir/Processor/Converter/CodeToByteConverter/CodeToByteConverter.cpp.o: ../Processor/Converter/CodeToByteConverter/CodeToByteConverter.cpp

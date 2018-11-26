@@ -8,6 +8,7 @@ CMakeFiles/ProcessorTest.dir/Processor/Converter/ByteToCodeConverter/ByteToCodeC
  /home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/CommandService/CommandService.h
  /home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.cpp
  /home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.h
+ /home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/CodeToByteConverter/CodeToByteConverter.h
 CMakeFiles/ProcessorTest.dir/Processor/Converter/CodeToByteConverter/CodeToByteConverter.cpp.o
  /home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/CommandService/CommandService.h
  /home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/CodeToByteConverter/CodeToByteConverter.cpp

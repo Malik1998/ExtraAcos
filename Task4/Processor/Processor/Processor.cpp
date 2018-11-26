@@ -39,8 +39,14 @@ Processor::Processor(char *filename, Processor::TypeOfProgram typeOfProgram,
 }
 
 void Processor::execute() {
-size_t count_line = 0;
-    for (size_t i = 0; i < sizeOfProgram; ) {
+
+    if(getNumber(programm) != CodeToByteConverter::version) {
+        cout << "Trying to LIE ME!!!!!!!!!!!" << "\n";
+        return;
+    }
+
+    int count_line = 0;
+    for (int i = 4; i < sizeOfProgram; ) {
         auto command = extractCommandByte(programm + i);
         i += command.second;
 count_line++;
@@ -190,8 +196,8 @@ count_line++;
                 break;
             }
             case CommandService::jmp : {
-                auto number = static_cast<int>(getNumber(programm + i));
-                i = static_cast<size_t>(number);
+                auto number = getNumber(programm + i);
+                i = number;
                 break;
             }
             case CommandService::ja : {
@@ -203,15 +209,15 @@ count_line++;
                 break;
             }
             case CommandService::Command::call : {
-                auto number = static_cast<int>(getNumber(programm + i));
-                stackOfCalls.push(static_cast<int>(i + 4));
-                i = static_cast<size_t>(number);
+                auto number = getNumber(programm + i);
+                stackOfCalls.push(i + 4);
+                i = number;
                 break;
             }
             case CommandService::Command::ret : {
                 auto b = stackOfCalls.getFrontUnsafe();
                 stackOfCalls.pop();
-                i = static_cast<size_t>(b);
+                i = b;
             }
         }
 
@@ -237,8 +243,8 @@ int Processor::getNumberChar(char *string, int length) {
     return number;
 }
 
-void Processor::conditionalJump(size_t *i, CommandService::Command command) {
-    auto number = static_cast<size_t>(getNumber(programm + *i));
+void Processor::conditionalJump(int *i, CommandService::Command command) {
+    auto number = getNumber(programm + *i);
     int fir = stack.getFrontSafe().first;
     stack.pop();
     int sec = stack.getFrontSafe().first;

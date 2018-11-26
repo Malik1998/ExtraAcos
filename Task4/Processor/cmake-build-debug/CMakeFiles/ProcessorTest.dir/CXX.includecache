@@ -12,9 +12,21 @@ iosfwd
 string
 -
 
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.h
+cstddef
+-
+map
+-
+
 /home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/CodeToByteConverter/CodeToByteConverter.h
 map
 -
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/CodeToWordConverter/CodeToWordConverter.h
+map
+-
+string
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/CodeToWordConverter/string
 
 /home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/WordToCodeConverter/WordToCodeConverter.h
 fstream
@@ -28,20 +40,6 @@ map
 cstdio
 -
 
-/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Processor.cpp
-cstring
--
-cmath
--
-Processor.h
-/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Processor.h
-FullFileReader/ReadFullFile/FullFileReader.h
-/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/FullFileReader/ReadFullFile/FullFileReader.h
-Converter/WordToCodeConverter/WordToCodeConverter.h
-/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/WordToCodeConverter/WordToCodeConverter.h
-Converter/CodeToByteConverter/CodeToByteConverter.h
-/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/CodeToByteConverter/CodeToByteConverter.h
-
 /home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Processor.h
 iostream
 -
@@ -54,5 +52,31 @@ CommandService/CommandService.h
 utility
 -
 ostream
+-
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/tests/ProcessorTest/ProcessorTest.cpp
+fcntl.h
+-
+ProcessorTest.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/tests/ProcessorTest/ProcessorTest.h
+gtest/gtest.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/tests/ProcessorTest/gtest/gtest.h
+../../Processor/Processor.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Processor.h
+iostream
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/tests/ProcessorTest/iostream
+../../Processor/Converter/WordToCodeConverter/WordToCodeConverter.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/WordToCodeConverter/WordToCodeConverter.h
+../../Processor/Converter/CodeToByteConverter/CodeToByteConverter.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/CodeToByteConverter/CodeToByteConverter.h
+../../Processor/FullFileReader/ReadFullFile/FullFileReader.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/FullFileReader/ReadFullFile/FullFileReader.h
+../../Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/ByteToCodeConverter/ByteToCodeConverter.h
+../../Processor/Converter/CodeToWordConverter/CodeToWordConverter.h
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/Processor/Converter/CodeToWordConverter/CodeToWordConverter.h
+
+/home/user/Desktop/Studying/MIPT/term_5/extra acos/hw/ExtraAcos/Task4/Processor/tests/ProcessorTest/ProcessorTest.h
+gtest/gtest.h
 -
 

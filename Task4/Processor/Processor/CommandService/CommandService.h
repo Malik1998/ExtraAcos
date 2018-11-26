@@ -13,7 +13,7 @@
 
 namespace CommandService {
 
-    static const size_t number_of_commands = 17;
+    static const int number_of_commands = 17;
 
     enum Command {
         push = 0,

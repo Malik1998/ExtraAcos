@@ -12,28 +12,28 @@
 #include <cstring>
 
 namespace FullFileReader {
-    size_t readFullFile(const char *FileName, char ** text) {
+    int readFullFile(const char *FileName, char ** text) {
         int fileDescriptor = open(FileName, O_RDONLY);
         struct stat st;
         fstat(fileDescriptor, &st);
-        auto fullTextSize = static_cast<size_t>(st.st_size);
+        auto fullTextSize = static_cast<int>(st.st_size);
         (*text) = new char[fullTextSize + 1]; // Maybe - maybe
         read(fileDescriptor, *text, fullTextSize);
         close(fileDescriptor);
         return fullTextSize;
     }
 
-    size_t changeSlashesToNulles(char *text, size_t ** indexes) {
-        size_t countOfLines = 0;
-        size_t i = 0;
+    int changeSlashesToNulles(char *text, int ** indexes) {
+        int countOfLines = 0;
+        int i = 0;
         while (text[i] != '\0') {
             if (text[i] == '\n') {
                 ++countOfLines;
             }
             ++i;
         }
-        (*indexes) = new size_t[countOfLines + 1]; // may-be
-        size_t k = 0;
+        (*indexes) = new int[countOfLines + 1]; // may-be
+        int k = 0;
         i = 0;
         countOfLines = 0;
         while (text[i] != '\0') {
@@ -47,9 +47,9 @@ namespace FullFileReader {
         return countOfLines;
     }
 
-    void outputInFile(size_t * indexes, const char *text, const char *FileName, size_t countOfLines, int typeOfWriting) {
+    void outputInFile(int * indexes, const char *text, const char *FileName, int countOfLines, int typeOfWriting) {
         int fileDescriptor = open(FileName, typeOfWriting, 0666);
-        for (size_t i = 0; i < countOfLines - 1; ++i) {
+        for (int i = 0; i < countOfLines - 1; ++i) {
             write(fileDescriptor, text + indexes[i], strlen(&text[indexes[i]]));
             write(fileDescriptor, "\n", 1);
         }

@@ -22,7 +22,7 @@ namespace CommandService {
         char command[MAX_LENGTH];
         int position = 0;
         sscanf(in, "%s%n", command, &position);
-        for (size_t i = 0; i < number_of_commands; i++) {
+        for (int i = 0; i < number_of_commands; i++) {
             if (std::strcmp(commands[i], command) == 0) {
                 return std::make_pair(static_cast<Command>(i), position);
             }

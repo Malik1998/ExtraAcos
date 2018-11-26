@@ -15,8 +15,9 @@ namespace CodeToByteConverter {
         std::map<int, int> labels = getLabels(program);
         std::ofstream myfile;
         myfile.open(filename, std::ios::binary | std::ios::out);
-        size_t currentPosition = 0;
-        size_t currentLine = 0;
+        int currentPosition = 0;
+        int currentLine = 0;
+        myfile.write(reinterpret_cast<const char *>(&version), sizeof(version));
         while (currentPosition != std::strlen(program)) {
             auto command = std::make_pair(CommandService::Command::no_such_command, 0);
             command = CommandService::extractCommandCode(program + currentPosition);
@@ -56,7 +57,7 @@ namespace CodeToByteConverter {
                 case CommandService::Command::ja : {
                     auto labelName = CommandService::extractWord(program + currentPosition);
                     currentPosition += labelName.second;
-                    unsigned int labelPointer = static_cast<int>(labels[std::stoi(labelName.first)]);
+                    unsigned int labelPointer = static_cast<unsigned int>(labels[std::stoi(labelName.first)]);
 
                     myfile.write(reinterpret_cast<const char *>(&labelPointer), sizeof(labelPointer));
                     break;
@@ -71,8 +72,8 @@ namespace CodeToByteConverter {
 
     std::map<int, int>  getLabels(char* program) {
         std::map<int, int> labels;
-        size_t currentPosition = 0;
-        int pos = 0;
+        int currentPosition = 0;
+        int pos = 4;
         int currentLine = 0;
         while (currentPosition != std::strlen(program)) {
             labels[currentLine] = pos;

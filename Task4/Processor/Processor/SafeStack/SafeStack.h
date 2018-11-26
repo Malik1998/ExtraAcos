@@ -40,26 +40,26 @@
 /// \tparam Type - type of elements in stack must have hash() function
 template <typename Type> class SafeStack {
     /// Kanareika Before variables
-    size_t KANAREIKA_STARTING_ = 0xBEDABEDA;
+    int KANAREIKA_STARTING_ = 0xBEDABEDA;
 
     /// max size of stack container
-    static const size_t MAX_SIZE_ = 100;
+    static const int MAX_SIZE_ = 100;
     /// simple number to calculate checksum
-    static const size_t SIMPLE_NUMBER_ = 11;
+    static const int SIMPLE_NUMBER_ = 11;
     /// module to calculate checksum
-    static const size_t MODULE_ = 10000001;
+    static const int MODULE_ = 10000001;
 
     /// Stack - container
     Type container_[MAX_SIZE_];
     /// Real count of elemnts now in stack
-    size_t count_ = 0;
+    int count_ = 0;
     /// Poisn value that can be used in stack
     Type POISON_;
 
     /// CurrentChecksum
-    size_t checkSum_ = 0xBEDABEDA;
+    int checkSum_ = 0xBEDABEDA;
     /// Kaanreika after variables
-    size_t KANAREIKA_ENDING_ = 0xBEDABEDA;
+    int KANAREIKA_ENDING_ = 0xBEDABEDA;
 
 public:
     enum ErrorCodes {
@@ -89,7 +89,7 @@ public:
             return codeOfIsValide;
         }
 
-        size_t currentCheckSum = getCheckSum();
+        int currentCheckSum = getCheckSum();
         if (currentCheckSum != checkSum_) {
             return ErrorCheckSum; // checkSum_ != currentCheckSum
         }
@@ -146,11 +146,11 @@ private:
 
     out << "class SafeStack {" << std::endl;
     out << "    /// Kanareika Before variables" << std::endl;
-    out << "    size_t KANAREIKA_STARTING_ = " << KANAREIKA_STARTING_ << " --- MUST BE " << 0xBEDABEDA << std::endl;
+    out << "    int KANAREIKA_STARTING_ = " << KANAREIKA_STARTING_ << " --- MUST BE " << 0xBEDABEDA << std::endl;
     out << "    /// Stack - container_" << std::endl;
     out << "    "<< typeid(Type).name()  << " container_[MAX_SIZE_] { " << std::endl;
 
-    for(size_t i = 0; i < MAX_SIZE_; i++) {
+    for(int i = 0; i < MAX_SIZE_; i++) {
         out << "    container_[" << i << "] = " << container_[i];
         if (i >= count_) {
             out << " * <---- MUST BE POISON_, " << "We SUPPOSE THAT POISON_ = " << POISON_;
@@ -161,23 +161,23 @@ private:
 
     out << "     }" << std::endl;
     out << "    /// Real count_ of elemnts now in stack" << std::endl;
-    out << "    size_t count_ = " << count_ << std::endl;
+    out << "    int count_ = " << count_ << std::endl;
     out << "    /// Poisn value that can be used in stack" << std::endl;
     out << "    " << typeid(Type).name() << " POISON_ = " << POISON_ << std::endl;
     out << "    /// CurrentChecksum" << std::endl;
-    out << "    size_t checkSum_ = " << checkSum_ << std::endl;
+    out << "    int checkSum_ = " << checkSum_ << std::endl;
     out << "    /// Kaanreika after variables" << std::endl;
-    out << "   size_t KANAREIKA_ENDING_ = " << KANAREIKA_ENDING_ << " --- MUST BE " << 0xBEDABEDA << std::endl;
+    out << "   int KANAREIKA_ENDING_ = " << KANAREIKA_ENDING_ << " --- MUST BE " << 0xBEDABEDA << std::endl;
     out << "}" << std::endl;
 
 }
 #endif
     /// checksum calculation
     /// \return current checksum
-    size_t getCheckSum() const {
-        size_t cacheSum  = 5;
+    int getCheckSum() const {
+        int cacheSum  = 5;
         std::hash<Type> hashFunc;
-        for (size_t i = 0; i < count_; i++) {
+        for (int i = 0; i < count_; i++) {
             cacheSum = ((cacheSum * SIMPLE_NUMBER_) + hashFunc(container_[i])) % MODULE_;
         }
         return cacheSum;
@@ -195,7 +195,7 @@ private:
         if (KANAREIKA_STARTING_ != KANAREIKA_ENDING_ || KANAREIKA_ENDING_ != 0xBEDABEDA) {
             return ErroKanareika; // Error with Kanareika
         }
-        for (size_t i = count_; i < MAX_SIZE_; i++) {
+        for (int i = count_; i < MAX_SIZE_; i++) {
             if (container_[i] != POISON_) {
                 return ErrorPoison; // POISON_ VALUE NOT IN ARRAY
             }

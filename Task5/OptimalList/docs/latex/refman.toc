@@ -1,0 +1,16 @@
+\contentsline {chapter}{\numberline {1}Class Index}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Class Node}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Class Documentation}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Node$<$ T $>$ Class Template Reference}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Optimal\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Node$<$ T $>$ Class Template Reference}{3}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Detailed Description}{3}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Constructor \& Destructor Documentation}{4}{subsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2.1}Optimal\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Node()}{4}{subsubsection.2.2.2.1}
+\contentsline {subsection}{\numberline {2.2.3}Member Function Documentation}{4}{subsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.3.1}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Back()}{4}{subsubsection.2.2.3.1}
+\contentsline {subsubsection}{\numberline {2.2.3.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Front()}{4}{subsubsection.2.2.3.2}
+\contentsline {subsubsection}{\numberline {2.2.3.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Next()}{4}{subsubsection.2.2.3.3}
+\contentsline {subsubsection}{\numberline {2.2.3.4}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Prev()}{5}{subsubsection.2.2.3.4}
+\contentsline {subsubsection}{\numberline {2.2.3.5}insert()}{5}{subsubsection.2.2.3.5}
+\contentsline {subsubsection}{\numberline {2.2.3.6}push\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Back()}{5}{subsubsection.2.2.3.6}
+\contentsline {subsubsection}{\numberline {2.2.3.7}push\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Front()}{6}{subsubsection.2.2.3.7}

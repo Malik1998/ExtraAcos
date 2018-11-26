@@ -8,17 +8,24 @@
 #include <cstring>
 #include <iostream>
 #include "../../CommandService/CommandService.h"
+#include "../CodeToByteConverter/CodeToByteConverter.h"
 
 namespace ByteToCodeConverter {
 
-    ErrorCode convert(char *program, char *filename, size_t length) {
+    ErrorCode convert(char *program, char *filename, int length) {
 
 
         std::map<int, int> labels = getLabels(program, length);
         std::ofstream myfile;
         myfile.open(filename);
-        size_t currentPosition = 0;
-        size_t currentLine = 0;
+
+        if (getNumber(program) != CodeToByteConverter::version) {
+            return ErrorCode::FAIL;
+        }
+
+        int currentPosition = 4;
+        int currentLine = 0;
+
         while (currentPosition < length) {
             auto command = std::make_pair(CommandService::Command::no_such_command, 0);
             command = CommandService::extractCommandByte(program + currentPosition);
@@ -79,12 +86,12 @@ namespace ByteToCodeConverter {
         return FAIL;
     }
 
-    std::map<int, int>  getLabels(char* program, size_t length) {
+    std::map<int, int>  getLabels(char* program, int length) {
         std::map<int, int> labels;
-        size_t currentPosition = 0;
-        size_t currentLine = 0;
+        int currentPosition = 4;
+        int currentLine = 0;
         while (currentPosition != length) {
-            labels[static_cast<int>(currentPosition)] = static_cast<int>(currentLine);
+            labels[currentPosition] = currentLine;
             auto command = std::make_pair(CommandService::Command::no_such_command, 0);
             command = CommandService::extractCommandByte(program + currentPosition);
             if (command.first == CommandService::Command::end ||

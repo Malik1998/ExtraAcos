@@ -16,6 +16,7 @@ namespace CodeToByteConverter {
 
     static const char* filename = "Byte.code";
 
+    static int const version = 1998;
 
     std::map<int, int>  getLabels(char* program);
     ErrorCode convert(char* program, char* filename_ = const_cast<char *>("Byte.code"));

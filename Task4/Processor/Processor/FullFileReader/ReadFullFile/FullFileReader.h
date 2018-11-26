@@ -11,13 +11,13 @@ namespace FullFileReader {
     /// read file to text pointer
     /// \param FileName - name of the file to be read
     /// \param text - variable, that will point to text
-    size_t readFullFile(const char *FileName, char ** text);
+    int readFullFile(const char *FileName, char ** text);
 
     /// change \n to \0
     /// \param text - variable pointing to text, where \n to be changed
     /// \param indexes - array where elemnts will index to the new tokens
     /// \return count of elemnts in indexes
-    size_t changeSlashesToNulles(char *text, size_t ** indexes);
+    int changeSlashesToNulles(char *text, int ** indexes);
 
 
     /// write text to file with order written in indexes array to the FileName file
@@ -26,7 +26,7 @@ namespace FullFileReader {
     /// \param FileName - file where to safe file
     /// \param countOfLines - count of elements in indexes
     /// \param typeOfWriting - parametres to open the file
-    void outputInFile(size_t * indexes, const char *text, const char *FileName, size_t countOfLines, int typeOfWriting);
+    void outputInFile(int * indexes, const char *text, const char *FileName, int countOfLines, int typeOfWriting);
 };
 
 

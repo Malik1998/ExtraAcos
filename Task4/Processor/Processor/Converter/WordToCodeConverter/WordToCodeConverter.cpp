@@ -16,15 +16,15 @@ namespace WordToCodeConverter {
         std::map<std::string, int> labels = getLabels(program);
         std::ofstream myfile;
         myfile.open(filename);
-        size_t currentPosition = 0;
-        size_t currentLine = 0;
+        int currentPosition = 0;
+        int currentLine = 0;
         while (currentPosition != std::strlen(program)) {
             auto command = std::make_pair(CommandService::Command::no_such_command, 0);
             command = CommandService::extractCommandWord(program + currentPosition);
             if (command.first == CommandService::Command::end ||
                 command.first == CommandService::Command::no_such_command) {
                 if (command.first == CommandService::Command::end) {
-                    myfile << static_cast<size_t>(command.first);
+                    myfile << static_cast<int>(command.first);
                     myfile.close();
                     return OK;
                 } else {
@@ -37,7 +37,7 @@ namespace WordToCodeConverter {
             currentPosition += command.second;
 
             if (command.first != CommandService::Command::label) {
-                myfile << static_cast<size_t>(command.first);
+                myfile << static_cast<int>(command.first);
             }
 
             switch (command.first) {
@@ -82,9 +82,9 @@ namespace WordToCodeConverter {
 
     std::map<std::string, int>  getLabels(char* program) {
         std::map<std::string, int> labels;
-        size_t currentPosition = 0;
-        size_t currentLine = 0;
-        size_t countLabels = 0;
+        int currentPosition = 0;
+        int currentLine = 0;
+        int countLabels = 0;
         while (currentPosition != std::strlen(program)) {
             auto command = std::make_pair(CommandService::Command::no_such_command, 0);
             command = CommandService::extractCommandWord(program + currentPosition);
@@ -105,8 +105,7 @@ namespace WordToCodeConverter {
                 }
                 case CommandService::Command::label : {
                     std::string labelName = CommandService::extractWord(program + currentPosition - command.second).first;
-                    labels[labelName.substr(0, labelName.length() - 1)] = static_cast<int>(
-                            static_cast<int>(currentLine) - countLabels); // cause it's look like: 'label_name: '
+                    labels[labelName.substr(0, labelName.length() - 1)] = currentLine - countLabels; // cause it's look like: 'label_name: '
                     countLabels++;
                     break;
                 }

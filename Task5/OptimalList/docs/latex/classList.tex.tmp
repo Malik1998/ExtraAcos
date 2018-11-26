@@ -1,0 +1,50 @@
+\hypertarget{classList}{}\section{Node$<$ T $>$ Class Template Reference}
+\label{classList}\index{Node$<$ T $>$@{Node$<$ T $>$}}
+
+
+Collaboration diagram for Node$<$ T $>$\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classList_a1ff07f2ae9278ad80adabab420dd4645}\label{classList_a1ff07f2ae9278ad80adabab420dd4645}} 
+{\bfseries Node} (\hyperlink{classList}{Node}$<$ T $>$ \&obj\+\_\+)
+\item 
+\mbox{\Hypertarget{classList_a180a5950a12ee80916384e024e932431}\label{classList_a180a5950a12ee80916384e024e932431}} 
+{\bfseries Node} (\hyperlink{classList}{Node} $\ast$next, \hyperlink{classList}{Node} $\ast$prev, T data)
+\item 
+\mbox{\Hypertarget{classList_a37150079356d139e27c52a35bb85668b}\label{classList_a37150079356d139e27c52a35bb85668b}} 
+\hyperlink{classList}{Node} $\ast$ {\bfseries get\+Next} () const
+\item 
+\mbox{\Hypertarget{classList_a0326957741944569c52c1d363ea33a8d}\label{classList_a0326957741944569c52c1d363ea33a8d}} 
+void {\bfseries set\+Next} (\hyperlink{classList}{Node} $\ast$next)
+\item 
+\mbox{\Hypertarget{classList_a2c83fecab04affbd86af2f623c36719c}\label{classList_a2c83fecab04affbd86af2f623c36719c}} 
+\hyperlink{classList}{Node} $\ast$ {\bfseries get\+Prev} () const
+\item 
+\mbox{\Hypertarget{classList_a7da8893b21541809dd210be972dd4bb3}\label{classList_a7da8893b21541809dd210be972dd4bb3}} 
+void {\bfseries set\+Prev} (\hyperlink{classList}{Node} $\ast$prev)
+\item 
+\mbox{\Hypertarget{classList_a6fd6b6bd478f7ad53375429db3562f45}\label{classList_a6fd6b6bd478f7ad53375429db3562f45}} 
+T {\bfseries get\+Data} () const
+\item 
+\mbox{\Hypertarget{classList_a3066933afdd040973213dd0a66607514}\label{classList_a3066933afdd040973213dd0a66607514}} 
+void {\bfseries set\+Data} (T data)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classList_a141a9cba941ab2d7a922d90356648fcf}\label{classList_a141a9cba941ab2d7a922d90356648fcf}} 
+\hyperlink{classList}{Node} $\ast$ {\bfseries next}
+\item 
+\mbox{\Hypertarget{classList_a419ba76d55cb41133bfde91ca86e5ea2}\label{classList_a419ba76d55cb41133bfde91ca86e5ea2}} 
+\hyperlink{classList}{Node} $\ast$ {\bfseries prev}
+\item 
+\mbox{\Hypertarget{classList_a726c6298eba9cb0972e79cd6e3ec8f55}\label{classList_a726c6298eba9cb0972e79cd6e3ec8f55}} 
+T {\bfseries data}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Node/Node.\+h\end{DoxyCompactItemize}

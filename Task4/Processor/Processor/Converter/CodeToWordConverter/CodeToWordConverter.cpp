@@ -16,8 +16,8 @@ using namespace CommandService;
         std::map<int, int> labels = getLabels(program);
         std::ofstream myfile;
         myfile.open(filename);
-        size_t currentPosition = 0;
-        size_t currentLine = 0;
+        int currentPosition = 0;
+        int currentLine = 0;
         while (currentPosition != std::strlen(program)) {
             auto command = std::make_pair(CommandService::Command::no_such_command, 0);
             command = CommandService::extractCommandCode(program + currentPosition);
@@ -27,7 +27,7 @@ using namespace CommandService;
             if (command.first == CommandService::Command::end ||
                 command.first == CommandService::Command::no_such_command) {
                 if (command.first == CommandService::Command::end) {
-                    myfile << commands[static_cast<size_t>(command.first)] << std::endl;
+                    myfile << commands[static_cast<int>(command.first)] << std::endl;
                     myfile.close();
                     return OK;
                 } else {
@@ -38,7 +38,7 @@ using namespace CommandService;
             }
 
             currentPosition += command.second;
-            myfile << commands[static_cast<size_t>(command.first)];
+            myfile << commands[static_cast<int>(command.first)];
 
             switch (command.first) {
                 case CommandService::Command::pop : {
@@ -76,7 +76,7 @@ using namespace CommandService;
     std::map<int, int>  getLabels(char* program) {
         std::map<int, int> labels;
         int currentPosition = 0;
-        size_t currentLine = 0;
+        int currentLine = 0;
         while (currentPosition != std::strlen(program)) {
             auto command = std::make_pair(CommandService::Command::no_such_command, 0);
             command = CommandService::extractCommandCode(program + currentPosition);
@@ -119,7 +119,7 @@ using namespace CommandService;
             auto command = std::make_pair(CommandService::Command::no_such_command, 0);
             command = CommandService::extractCommandCode(program + currentPosition);
             if (labels.find(static_cast<const int &>(currentLine)) != labels.end()) {
-                labels[static_cast<int>(currentLine)] = currentLine1;
+                labels[currentLine] = currentLine1;
                 currentLine1++;
             }
             if (command.first == CommandService::Command::end ||

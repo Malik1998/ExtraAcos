@@ -23,8 +23,9 @@ pop rcx
 
 push rcx
 push rax
-ja func
-
+je endif
+    call func
+endif:
 ret
 
 

@@ -18,8 +18,8 @@ namespace ByteToCodeConverter {
     static const char* filename = "Byte.code";
 
 
-    ErrorCode convert(char* program, char* filename_ = const_cast<char *>("Code.code"), size_t length = 0);
-    std::map<int, int>  getLabels(char* program, size_t length);
+    ErrorCode convert(char* program, char* filename_ = const_cast<char *>("Code.code"), int length = 0);
+    std::map<int, int>  getLabels(char* program, int length);
     int getNumber(char *strin);
 };
 

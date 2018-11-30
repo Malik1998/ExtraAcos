@@ -29,15 +29,15 @@ std::string Data::toString() const {
     if (type != const_number) {
         switch (type) {
             case sign_mult:
-                return "*";
+                return " * ";
             case sign_plus:
-                return "+";
+                return " + ";
             case sign_mins:
-                return "-";
+                return " - ";
             case sign_div:
-                return "/";
+                return " / ";
             case variable:
-                return "x";
+                return " x ";
             case sin:
                 return "sin";
             case cos:

@@ -34,6 +34,8 @@ public:
 
     void copy(Node *pNode);
 
+    int getPriority();
+
 private:
 
     Node *left = nullptr, *right = nullptr;

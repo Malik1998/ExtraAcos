@@ -67,3 +67,20 @@ void Node::copy(Node *pNode) {
     this->left = pNode->getLeft();
     this->right = pNode->getRight();
 }
+
+int Node::getPriority() {
+    switch (data.getType()) {
+        case(Data::sign_plus):
+        case(Data::sign_mins):
+            return 1;
+        case(Data::sign_mult):
+        case(Data::sign_div):
+            return 2;
+        case(Data::sin):
+        case(Data::cos):
+            return 3;
+        case(Data::const_number):
+        case(Data::variable):
+            return -1;
+    }
+}

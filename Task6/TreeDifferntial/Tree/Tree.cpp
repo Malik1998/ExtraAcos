@@ -5,6 +5,7 @@
 #include <fstream>
 #include <stdio.h>
 #include <stdlib.h>
+#include <cmath>
 #include "Tree.h"
 
 
@@ -30,7 +31,7 @@ void Tree::diriviate(std::string file_name) {
     Node* headDerivated = new Node;
     derviateRecursively(headDerivated, head, file);
 
-    file << "\\documentclass[a4paper,10pt]{article}\n"
+    file << "\\documentclass[a4paper, 20pt]{article}\n"
             "\\usepackage[utf8]{inputenc}\n"
             "\n"
             "\\usepackage[square,numbers]{natbib}\n"
@@ -43,7 +44,11 @@ void Tree::diriviate(std::string file_name) {
             "\\maketitle\n"
             "\n"
             "\n"
-            "\n$";
+            "\n";
+    file << "$( ";
+    showTree(head, file);
+    file << ")'" << "$ = $";
+
     showTree(headDerivated, file);
     file <<"$";
 
@@ -52,7 +57,7 @@ void Tree::diriviate(std::string file_name) {
         if (ran < countWord) {
             file << " \\\\ " << Tree::strings[ran]  << " \\\\ ";
         } else {
-            file << "=";
+            file << " = ";
         }
         file <<"$";
         showTree(headDerivated, file);
@@ -197,9 +202,6 @@ Data::Type Tree::getFuncName(size_t &i) {
             return Data::cos;
     }
 }
-
-//sin,
-//cos,
 
 void Tree::derviateRecursively(Node *d_curNode, Node *curNode, std::ofstream &cout) {
     switch (curNode->getData().getType()) {
@@ -384,10 +386,15 @@ void Tree::showTree(Node *curNode, std::ofstream &cout) {
             cout << "\\frac {";
         }
 
-
-        cout << "( ";
+        if ((curNode->getLeft()->getPriority() < curNode->getPriority() && curNode->getLeft()->getPriority() > 0) ||
+                                                                          curNode->getPriority() == 3) {
+            cout << "( ";
+        }
         showTree(curNode->getLeft(), cout);
-        cout << ")";
+        if ((curNode->getLeft()->getPriority() < curNode->getPriority() && curNode->getLeft()->getPriority() > 0) ||
+                                                                          curNode->getPriority() == 3) {
+            cout << ") ";
+        }
         if (curNode->getData().getType() == Data::sign_div) {
             cout << "}";
         }
@@ -402,9 +409,15 @@ void Tree::showTree(Node *curNode, std::ofstream &cout) {
         if (curNode->getData().getType() == Data::sign_div) {
             cout << "{";
         }
-        cout << "( ";
+        if ((curNode->getRight()->getPriority() < curNode->getPriority() && curNode->getRight()->getPriority() > 0) ||
+             curNode->getPriority() == 3) {
+            cout << "( ";
+        }
         showTree(curNode->getRight(), cout);
-        cout << ")";
+        if ((curNode->getRight()->getPriority() < curNode->getPriority() && curNode->getRight()->getPriority() > 0) ||
+                 curNode->getPriority() == 3) {
+            cout << ") ";
+        }
         if (curNode->getData().getType() == Data::sign_div) {
             cout << "}";
         }
@@ -439,8 +452,36 @@ bool Tree::optimize(Node *curNode) {
                 delete curNode->getRight();
                 curNode->copy(curNode->getLeft());
                 return true;
-            } else {
-                return optimize(curNode->getLeft()) || optimize(curNode->getRight());
+            } else if (curNode->getLeft()->getData().getType() == Data::Type::const_number &&
+                    curNode->getRight()->getData().getType() == Data::Type::const_number) {
+                int a = curNode->getLeft()->getData().getNumber();
+                int b = curNode->getRight()->getData().getNumber();
+                int c = -1;
+
+                delete curNode->getLeft();
+                delete curNode->getRight();
+
+                switch (curNode->getData().getType()) {
+                    case Data::sign_plus: {
+                        c = (a + b);
+                        break;
+                    }
+                    case Data::sign_mins: {
+                        c = (a - b);
+                        break;
+                    }
+                }
+
+                curNode->setLeft(nullptr);
+                curNode->setRight(nullptr);
+
+                Data data(Data::Type::const_number);
+                data.setNumber(c);
+                curNode->setData(data);
+                return true;
+            }
+            else {
+                    return optimize(curNode->getLeft()) || optimize(curNode->getRight());
             }
 
 
@@ -461,6 +502,23 @@ bool Tree::optimize(Node *curNode) {
             } else if (canDelete(curNode->getRight(), 1)) {
                 delete curNode->getRight();
                 curNode->copy(curNode->getLeft());
+                return true;
+            } else if (curNode->getLeft()->getData().getType() == Data::Type::const_number &&
+                       curNode->getRight()->getData().getType() == Data::Type::const_number) {
+                int a = curNode->getLeft()->getData().getNumber();
+                int b = curNode->getRight()->getData().getNumber();
+                int c = a * b;
+
+                delete curNode->getLeft();
+                delete curNode->getRight();
+
+
+                curNode->setLeft(nullptr);
+                curNode->setRight(nullptr);
+
+                Data data(Data::Type::const_number);
+                data.setNumber(c);
+                curNode->setData(data);
                 return true;
             } else {
                 Data data1 = Data(Data::const_number);
@@ -491,7 +549,25 @@ bool Tree::optimize(Node *curNode) {
                 delete curNode->getRight();
                 curNode->copy(curNode->getLeft());
                 return true;
-            } else {
+            } else if (curNode->getLeft()->getData().getType() == Data::Type::const_number &&
+                       curNode->getRight()->getData().getType() == Data::Type::const_number) {
+                int a = curNode->getLeft()->getData().getNumber();
+                int b = curNode->getRight()->getData().getNumber();
+                int c = a / b;
+
+                delete curNode->getLeft();
+                delete curNode->getRight();
+
+
+                curNode->setLeft(nullptr);
+                curNode->setRight(nullptr);
+
+                Data data(Data::Type::const_number);
+                data.setNumber(c);
+                curNode->setData(data);
+                return true;
+            }
+            else {
                 Data data1 = Data(Data::const_number);
                 data1.setNumber(0);
                 if (canDelete(curNode->getLeft(), 0)) {

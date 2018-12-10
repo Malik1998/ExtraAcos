@@ -8,6 +8,21 @@
 #include <cmath>
 #include "Tree.h"
 
+#define VARIABLE_DATA Data data(Data::variable);
+#define CONST_DATA Data data(Data::const_number);
+#define PNODE_SET_DATA pNode->setData(data);
+#define L getLeft()
+#define R getRight()
+#define DATA getData()
+#define TYPE getType()
+#define SET_L setLeft
+#define SET_R setRight
+#define CREATE_DATA Data data;
+#define PRIOR getPriority()
+#define NUMBER getNumber()
+#define SET_NUMBER setNumber
+
+
 
 Tree::Tree(std::string expression_) {
     expression = expression_;
@@ -45,23 +60,23 @@ void Tree::diriviate(std::string file_name) {
             "\n"
             "\n"
             "\n";
-    file << "$( ";
+    file << "( ";
     showTree(head, file);
-    file << ")'" << "$ = $";
+    file << ")'" << " = \\\\ ";
 
     showTree(headDerivated, file);
-    file <<"$";
+    file <<"";
 
     while(optimize(headDerivated)) {
         int ran = rand() % 7;
         if (ran < countWord) {
             file << " \\\\ " << Tree::strings[ran]  << " \\\\ ";
         } else {
-            file << " = ";
+            file << " = \\\\ ";
         }
-        file <<"$";
+        file <<" ";
         showTree(headDerivated, file);
-        file <<"$";
+        file <<"  ";
     }
 
     file << "\n"
@@ -73,7 +88,7 @@ void Tree::diriviate(std::string file_name) {
 
     file.close();
 
-    std::string command = ("pdflatex " + file_name);
+    std::string command = ("pdflatex " + file_name + " -output-directory answ");
     std::system(command.c_str());
 }
 
@@ -108,35 +123,33 @@ void Tree::recursivelyBuild(size_t &i, Node *pNode) {
     TypeParse typeParse = getTypeParse(expression[i]);
     switch (typeParse) {
         case variable: {
-            Data data(Data::variable);
-            pNode->setData(data);
+            VARIABLE_DATA
+            PNODE_SET_DATA
             i++;
             return;
         }
         case open_bracket: {
             Node *newNode = new Node();
-            newNode->setParent(pNode);
 
             i++; // open bracket
             recursivelyBuild(i, newNode);
             i++; // close bracket
 
-            pNode->setLeft(newNode);
+            pNode->SET_L(newNode);
 
             if (i == expression.length() - 1) {
                 return;
             }
 
-            Data data;
+            CREATE_DATA
             data.setType(getSign(i));
-            pNode->setData(data);
+            PNODE_SET_DATA
 
             i++; // open bracket
             Node *leftNode = new Node();
-            leftNode->setParent(pNode);
             recursivelyBuild(i, leftNode);
 
-            pNode->setRight(leftNode);
+            pNode->SET_R(leftNode);
             i++; //close bracket
             return;
 
@@ -144,25 +157,24 @@ void Tree::recursivelyBuild(size_t &i, Node *pNode) {
         case function: {
 
 
-            Data data;
+            CREATE_DATA
             data.setType(getFuncName(i));
-            pNode->setData(data);
+            PNODE_SET_DATA
 
             i++; // open bracket
 
             Node *leftNode = new Node();
-            leftNode->setParent(pNode);
             recursivelyBuild(i, leftNode);
 
-            pNode->setLeft(leftNode);
+            pNode->SET_L(leftNode);
             i++; //close bracket
             return;
 
         }
         case const_number: {
-            Data data(Data::const_number);
-            data.setNumber(getNumber(i));
-            pNode->setData(data);
+            CONST_DATA
+            data.SET_NUMBER(getNumber(i));
+            PNODE_SET_DATA
             return;
         }
     }
@@ -203,109 +215,99 @@ Data::Type Tree::getFuncName(size_t &i) {
     }
 }
 
-void Tree::derviateRecursively(Node *d_curNode, Node *curNode, std::ofstream &cout) {
-    switch (curNode->getData().getType()) {
+void Tree::derviateRecursively(Node *pNode, Node *curNode, std::ofstream &cout) {
+    switch (curNode->DATA.TYPE) {
         case Data::variable: {
-            Data data(Data::const_number);
-            data.setNumber(1);
-            d_curNode->setData(data);
+            CONST_DATA
+            data.SET_NUMBER(1);
+            PNODE_SET_DATA
             return;
         }
         case Data::const_number: {
-            Data data(Data::const_number);
-            data.setNumber(0);
-            d_curNode->setData(data);
+            CONST_DATA
+            data.SET_NUMBER(0);
+            PNODE_SET_DATA
             return;
         }
         case Data::sign_plus:
         case Data::sign_mins: {
 
-            Data data(curNode->getData().getType());
-            d_curNode->setData(data);
+            Data data(curNode->DATA.TYPE);
+            PNODE_SET_DATA
 
             Node *newNode = new Node();
-            newNode->setParent(d_curNode);
 
-            derviateRecursively(newNode, curNode->getLeft(), cout);
+            derviateRecursively(newNode, curNode->L, cout);
 
-            d_curNode->setLeft(newNode);
+            pNode->SET_L(newNode);
 
 
             Node *newNodeRight = new Node();
-            newNodeRight->setParent(d_curNode);
 
-            derviateRecursively(newNodeRight, curNode->getRight(), cout);
+            derviateRecursively(newNodeRight, curNode->R, cout);
 
-            d_curNode->setRight(newNodeRight);
+            pNode->SET_R(newNodeRight);
             return;
 
         }
         case Data::sign_mult: {
 
             Data data(Data::sign_plus);
-            d_curNode->setData(data);
+            PNODE_SET_DATA
 
-            make_mult_deriviative(d_curNode, curNode, cout);
+            make_mult_deriviative(pNode, curNode, cout);
             return;
 
         }
         case Data::sign_div: {
             Data data(Data::sign_div);
-            d_curNode->setData(data);
+            PNODE_SET_DATA
 
-            make_div_deriviative(d_curNode, curNode, cout);
+            make_div_derivative(pNode, curNode, cout);
             return;
         }
         case Data::sin: {
             Data data(Data::sign_mult);
-            d_curNode->setData(data);
+            PNODE_SET_DATA
 
             Node *left = new Node(Data::cos);
-            left->setParent(d_curNode);
-            d_curNode->setLeft(left);
+            pNode->SET_L(left);
 
-            Node *leftCopy = new Node(curNode->getLeft());
-            left->setLeft(leftCopy);
-            leftCopy->setParent(left);
+            Node *leftCopy = new Node(curNode->L);
+            left->SET_L(leftCopy);
 
 
             Node *right = new Node();
-            right->setParent(d_curNode);
-            d_curNode->setRight(right);
+            pNode->SET_R(right);
 
-            derviateRecursively(right, curNode->getLeft(), cout);
+            derviateRecursively(right, curNode->L, cout);
 
             return;
         }
         case Data::cos: {
             Data data(Data::sign_mult);
-            d_curNode->setData(data);
+            PNODE_SET_DATA
 
             Node *mainleft = new Node(Data::sign_mult);
-            d_curNode->setLeft(mainleft);
-            mainleft->setParent(d_curNode);
+            pNode->SET_L(mainleft);
 
             Node *left = new Node(Data::sin);
-            left->setParent(mainleft);
-            mainleft->setLeft(left);
+            mainleft->SET_L(left);
 
-            Node *leftCopy = new Node(curNode->getLeft());
-            left->setLeft(leftCopy);
-            leftCopy->setParent(left);
+            Node *leftCopy = new Node(curNode->L);
+            left->SET_L(leftCopy);
 
             data = Data(Data::const_number);
-            data.setNumber(-1);
+            data.SET_NUMBER(-1);
 
             Node *right_left = new Node();
             right_left->setData(data);
-            right_left->setParent(mainleft);
-            mainleft->setRight(right_left);
+            mainleft->SET_R(right_left);
 
             Node *right = new Node();
-            right->setParent(d_curNode);
-            d_curNode->setRight(right);
+            pNode->SET_R(right);
 
-            derviateRecursively(right, curNode->getLeft(), cout);
+            derviateRecursively(right, curNode->L, cout);
 
             return;
         }
@@ -315,39 +317,32 @@ void Tree::derviateRecursively(Node *d_curNode, Node *curNode, std::ofstream &co
 void Tree::make_mult_deriviative(Node *d_curNode, Node *curNode, std::ofstream &cout) {
 
     Node *left = new Node(Data::sign_mult);
-    left->setParent(d_curNode);
-    d_curNode->setLeft(left);
+    d_curNode->SET_L(left);
 
     Node *d_new = new Node();
-    derviateRecursively(d_new, curNode->getLeft(), cout);
-    d_new->setParent(left);
+    derviateRecursively(d_new, curNode->L, cout);
 
-    Node *copy = new Node(curNode->getRight());
-    copy->setParent(left);
+    Node *copy = new Node(curNode->R);
 
-    left->setLeft(d_new);
-    left->setRight(copy);
+    left->SET_L(d_new);
+    left->SET_R(copy);
 
 
     Node *right = new Node(Data::sign_mult);
-    right->setParent(d_curNode);
-    d_curNode->setRight(right);
+    d_curNode->SET_R(right);
 
     d_new = new Node();
-    derviateRecursively(d_new, curNode->getRight(), cout);
-    d_new->setParent(right);
+    derviateRecursively(d_new, curNode->R, cout);
 
-    copy = new Node(curNode->getLeft());
-    copy->setParent(right);
+    copy = new Node(curNode->L);
 
-    right->setLeft(d_new);
-    right->setRight(copy);
+    right->SET_L(d_new);
+    right->SET_R(copy);
 }
 
-void Tree::make_div_deriviative(Node *d_curNode, Node *curNode, std::ofstream &cout) {
+void Tree::make_div_derivative(Node *d_curNode, Node *curNode, std::ofstream &cout) {
     Node *left = new Node();
-    left->setParent(d_curNode);
-    d_curNode->setLeft(left);
+    d_curNode->SET_L(left);
 
     Data data(Data::sign_plus);
     left->setData(data);
@@ -356,18 +351,15 @@ void Tree::make_div_deriviative(Node *d_curNode, Node *curNode, std::ofstream &c
 
 
     Node *right = new Node(Data::sign_mult);
-    right->setParent(d_curNode);
 
-    d_curNode->setRight(right);
+    d_curNode->SET_R(right);
 
-    Node *copyL = new Node(curNode->getRight());
-    copyL->setParent(right);
-    right->setLeft(copyL);
+    Node *copyL = new Node(curNode->R);
+    right->SET_L(copyL);
 
 
-    Node *copyR = new Node(curNode->getRight());
-    copyR->setParent(right);
-    right->setRight(copyR);
+    Node *copyR = new Node(curNode->R);
+    right->SET_R(copyR);
 
 }
 
@@ -377,49 +369,45 @@ void Tree::showTree(Node *curNode, std::ofstream &cout) {
         return;
     }
 
-    if (curNode->getLeft() != nullptr) {
-        if (curNode->getData().getType() == Data::sin || curNode->getData().getType() == Data::cos) {
-            cout << curNode->getData().toString();
+    if (curNode->L != nullptr) {
+        if (curNode->DATA.TYPE == Data::sin || curNode->DATA.TYPE == Data::cos) {
+            cout << curNode->DATA.toString();
         }
 
-        if (curNode->getData().getType() == Data::sign_div) {
-            cout << "\\frac {";
+        if (curNode->DATA.TYPE == Data::sign_div) {
+            cout << "$\\frac {";
         }
 
-        if ((curNode->getLeft()->getPriority() < curNode->getPriority() && curNode->getLeft()->getPriority() > 0) ||
-                                                                          curNode->getPriority() == 3) {
+        if (isBracketNeedL(curNode)) {
             cout << "( ";
         }
-        showTree(curNode->getLeft(), cout);
-        if ((curNode->getLeft()->getPriority() < curNode->getPriority() && curNode->getLeft()->getPriority() > 0) ||
-                                                                          curNode->getPriority() == 3) {
+        showTree(curNode->L, cout);
+        if (isBracketNeedL(curNode)) {
             cout << ") ";
         }
-        if (curNode->getData().getType() == Data::sign_div) {
+        if (curNode->DATA.TYPE == Data::sign_div) {
             cout << "}";
         }
 
     }
 
-    if (!(curNode->getData().getType() == Data::sin || curNode->getData().getType() == Data::cos || curNode->getData().getType() == Data::sign_div)) {
-        cout << curNode->getData().toString();
+    if (!(curNode->DATA.TYPE == Data::sin || curNode->DATA.TYPE == Data::cos || curNode->DATA.TYPE == Data::sign_div)) {
+        cout << curNode->DATA.toString();
     }
 
-    if (curNode->getRight() != nullptr) {
-        if (curNode->getData().getType() == Data::sign_div) {
+    if (curNode->R != nullptr) {
+        if (curNode->DATA.TYPE == Data::sign_div) {
             cout << "{";
         }
-        if ((curNode->getRight()->getPriority() < curNode->getPriority() && curNode->getRight()->getPriority() > 0) ||
-             curNode->getPriority() == 3) {
+        if (isBracketNeedR(curNode)) {
             cout << "( ";
         }
-        showTree(curNode->getRight(), cout);
-        if ((curNode->getRight()->getPriority() < curNode->getPriority() && curNode->getRight()->getPriority() > 0) ||
-                 curNode->getPriority() == 3) {
+        showTree(curNode->R, cout);
+        if (isBracketNeedR(curNode)) {
             cout << ") ";
         }
-        if (curNode->getData().getType() == Data::sign_div) {
-            cout << "}";
+        if (curNode->DATA.TYPE == Data::sign_div) {
+            cout << "}$";
         }
     }
 }
@@ -428,40 +416,40 @@ Tree::~Tree() {
     delete head;
 }
 
-bool Tree::optimize(Node *curNode) {
+bool Tree::optimize(Node *pNode) {
 
-    if (curNode== nullptr) {
+    if (pNode== nullptr) {
         return false;
     }
-    switch (curNode->getData().getType()) {
+    switch (pNode->DATA.TYPE) {
         case Data::sign_plus:
         case Data::sign_mins: {
-            if (curNode->getLeft() == nullptr) {
-                Data data(Data::const_number);
-                data.setNumber(0);
-                curNode->setData(data);
-                curNode->setLeft(nullptr);
-                curNode->setRight(nullptr);
+            if (pNode->L == nullptr) {
+                CONST_DATA
+                data.SET_NUMBER(0);
+                PNODE_SET_DATA
+                pNode->SET_L(nullptr);
+                pNode->SET_R(nullptr);
                 return false;
             }
-            if (canDelete(curNode->getLeft(), 0)) {
-                delete curNode->getLeft();
-                curNode->copy(curNode->getRight());
+            if (canDelete(pNode->L, 0)) {
+                delete pNode->L;
+                pNode->copy(pNode->R);
                 return true;
-            } else if (canDelete(curNode->getRight(), 0)) {
-                delete curNode->getRight();
-                curNode->copy(curNode->getLeft());
+            } else if (canDelete(pNode->R, 0)) {
+                delete pNode->R;
+                pNode->copy(pNode->L);
                 return true;
-            } else if (curNode->getLeft()->getData().getType() == Data::Type::const_number &&
-                    curNode->getRight()->getData().getType() == Data::Type::const_number) {
-                int a = curNode->getLeft()->getData().getNumber();
-                int b = curNode->getRight()->getData().getNumber();
+            } else if (pNode->L->DATA.TYPE == Data::Type::const_number &&
+                    pNode->R->DATA.TYPE == Data::Type::const_number) {
+                int a = pNode->L->DATA.NUMBER;
+                int b = pNode->R->DATA.NUMBER;
                 int c = -1;
 
-                delete curNode->getLeft();
-                delete curNode->getRight();
+                delete pNode->L;
+                delete pNode->R;
 
-                switch (curNode->getData().getType()) {
+                switch (pNode->DATA.TYPE) {
                     case Data::sign_plus: {
                         c = (a + b);
                         break;
@@ -472,119 +460,119 @@ bool Tree::optimize(Node *curNode) {
                     }
                 }
 
-                curNode->setLeft(nullptr);
-                curNode->setRight(nullptr);
+                pNode->SET_L(nullptr);
+                pNode->SET_R(nullptr);
 
-                Data data(Data::Type::const_number);
-                data.setNumber(c);
-                curNode->setData(data);
+                CONST_DATA
+                data.SET_NUMBER(c);
+                PNODE_SET_DATA
                 return true;
             }
             else {
-                    return optimize(curNode->getLeft()) || optimize(curNode->getRight());
+                    return optimize(pNode->L) || optimize(pNode->R);
             }
 
 
         }
         case Data::sign_mult: {
-            if (curNode->getLeft() == nullptr) {
-                Data data(Data::const_number);
-                data.setNumber(0);
-                curNode->setLeft(nullptr);
-                curNode->setRight(nullptr);
-                curNode->setData(data);
+            if (pNode->L == nullptr) {
+                CONST_DATA
+                data.SET_NUMBER(0);
+                pNode->SET_L(nullptr);
+                pNode->SET_R(nullptr);
+                PNODE_SET_DATA
                 return false;
             }
-            if (canDelete(curNode->getLeft(), 1)) {
-                delete curNode->getLeft();
-                curNode->copy(curNode->getRight());
+            if (canDelete(pNode->L, 1)) {
+                delete pNode->L;
+                pNode->copy(pNode->R);
                 return true;
-            } else if (canDelete(curNode->getRight(), 1)) {
-                delete curNode->getRight();
-                curNode->copy(curNode->getLeft());
+            } else if (canDelete(pNode->R, 1)) {
+                delete pNode->R;
+                pNode->copy(pNode->L);
                 return true;
-            } else if (curNode->getLeft()->getData().getType() == Data::Type::const_number &&
-                       curNode->getRight()->getData().getType() == Data::Type::const_number) {
-                int a = curNode->getLeft()->getData().getNumber();
-                int b = curNode->getRight()->getData().getNumber();
+            } else if (pNode->L->DATA.TYPE == Data::Type::const_number &&
+                       pNode->R->DATA.TYPE == Data::Type::const_number) {
+                int a = pNode->L->DATA.NUMBER;
+                int b = pNode->R->DATA.NUMBER;
                 int c = a * b;
 
-                delete curNode->getLeft();
-                delete curNode->getRight();
+                delete pNode->L;
+                delete pNode->R;
 
 
-                curNode->setLeft(nullptr);
-                curNode->setRight(nullptr);
+                pNode->SET_L(nullptr);
+                pNode->SET_R(nullptr);
 
-                Data data(Data::Type::const_number);
-                data.setNumber(c);
-                curNode->setData(data);
+                CONST_DATA
+                data.SET_NUMBER(c);
+                PNODE_SET_DATA
                 return true;
             } else {
-                Data data1 = Data(Data::const_number);
-                data1.setNumber(0);
-                if (canDelete(curNode->getLeft(), 0) || canDelete(curNode->getRight(), 0)) {
-                    delete curNode->getLeft();
-                    delete curNode->getRight();
-                    curNode->setData(data1);
-                    curNode->setLeft(nullptr);
-                    curNode->setRight(nullptr);
+                CONST_DATA
+                data.SET_NUMBER(0);
+                if (canDelete(pNode->L, 0) || canDelete(pNode->R, 0)) {
+                    delete pNode->L;
+                    delete pNode->R;
+                    PNODE_SET_DATA
+                    pNode->SET_L(nullptr);
+                    pNode->SET_R(nullptr);
                     return true;
                 }
-                return optimize(curNode->getLeft()) || optimize(curNode->getRight());
+                return optimize(pNode->L) || optimize(pNode->R);
             }
 
 
         }
         case Data::sign_div: {
-            if (curNode->getLeft() == nullptr) {
-                Data data(Data::const_number);
-                data.setNumber(0);
-                curNode->setLeft(nullptr);
-                curNode->setRight(nullptr);
-                curNode->setData(data);
+            if (pNode->L == nullptr) {
+                CONST_DATA
+                data.SET_NUMBER(0);
+                pNode->SET_L(nullptr);
+                pNode->SET_R(nullptr);
+                PNODE_SET_DATA
                 return false;
             }
-            if (canDelete(curNode->getRight(), 1)) {
-                delete curNode->getRight();
-                curNode->copy(curNode->getLeft());
+            if (canDelete(pNode->R, 1)) {
+                delete pNode->R;
+                pNode->copy(pNode->L);
                 return true;
-            } else if (curNode->getLeft()->getData().getType() == Data::Type::const_number &&
-                       curNode->getRight()->getData().getType() == Data::Type::const_number) {
-                int a = curNode->getLeft()->getData().getNumber();
-                int b = curNode->getRight()->getData().getNumber();
+            } else if (pNode->L->DATA.TYPE == Data::Type::const_number &&
+                       pNode->R->DATA.TYPE == Data::Type::const_number) {
+                int a = pNode->L->DATA.NUMBER;
+                int b = pNode->R->DATA.NUMBER;
                 int c = a / b;
 
-                delete curNode->getLeft();
-                delete curNode->getRight();
+                delete pNode->L;
+                delete pNode->R;
 
 
-                curNode->setLeft(nullptr);
-                curNode->setRight(nullptr);
+                pNode->SET_L(nullptr);
+                pNode->SET_R(nullptr);
 
-                Data data(Data::Type::const_number);
-                data.setNumber(c);
-                curNode->setData(data);
+                CONST_DATA
+                data.SET_NUMBER(c);
+                PNODE_SET_DATA
                 return true;
             }
             else {
-                Data data1 = Data(Data::const_number);
-                data1.setNumber(0);
-                if (canDelete(curNode->getLeft(), 0)) {
-                    delete curNode->getLeft();
-                    delete curNode->getRight();
-                    curNode->setData(data1);
-                    curNode->setLeft(nullptr);
-                    curNode->setRight(nullptr);
+                CONST_DATA
+                data.SET_NUMBER(0);
+                if (canDelete(pNode->L, 0)) {
+                    delete pNode->L;
+                    delete pNode->R;
+                    PNODE_SET_DATA
+                    pNode->SET_L(nullptr);
+                    pNode->SET_R(nullptr);
                     return true;
                 }
-                return optimize(curNode->getLeft()) || optimize(curNode->getRight());
+                return optimize(pNode->L) || optimize(pNode->R);
             }
         }
 
         case Data::sin:
         case Data::cos: {
-            return optimize(curNode->getLeft());
+            return optimize(pNode->L);
         }
     }
 
@@ -595,6 +583,16 @@ bool Tree::canDelete(Node *pNode, int value) {
     if (pNode == nullptr) {
         return true;
     }
-    return pNode->getData().getType() == Data::const_number && pNode->getData().getNumber() == value;
+    return pNode->DATA.TYPE == Data::const_number && pNode->DATA.NUMBER == value;
+}
+
+bool Tree::isBracketNeedR(Node *curNode) {
+    return (curNode->R->PRIOR < curNode->PRIOR && curNode->R->PRIOR > 0) ||
+           curNode->PRIOR == 3;
+}
+
+bool Tree::isBracketNeedL(Node *curNode) {
+    return (curNode->L->PRIOR < curNode->PRIOR && curNode->L->PRIOR > 0) ||
+           curNode->PRIOR == 3;
 }
 

@@ -20,13 +20,6 @@ void Node::setRight(Node *right) {
     Node::right = right;
 }
 
-Node *Node::getParent() const {
-    return parent;
-}
-
-void Node::setParent(Node *parent) {
-    Node::parent = parent;
-}
 
 const Data &Node::getData() const {
     return data;
@@ -45,14 +38,12 @@ Node::Node(Node *pNode) {
     this->data = pNode->data;
     if (pNode->getLeft() != nullptr) {
         Node *left_ = new Node(pNode->getLeft());
-        left_->parent = this;
 
         this->left = left_;
     }
 
     if (pNode->getRight() != nullptr) {
         Node *right_ = new Node(pNode->getRight());
-        right_->parent = this;
 
         this->right = right_;
     }

@@ -44,17 +44,20 @@ private:
 
     Data::Type getFuncName(size_t &i);
 
-    void derviateRecursively(Node *d_curNode, Node *curNode, std::ofstream &cout);
+    void derviateRecursively(Node *pNode, Node *curNode, std::ofstream &cout);
 
     void make_mult_deriviative(Node *d_curNode, Node *curNode, std::ofstream &cout);
 
-    void make_div_deriviative(Node *d_curNode, Node *curNode, std::ofstream &cout);
+    void make_div_derivative(Node *d_curNode, Node *curNode, std::ofstream &cout);
 
     void showTree(Node *curNode, std::ofstream &cout);
 
-    bool optimize(Node *curNode);
+    bool optimize(Node *pNode);
 
     bool canDelete(Node *pNode, int value);
+
+    bool isBracketNeedR(Node *curNode);
+    bool isBracketNeedL(Node *curNode);
 };
 
 

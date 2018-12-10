@@ -5,7 +5,7 @@ int main() {
     Tree tree("((5)+(3))");
     tree.diriviate("answ/five_plus_three.tex");
 
-    Tree tree1("(sin((5)*((3)*(x)))+(3))");
+    Tree tree1("(sin(((5)*(3))*(x)))+(3))");
     tree1.diriviate("answ/sinmult.tex");
 
     Tree tree2("((5)/(3))");

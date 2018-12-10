@@ -24,10 +24,6 @@ public:
 
     void setRight(Node *right);
 
-    Node *getParent() const;
-
-    void setParent(Node *parent);
-
     const Data &getData() const;
 
     void setData(const Data &data);
@@ -39,7 +35,6 @@ public:
 private:
 
     Node *left = nullptr, *right = nullptr;
-    Node *parent = nullptr;
     Data data;
 
 };

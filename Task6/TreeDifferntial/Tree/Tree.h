@@ -29,6 +29,7 @@ class Tree {
 public:
     Tree(std::string expression_);
     void diriviate(std::string file_name = "derrivative");
+    void diriviateLatexOnly(std::string file_name = "derrivative");
     ~Tree();
 
 private:

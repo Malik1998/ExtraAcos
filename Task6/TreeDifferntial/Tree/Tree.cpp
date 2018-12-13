@@ -88,7 +88,7 @@ void Tree::diriviate(std::string file_name) {
 
     file.close();
 
-    std::string command = ("pdflatex " + file_name + " -output-directory answ");
+    std::string command = ("pdflatex " + file_name);
     std::system(command.c_str());
 }
 
@@ -594,5 +594,56 @@ bool Tree::isBracketNeedR(Node *curNode) {
 bool Tree::isBracketNeedL(Node *curNode) {
     return (curNode->L->PRIOR < curNode->PRIOR && curNode->L->PRIOR > 0) ||
            curNode->PRIOR == 3;
+}
+
+void Tree::diriviateLatexOnly(std::string file_name) {
+    std::ofstream file;
+    file.open (file_name);
+
+
+    Node* headDerivated = new Node;
+    derviateRecursively(headDerivated, head, file);
+
+    file << "\\documentclass[a4paper, 20pt]{article}\n"
+            "\\usepackage[utf8]{inputenc}\n"
+            "\n"
+            "\\usepackage[square,numbers]{natbib}\n"
+            "\\bibliographystyle{unsrtnat}\n"
+            "\n"
+            "\\title{Derviation}\n"
+            "\n"
+            "\\begin{document}\n"
+            "\n"
+            "\\maketitle\n"
+            "\n"
+            "\n"
+            "\n";
+    file << "( ";
+    showTree(head, file);
+    file << ")'" << " = \\\\ ";
+
+    showTree(headDerivated, file);
+    file <<"";
+
+    while(optimize(headDerivated)) {
+        int ran = rand() % 7;
+        if (ran < countWord) {
+            file << " \\\\ " << Tree::strings[ran]  << " \\\\ ";
+        } else {
+            file << " = \\\\ ";
+        }
+        file <<" ";
+        showTree(headDerivated, file);
+        file <<"  ";
+    }
+
+    file << "\n"
+            "\\medskip\n"
+            "\n"
+            "\n"
+            "\\end{document}";
+    delete headDerivated;
+
+    file.close();
 }
 
